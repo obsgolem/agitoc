@@ -1,0 +1,28 @@
+\documentclass{article}
+\input{commands.tex}
+
+\title{Chapter 1 Problems}
+\author{Josiah Bills}
+\date{July 2020}
+
+\begin{document}
+
+\maketitle
+
+\section{Transitivity of Localization}
+Let $a/b \sim c/d \sim e/f$. Then there exist $s_1, s_2$ such that
+$s_1(ad-bc)=0$ and $s_2(cf-ed)=0$. Thus
+$s_2(bcf-edb)=s_2(s_1daf-s_1bed)=s_2ds_1(af-eb)$. Since $s_2ds_1 \in S$ the result follows.
+
+\section{1.3.C}
+\begin{itemize}
+    \item[$\leftarrow$] Suppose $ab=0$, $0 \not = a \in S$ and $b \not = 0$. Then $a(b-0)=0$ so that $b/1=0/1$. \qed
+    \item[$\rightarrow$] Suppose $x/1=y/1$. Then $s(x-y)=0$. Since $s$ is not a zero divisor, $x=y$. \qed
+\end{itemize}
+
+\section{1.3.D}
+Let $\phi: A \to B$ be such that $\phi(S)$ contains only invertible elements.
+Define $f : S^{-1}A \to B$ by $f(a/b)=\phi(a)\phi(b)^{-1}$. The map is well defined,
+and $f(a/1)=\phi(a)$ as desired.
+
+\end{document}

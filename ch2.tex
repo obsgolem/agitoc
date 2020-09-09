@@ -1,0 +1,118 @@
+\documentclass{article}
+\input{commands.tex}
+
+\title{Chapter 2 Problems}
+\author{Josiah Bills}
+\date{July 2020}
+
+\begin{document}
+
+\maketitle
+
+\section*{2.1.A}
+Suppose $f$ is non-zero at $p$. Then it is non-zero on an open set containing $p$. So every
+function equivalent to $f$ is eventually non-zero and thus has a continuous reciprocal. \qed
+
+\section*{2.2.F}
+The identity axiom holds since functions are determined pointwise.
+Define $f(x)=f_i(x)$ for some $U_i \ni x$. This is well defined: if $x \in U_i, U_j$ then
+$f_i=f_j$ on the overlap by the conditions. It is continuous: Let $U \subseteq Y$ be an open set.
+Then
+\[
+    f^{-1}(U) = \bigcup f_i^{-1}(U)
+\]
+which is an open set.
+
+\section*{2.2.G}
+\begin{itemize}
+    \item[a.] Identity holds since functions are defined pointwise.
+          Define $s(x)=s_i(x)$. This is continuous by the previous exercise. It is a section of $\mu$,
+          indeed $(\mu \after s)(x)=(\mu \after s_i)(x)=x$, where for the first equality we first pass
+          to an element of the open cover.
+    \item[b.] Define the group operation pointwise, i.e. $f*g=f(x)*g(x)$. This definition
+          shows that the restriction maps are group homomorphisms. 2.2.F shows everything else that remains to be shown.
+\end{itemize}
+
+\section*{2.2.H}
+Let the conditions of the identity axiom hold. Then $\{\pi^{-1}(V_i)=U_i\}$ is an open cover of
+$\pi^{-1}(V)$ and $f_1 |_{V_i}=f_2 |_{V_i}=f_1|_{U_i}=f_2|_{U_i}$ which implies, by the identity
+for $\mathscr{F}$, that $f_1=f_2$.
+
+Gluability follows by the same line of reasoning: gluing on $V_i$ is the same as gluing
+on $\pi^{-1}(V_i)$.
+
+\section*{2.2.I}
+If $q \in V$ where $V$ is open then we have a map from $\pi^*\mathscr{F}(V)$ to
+$\mathscr{F}_p$ given by regarding the former as $\mathscr{F}(\pi^{-1}(V))$ since
+$p \in \pi^{-1}(V)$. This is true for every open set of $Y$, so by the universal property
+of colimits, we get a (unique) map from $\pi^*\mathscr{F}_q$ to $\mathscr{F}_p$ which
+makes the relevant triangles commute.
+
+\section*{2.2.J}
+If $s, r \in \mathscr{O}_X(U)$ are eventually equal at $p$, and $f, g \in \mathscr{F(U)}$ are eventually
+equal at $p$, then $sf$ and $rg$ are eventually equal on the intersection of the relevant open sets.
+Thus the multiplication of $\mathscr{O}_{x,p}$ on $\mathscr{F}_p$ is well defined
+and gives $\mathscr{F}_p$ an $\mathscr{O}_{x,p}$ module structure.
+
+\section*{2.3.A}
+Define  define $\phi_p(f)=\phi_U(f)_p$ where $U$ is any open set containing $p$.
+Let $f,g \in \mathscr{F}_p$ and let $\widetilde{f}, \widetilde{g}$ be equal representatives on an
+open set $U \ni p$. Then $\phi_U(\widetilde{f})=\phi_U(\widetilde{g})$
+so the given function is well defined.
+
+\section*{2.3.B}
+Let $U \subseteq Y$ and $\eta: \mathscr{F} \to \mathscr{G}$. Define $\pi_*(\eta)_U$ to be
+$\eta_{\pi^{-1}(U)}$.
+
+\section*{2.3.C}
+Given $\eta \in \Hom(\mathscr{F},\mathscr{G})(U)$,
+$\eta|_{V,O}$ (to be read as "eta restricted to V at O") is defined to be $\eta_O$. The relevant diagrams can
+easily be seen to commute.
+
+We next show identity. Let $\eta, \zeta \in \Hom(\mathscr{F},\mathscr{G})(U)$,
+and let ${U_i}$ be the open cover in the conditions for identity. Let $V \subseteq U$ be open.
+Then $\eta|_{U_i,V \intersect U_i} = \zeta|_{U_i,V \intersect U_i}$.
+Let $x \in \mathscr{F}(V)$. Then $\eta|_{U_i,V \intersect U_i}(x|_{V \intersect U_i})= \zeta|_{U_i,V \intersect U_i}(x|_{V \intersect U_i})$.
+Thus by identity in $\mathscr{G}$, $\eta_V(x)=\zeta_V(x)$.
+
+Gluability is next. Let $\eta_i \in \Hom(\mathscr{F},\mathscr{G})(U_i)$,
+let $V \subseteq U$ be open, and let the $\eta_i$ agree on overlaps.
+We wish to define a natural transformation $\eta$. Let $x \in \mathscr{F}(V)$.
+Then the family of sections $\eta_i|_{V \intersect U_i, V \intersect U_i}(x|_{U_i})$ agree on overlaps.
+Thus they glue to a section of $\mathscr{G}(V)$. We define $\eta_V(x)$ to be this section.
+
+\section*{2.3.E}
+This is just a fragment of the snake lemma. \qed
+
+\section*{2.3.F}
+
+\[
+    \begin{tikzcd}
+         & \mathscr{H}(U) \ar[to=V, bend right=90, looseness=2]        \\
+        \mathscr{F}(U) \ar[d] \ar[r, "\phi_U"]
+         & \mathscr{G}(U) \ar[d] \ar[u] \ar[r, "\pi_U"]
+         & \text{coker} \phi(U) \ar[d] \ar[ul, dotted, "\psi_U", swap] \\
+        \mathscr{F}(V) \ar[r, "\phi_U"]
+         & \mathscr{G}(U) \ar[d] \ar[r, "\pi_U"]
+         & \text{coker} \phi(V) \ar[dl, dotted, "\psi_V", swap]        \\
+         & |[alias=V]| \mathscr{H}(V)
+    \end{tikzcd}
+\]
+
+Note that the two paths from $\text{coker}\phi(U)$ to $H(V)$
+are the same by universal property of the cokernel in $\catname{Ab}$.
+
+\section*{2.3.G}
+Exactness follows from the fact that the kernel/cokernel presheaves are the kernel/cokernel
+in the category of sheaves of abelian groups on $X$.
+
+\section*{2.3.H}
+Exact functors preserve long exact sequences. \qed
+
+\section*{2.3.I}
+Identity follows by considering the kernel to be a subset of $\mathscr{F}$.
+Let $f_i \in \text{ker}\phi(U_i)$ agree on overlaps. Then we use gluing in $\mathscr{F}$ to
+define $f$. Then we can use gluing in $\mathscr{G}$
+to show that the images under $\phi$ glue to 0, showing that $f$ is in the kernel.
+
+\end{document}

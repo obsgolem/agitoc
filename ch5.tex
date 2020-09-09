@@ -1,0 +1,151 @@
+\documentclass{article}
+\input{commands.tex}
+
+\title{Chapter 5 Problems}
+\author{Josiah Bills}
+\date{August 2020}
+
+\begin{document}
+
+\maketitle
+
+\section{5.1.A}
+Let $S_{\bullet}=k[x_0, \dots, x_n]$.
+We first note that $\Spec S_{\bullet, f, 0}$ form a basis for $\operatorname{Proj} S_{\bullet}$. These rings are the zero ring iff $f=0$, so every one of them has a point. In particular, the intersection of any two elements of this basis has a point, so that $\operatorname{Proj} S_{\bullet}$ is irreducible. Alternatively, apply 5.3.C.
+
+\section{5.1.B}
+In other words, every point is generic for some irreducible closed subset.
+Every single point set is irreducible, so its closure is irreducible.
+Every irreducible closed subset has a generic point. Let $X$ be such a subset, and cover it with affine opens $U_i=\Spec A_i$. Then $U_i \intersect X=\V(\p_i)$ for some prime $\p_i \subseteq A_i$. Since $U_i \intersect X$ is dense in $X$, $\overline{\{\p_i\}}=\overline{U_i \intersect X}=X$. This generic point is unique since $\p_i$ is prime and thus uniquely determines $U_i \intersect X$. \qed
+
+\section{5.1.C}
+Let $X=\Union_{i=0}^n U_i$ where $U_i$ are noetherian open sets. Consider a decreasing sequence of closed sets $V_0 \subseteq V_1 \dots$. Then $U_i \intersect V_j$ is a decreasing sequence of closed sets in $U_i$. Choose $k$ such that $U_i \intersect V_k$ is stable for all $i$. Then $V_k=\Union_{i=0}^n U_i \intersect V_k$. All the terms on the right are stable, so the left is stable too. \qed
+
+\section{5.1.D}
+Only if is trivial. Suppose you are given an open cover $\{U_i\}_{i \in I}$ and a finite affine open cover $\{V_i\}_{i \in [0, n]}$. Then $\{U_i\intersect V_k\}_{i \in I}$ has a finite subcover for all $k$. The cover consisting of the union of these covers over all $k$ is then a finite subcover as desired. \qed
+
+\section{5.1.E}
+A closed point of a closed subset is closed in the whole space: indeed, the point is the intersection of two closed sets, and is thus closed.
+
+We induct on the number of affines covering an irreducible closed subset $X$. If $n=1$ then every closed subset of an affine scheme contains closed points.
+
+We assume that every irreducible closed subset covered by $n-1$ affine opens has a closed point. Then we choose an affine open $U$ and a closed point of $U \intersect X$. If this point is closed in $X$ then we are done. Otherwise it is the generic point of an irreducible closed subspace which is covered by the finite affine open cover, with $U$ removed. By the inductive hypothesis, this irreducible closed subset has a closed point. By the above lemma this point is closed in $X$.
+
+Choose a point of a closed subset. The closed subset contains the irreducible subset corresponding to this point by definition of closure. Thus the closed set has a point which is closed in that closed set. By the above lemma, this must be closed in the entire scheme. \qed
+
+\section{5.1.F}
+\begin{itemize}
+    \item [$\implies$] Affine opens are quasicompact, hence their intersection is quasicompact by quasiseperatedness, hence they are a union of affine opens by 5.1.D.
+    \item [$\impliedby$] Let $U, V$ be affine opens that meet. Since they are quasicompact and since $\Spec A$ is affine, they may be covered by distinguished opens ${U_i}_{i \in [0,n]}$ and ${V_j}_{j \in [0,m]}$. But now,
+          \begin{align*}
+              U \intersect V & = \Union_{i=0}^n U_i \intersect \Union_{j=0}^m V_j \\
+                             & = \Union_{i=0}^n \Union_{j=0}^m U_i \intersect V_j
+          \end{align*}
+          $U_i \intersect V_j$ are intersections of distinguished opens, and thus distinguished opens themselves, and thus affine. Thus $U \intersect V$ is a finite union of affines so that $\Spec A$ is quasiseperated.
+\end{itemize}
+
+\section{5.1.G}
+Write two affine opens as $\Union_{i=0}^n \D(u_i), \Union_{j=0}^m \D(v_j)$. Then
+\begin{align*}
+    \Union_{i=0}^n \D(u_i) \intersect \Union_{j=0}^m \D(v_j) & = \Union_{i=0}^n \Union_{j=0}^m \D(u_i) \intersect \D(v_i) \\
+                                                             & = \Union_{i=0}^n \Union_{j=0}^m \D(u_iv_j).
+\end{align*}
+\qed
+
+\section{5.1.I}
+We note that $S_{\bullet} = A[x_0, \dots, x_n]/I$ where $I$ is homogenous. Then $\D(x_i)$ form an affine open covering, so that $\operatorname{Proj}(S_{\bullet})$ is quasicompact. Now, the distinguished opens form a base for $\operatorname{Proj}(S_{\bullet})$, so the same argument as in 5.1.F applies here to give quasiseperatedness. \qed
+
+\section{5.1.J}
+Take $X_1 \intersect X_2 = U$. \qed
+
+\section{5.2.A}
+Nilpotents at the stalks come from nilpotents on open sets and vice versa.
+If $f=g$ in $k(\p)$ for all $\p$ then $f-g \in \p$ for all $\p$. Hence $f-g$ is nilpotent on every affine open. Thus if we are reduced, then $f-g=0$ on every affine open, i.e. $f=g$. \qed
+
+\section{5.2.B}
+The stalks of a reduced ring are reduced. \qed
+
+\section{5.2.G}
+The property holds for affines: indeed, irreducible is equivalent to having no non-nilpotent zero divisors, and reduced says that it has no nilpotent zero divisors. Any open subset of an irreducible topological space is irreducible.
+
+Let $X$ be irreducible and reduced and let $fg=0$ globally. Then on any affine open WLOG, $f=0$. The set of points where $f=0$ is closed by 4.3.G, so it must be $X$ itself since any open is dense. Thus by reducedness and 5.2.A, $f=0$ globally.
+
+Now let X be integral. Reducedness is stalk local, and hence evident. Irreducible is equivalent to every pair of non-empty opens meeting, which can be checked on affine opens. Indeed, if they didn't meet then their union would be isomorphic to a disjoint union of spectra, and thus wouldn't be integral. \qed
+
+\section{5.2.H}
+Note that $\eta$ is generic and thus equals $(0)$ in $\Spec A$. We are then inverting all nonzero elements of $A$, which obviously gives us $\operatorname{K}(A)$. \qed
+
+\section{5.2.I}
+As can be easily checked, equality of elements can be checked at a generic point. Thus since the two functions are equal on the generic point of both sets, they are equal.
+
+\section{5.3.A}
+Open subsets of noetherian spaces are noetherian, so the intersection of two noetherian affines is noetherian and thus quasicompact. \qed
+
+\section{5.3.B}
+This is true for arbitrary noetherian spaces. 3.6.15 shows that it has finitely many irreducible components. Each connected component is a union of these, so there must be finitely many of them.
+
+\section{5.3.C}
+Suppose $X$ has multiple irreducible components. We note (by 5.3.B) that $X$ has finitely many (closed) irreducible components. Writing the scheme as a union of one of these and the union of the rest of them we find it must be covered by two closed sets. These two must meet, lest we disconnect the space. Hence every irreducible component meets every other one in at least one point. We consider an affine open $\Spec A$ containing any point in this intersection. On this open set, we find that the ring has two or more minimal primes, say $\V(\p)$ and $\V(\q)$. We also have that $\V(\p) \intersect \V(\q)\neq \emptyset$. The localization at any point of this intersection has two minimal primes, and thus isn't integral.
+
+\section{5.3.E}
+\begin{itemize}
+    \item [a.] This is obviously finite type. Suppose $I$ is radical. Then the quotient is reduced. Suppose it isn't radical. Then the quotient isn't reduced. \qed
+\end{itemize}
+
+\section{5.3.F}
+\begin{itemize}
+    \item [$\implies$] Closed point implies maximal on any open affine. Since the open affine is locally finite, the quotient is a finite field extension.
+    \item [$\impliedby$] Such a point is maximal on any open set, and hence closed globally.
+\end{itemize}
+Density can be checked on an affine cover, and by the above, closed points on affines are closed globally.
+
+\section{5.3.H}
+Denote the morphism in the hint by $\phi$. Then $I_{j,\phi}^{\text{e}}=\prod_i I_{i,j}$. Since $\phi$ is injective, it preserves strict inclusions. Thus, composing with the projections onto the components we find that $I_{i,j-1} \subset I_{i,j}$ for some $i$. \qed
+
+\section{5.3.I}
+Given $\sum_j r_{ij}/f_i^{k_j}=r$ we let $k=\max k_j$. Then
+\[
+    \frac{\sum_j \frac{f_i^kr_{ij}}{f_i^{k_j}}}{f_i^k}=\frac{\sum_j f_i^{k-k_j}r_{ij}}{f_i^k}=r
+\]
+as desired. The gluing argument in 4.1 gives an explicit equation for gluing together expressions of this form, and this expression is a polynomial in the $c_i$ and the restriction of $r$ to the open cover. This then gives us a polynomial formula for $r$ in $c_i$, $f_i$ and $r_{ij}$. \qed
+
+\section{5.4.A}
+Let $x^n+\sum_{i=0}^{n-1} a_ix^i/s_i \in (S^{-1}A)[x]$ have a root in $\operatorname{K}(A)$. Call this root $r$ and let $t=\prod_{i=0}^n s_i$. We then have
+\[
+    t^n(r^n+\sum_{i=0}^{n-1} a_ir^i/s_i)=t^nr^n+\sum_{i=0}^{n-1} a_ir^it^is'_i
+\]
+where $s'_i \in S$. This is a monic equation with coefficients in $A$, and so $tr \in A$ and so $tr/t=r \in S^{-1}A$. \qed
+
+\section{5.4.B}
+Any noetherian scheme is a finite union of connected components. By 5.3.C, each of these is then integral. The reverse implication is trivial.
+
+\section{5.4.E}
+Let $x/y \in S^{-1}A$. Factorize $x$ and $y$ into irreducibles and clear denominators to get $(\prod_i x_i)/d$ where $x_i$ is irreducible. Suppose $(\prod_i x_i)/d=z/w$ where $z$ and $w$ are coprime. Since $d$ doesn't divide any of the $x_i$ we find that it must divide $w$, and vice versa. Thus we get that $\prod_i x_i=ag$ where $a$ is a unit in $A$. \qed
+
+\section{5.4.F}
+Let $x^n+\sum_{i=0}^{n-1} a_ix^i=0$. We write $x=r/s$ where $r, s \in A$ are relatively prime. Then $x^n=-\sum_{i=0}^{n-1} a_ix^{i}$ so that $r^n=\sum_{i=0}^{n-1} a_ir^is^{n-i}$. So $s$ divides $r$, but that can't happen if they are coprime, hence $s$ is a unit. \qed
+
+\section{5.4.G}
+Each of these admit a covering by UFD affines.
+
+\section{5.4.H}
+\begin{itemize}
+    \item [a.] We can assume the root is in $\operatorname{K}(B) \setminus \operatorname{K}(A)$ since otherwise $\overline{F}F$ would have be a polynomial in $A$ the root would then lie in $A$. Now, by gauss's lemma we have $F=(cP)(c^{-1}Q)$ where both the terms are in $A[x]$. Since $Q$ is monic, we must have $c^{-1} \in A$. Since $F$ and $Q$ are monic, we must have that $P$ is monic. So $c \in A$. But then $cc^{-1}Q \in A[x]$. Now, since 2 is invertible, $g\in A$. Thus, $h^2f \in A$. Since $f$ is square free and $s$ is coprime to $t$, we get $s^2f/t^2 \in A$ implies that $1/t^2$ is a unit, and thus $1/t$ is too. This shows that $\alpha \in B$. \qed
+    \item[b.] Let $t^2 \mid f$ where $t \in A$ is irreducible and let $g \in A$ be arbitrary. Then $g+z/t \in \operatorname{K}(B)$ is a root of $x^2-2gx+(g^2-f/t^2) \in A[x]$. But $t$ isn't a unit in $A$ (or $B$), so this root can't be in $B$.
+\end{itemize}
+
+\section{5.4.I}
+\begin{itemize}
+    \item[a.] We proceed as in 5.4.H, concluding that $2g \in \Z$, $g^2-nh^2 \in \Z$. Now, if $g \in \Z$ then we are done, by the same argument as in 5.4.H. We have $r^2t^2/4t^2-4ns^2/4t^2 \in \Z$, so $r^2t^2 \equiv 0 \mod 4$. Therefore $4 \mid t^2$. But then $t^2 = 4$, indeed if $r^2/4-ns^2/t^2=z \in Z$ then $4z-r^2=ns^2/m^2$ then $m^2=1$ since $s^2$ and $t^2$ are coprime. So $r^2-ns^2 \equiv 0 \mod 4$. But $r^2 = 0 \mod 4$ or $r^2 = 1 \mod 4$. In the latter case, $1-3s^2 \equiv 1 \mod 4$ or $1-3s^2 \equiv 2 \mod 4$. So $r^2 \equiv 0 \mod 4$ and $s^2 \equiv 0 \mod 4$. A minor modification shows that the same thing holds for $n \equiv 2 \mod 4$ \qed
+    \item[b.] Write the ideal as $x_1^2-(-x_2^2-\dots-x_m^2)$. The latter element is irreducible, and hence square free. Applying 5.4.H we get the result.
+          We wish to show that $x_2^2+\dots+x_m^2$ is square free. We reduce to the case where $m=3$. Then $x_2^2+x_3^2=(x_2+ix_3)(x_2-ix_3)$ or it is irreducible if $i \notin k$. Thus, it is square free. This shows that $x_1^2+x_2^2+x_3^2$ is irreducible, hence square free. The result follows by induction. \qed
+    \item[c.] Apply a linear change of coordinates from 5.4.J to reduce to part b. \qed
+\end{itemize}
+
+\section{5.4.J}
+\begin{itemize}
+    \item[a.] Every quadratic form is represented by a symmetric matrix. By the spectral theorem, this can be diagonalized by an orthogonal matrix. The diagonal form is the desired quadratic form.
+    \item[b.] Clear from the definition of a quadratic form.
+\end{itemize}
+
+\end{document}
