@@ -1,0 +1,331 @@
+\documentclass{article}
+\input{commands.tex}
+
+\title{Chapter 9 Problems}
+\author{Josiah Bills}
+\date{October 2020}
+
+\begin{document}
+
+\maketitle
+
+\section{7.1.A}
+Trivial \qed
+
+\section{7.1.B}
+\[
+    \begin{tikzcd}
+        X \ar[drr, bend left] \ar[ddr, bend right] \ar[dr, dotted] &
+                                                                   &
+        \\
+                                                                   & U \times_Z
+        Y \ar[d] \ar[r, hook]                                      & Y \ar[d,
+            "\pi"]
+        \\
+                                                                   & U \ar[r,
+        hook]                                                      & Z
+    \end{tikzcd}
+\]
+
+Define the dotted morphism by taking the inverse image of $U$, noting that it
+goes to $\pi^{-1}(U)$ under the top morphism. Thus it restricts to a morphism
+to that scheme. The product is obviously an open subscheme. \qed
+
+\section{7.1.C}
+Recall that noetherianness descends to open subsets. Given a point in the
+subset you are embedding, take a noetherian neighborhood and intersect it with
+the open subset.
+
+For the last question, consider $\D(x_1, x_2, \dots) \to A^{\infty}_k$. By
+3.6.G(b) the former is not quasicompact.
+
+\section{7.1.D}
+We need to exhibit a morphism such that on some open cover it is an open
+immersion. Consider the line with the doubled origin projecting onto the affine
+line. As an open cover, take the two standard open covers. Then on each open
+set it is an isomorphism.
+
+\section{7.2.A}
+We first note that surjective ring morphisms are integral, since any ring is
+integral over itself. Therefore, we may decompose an arbitrary morphism into an
+integral surjection and potentially non-integral injection. Thus we may replace
+$B$ with $\phi(B)$.
+
+We note that if $(b_1, \dots, b_n)=(1)$ then $(b_1^m, \dots, b_n^m)=(1)$. This
+follows from $\Union_i \D(b_i)=\Spec B$ and $\D(b_i)=\D(b_i^m)$. Now, let $a
+    \in A$. Then over $B_{b_i}$ we have
+\[
+    a^n+\sum_{j=1}^{n-1} a^jb'_j/(b_i)^{m_j}=0
+\]
+for some $b'_j$ and $m_j$. Clearing denominators and subtracting the sum gives
+us an equation of the desired form. Now, let $n$ be the largest power of $a$
+appearing in one of these integral dependence equations. Then for each $i$ we
+have an equation of the form
+\[
+    a^nb_i^{m_i}=\sum_{j=1}^{n-1} a^jb'_{ij}
+\]
+Now, let $\sum_i b''_ib_i^{m_i}=1$. Then
+\begin{align*}
+    a^n & =a^n\sum_i b''_ib_i^{m_i}          \\
+        & =\sum_i a^nb''_ib_i^{m_i}          \\
+        & =\sum_i\sum_{j=1}^{n-1} a^jb'_{ij}
+\end{align*}
+Which is an equation of integral dependence for $a$ over $B$. \qed
+
+\section{7.2.B}
+\begin{enumerate}[a.]
+    \item Let $a/\phi(b)^m \in A_{\phi(b)}$. Then we have an integral relation
+          for $a$, $\sum_{i=0}^n a^ib_i=0$. Multiply this by $1/\phi(b)^{nm}$
+          and recall
+          that $1/\phi(b)^{nm} \in \phi(B)_{\phi(b)}$. This gives an integral
+          relation
+          for $a/\phi(b)^m$ over $B_b$.
+
+          Quotient of $A$ is given by a finite, hence integral morphism, so by
+          7.2.C we have that the overall morphism is integral.
+
+          Let $a \in A/\bi^{\text{e}}_{\phi}$. Then we have an integral
+          relation $\sum_{i=0}^n a^ib_i=0$ in $A$. Apply the projection to this
+          to get
+          the desired integral relation.
+
+          We note that $1/t$ is not integral over $k[t]$. Suppose otherwise:
+          Then $1/t^n=\sum_{i=0}^{n-1} p_i(t)/t^i$, so that
+          $1/t=\sum_{i=0}^{n-1}
+              p_i(t)t^{n-1-i}$. But the latter is contained in $k[t]$. Thus,
+          $k[t] \to
+              k[t]_t$ is not integral. \qed
+
+    \item Let $\phi : B \to A$ be an integral extension and let $\phi' :
+              S^{-1}B \to \phi(S)^{-1}A$ be the localization. Let
+          $\phi'(a/b^n)=0$. Then
+          $0=\phi(a)/\phi(b)^n$ so that $\phi(s)\phi(a)=0$ for some $\phi(s)
+              \in
+              \phi(S)$. Thus, by injectivity of $\phi$, $sa=0$ so that
+          $a/b^n=0$. Thus
+          $\phi'$ is injective.
+
+          Recall from above that localization of $A$ is not necessarily
+          integral. The morphism given in the hints is clearly surjective but
+          not
+          bijective, thus it is in particular not injective (it is still
+          integral). \qed
+    \item Lemma: let $\phi: B \to A$ be an integral extension and let $\ai
+              \subset A$ be an ideal. Then $\phi': B/\ai^{\text{c}}_{\phi} \to
+              A/\ai$ is an
+          integral extension. By 7.2.B(a) it is integral, so we merely need to
+          show it is
+          injective. Let $\phi'(b)=0$. Then $\phi(b) \in \ai$ so that $b \in
+              \ai^{\text{c}}_{\phi}$. In other words, $b = 0$ in the quotient.
+
+          We have $\pi: A/\ai^{\text{ce}}_{\phi} \to A/\ai$ given by
+          $\pi(a)=a$. This is well defined: if $a-b \in \ai^{\text{ce}}_{\phi}$
+          then
+          $\pi(a-b) \in \ai$. Note that $\ker \pi = \ai$.
+
+          In the lemma above, $\phi' = \pi \after \phi''$ factors through
+          $\phi'': B/\ai^{\text{c}}_{\phi} \to A/\ai^{\text{ce}}_{\phi}$. To
+          see this, we
+          note that if $b \in \ai^{\text{c}}_{\phi}$ then $\phi(a) \in
+              \ai^{\text{ce}}_{\phi}$. We recall that for any ideal,
+          $\ai^{\text{cec}}_{\phi}=\ai^{\text{c}}_{\phi}$. Thus, $\ker \phi'' =
+              (0)$.
+          \qed
+
+\end{enumerate}
+
+\section{7.2.C}
+We first show the following result: let $A$ be a finitely generated $B$-algebra
+with each of its generators integral. Then $A$ is finite over $B$. We reduce to
+the 1D case immediately. Consider $B[a]$. By lemma 7.2.1, this must be finite
+(it is the smallest algebra containing both $B$ and $a$).
+
+Now, let $a \in A$ be arbitrary. Then $a$ satisfies a relation
+$a^n+b_{n-1}a^{n-1}+\dots$. Then clearly $a$ is integral over
+$C[b_{n-1},\dots]$. From the above lemma, $C[a, b_{n-1},\dots]$ is finite. But
+finite morphisms are integral, hence $a$ is integral over $C$. \qed
+
+\subsection*{Second proof}
+
+Let $a \in A$ be arbitrary and let $\phi: C \to B, \pi: B \to A$. Now, by lemma
+7.2.1, we have a linear relation $a=\sum_i b_ia_i$. Repeat again for the $b_i$,
+letting $b_i=\sum_j c_jb_{ij}$ for a generating set dependent on $i$, $b_{ij}$.
+Then $a=\sum_i \sum_j c_j(b_{ij}a_i)$. Then clearly the $b_{ij}a_i$ form a
+generating set for a finite subalgeba containing $a$. \qed
+
+\section{7.2.D}
+Consider two integral elements $a, b \in A$. Then by the above lemma these are
+contained in $\phi(B)[a, b]$ which is a in particular a subalgebra. This holds
+for arbitrary integral elements, so the set of all integral elements is a
+subalgebra.
+
+\section{7.2.E}
+The inverse image of the zero ideal under such a map is the zero ideal. Thus,
+the only prime ideal of $B$ is the zero ideal. But in that case it is maximal,
+hence the ring is a field. Let $b \in B$ be nonzero. Then surely $1/b \in A$,
+satisfies an integral dependence relation $1/b^n=\sum_{i=0}^{n-1} b_ib^i$. Then
+we have $1/b=\sum_{i=0}^{n-1} b_ib^{n-1-i} \in B$. \qed
+
+\section{7.2.F}
+Consider $\p_m$ and $\q_m \subset \q_{m+1}$. By the lemma in 7.2.B(c) we may
+quotient the integral extension by $\p_m$ to reduce to the integral domain
+case. We then have $(0) \subset \q_{m+1}/\q_m$. Apply the lying over theorem to
+get the desired ideal. The full result follows by induction.
+
+\section{7.2.G}
+Given the following exact sequence
+\[
+    \begin{tikzcd}
+        0 \ar[r] & N \ar[r] & M \ar[r] & M/N \ar[r] & 0
+    \end{tikzcd}
+\]
+we tensor with $A/I$ to get
+\[
+    \begin{tikzcd}
+        N/IN \ar[r] & M/IM \ar[r] & (M/N)/(IM/N) \ar[r] & 0
+    \end{tikzcd}
+\]
+The first arrow is surjective by hypothesis and the second arrow is surjective
+by exactness. This means that $(M/N)/(IM/N)=0$, or $IM/N=M/N$. Thus by Nakayama
+2, $M/N=0$ so that $M=N$. \qed
+
+\section{7.2.H}
+Let $N=(f_1, \dots, f_n) \subseteq M$. Then $N/mN \to M/mM$ is surjective since
+the images of the $f_i$ generate $M/mM$. Thus by Nakayama 3, $M=N$. \qed
+
+\section{7.2.I}
+We argue by contrapositive. Let $M$ be an $S[r]$ module which is finitely
+generated as an $S$ module. Assume that $r$ is not integral. Then $M$ is not
+faithful. Indeed, $\phi(x)=rx$ is a homomorphism. Applying Cayley-Hamilton to
+it we get an equation of the form $(r^n+\sum_{i=0}^{n-1} s_ir^i)x=0$. But since
+$r$ is not integral, the coefficient is not zero, as desired. \qed
+
+\section{7.2.J}
+Trivial. \qed
+
+\section{7.3.A}
+Trivial.
+
+\section{7.3.B}
+Noetherian spaces are quasicompact, and noetherian descends to open subsets.
+Thus every open subset of a Noetherian scheme is quasicompact. This proves part
+(a). By the same vein, quasiseparated descends to open subsets, proving part
+(b). \qed
+
+\section{7.3.C}
+\begin{enumerate}[a.]
+    \item Let $U_i=\Spec A_i$. Let $f_{ij} \in A_i$ be such that $(f_{ij})=A$.
+          Then if $\pi^{-1}(U_i)$ is quasicompact then so is
+          $\pi^{-1}(U_{if_{ij}})$. Indeed, by
+          quasicompactness of $\pi^{-1}(U_i)$ we may cover it with affine
+          schemes $\Spec
+              B_{ik}$, getting an induced morphism \[\pi_{ik}: \Spec B_{ik} \to
+              \Spec A_i\]
+          Since this comes from a morphism of affine schemes, we have
+          $\pi_{ik}^{-1}(U_{if_{ij}})=\Spec B_{ik\pi^{\#}f_{ij}}$. By varying
+          $k$ we get an open cover of
+          $\pi^{-1}(U_{if_{ij}})$.
+
+          The converse also holds, note that $\pi^{-1}(U_i)=\Union_j
+              \pi^{-1}(U_{if_{ij}})$, which is a finite union of quasicompact
+          spaces.
+          \qed
+    \item We first note that quasiseparatedness is inherited by open sets.
+          Indeed, let $X$ be quasiseparated, let $U \subseteq X$ be open, and
+          let $U_1,
+              U_2 \subseteq U$ be quasicompact in $U$. Then $U_1$ and $U_2$ are
+          quasicompact
+          in $X$, hence their intersection is quasicompact in $X$, hence also
+          in $U$.
+
+          Let $U_i=\Spec A_i$. Let $f_{ij} \in A_i$ be such that $(f_{ij})=A$.
+          Then $\pi^{-1}(U_i)$ is quasiseparated iff $\pi^{-1}(U_{if_{ij}})$ is
+          also.
+          The forward direction follows by the above note. For the converse,
+          let $V_1,
+              V_2 \subseteq \pi^{-1}(U_i)$ be quasicompact. Then we may cover
+          their
+          intersection with a finite number of quasicompact intersections,
+          $\pi^{-1}(U_{if_{ij}}) \intersect V_1$.
+\end{enumerate}
+
+\section{7.3.D}
+Recall that affine schemes are quasicompact and quasiseparated (5.1.G).
+
+\section{7.3.E}
+Consider the restriction map $\Gamma(X, \Osh_X) \to \Gamma(X_s, \Osh_X)$. On a
+given affine cover of $X_s$ we have that $s$ is invertible, thus it is
+invertible on $X_s$. Now, use the universal property of localization to define
+a morphism as desired. \qed
+
+\section{7.3.F}
+Let $Y=\Spec A \setminus Z$. Then the open embedding $\iota: Y \to \Spec A$ is
+affine. Indeed, $Y$ is covered by open sets $Y_{f_i}$. These may in turn be
+covered by affine open sets $\Spec A_{jf_i}$. Then the $\Spec A_j$ cover $\Spec
+    A$, and $\iota^{-1}(\Spec A_j)=\Spec A_{jf_i}$ which is affine. \qed
+
+\section{7.3.G}
+We first note the following property of affine morphisms: If $\mathbf{P}$ is a
+property of morphisms that is local on the target, then it suffices to check
+this for affine schemes.
+
+Now, it is trivial to check that the localization of a finite morphism of rings
+is finite. For the converse, we may use a similar argument to that used in
+$7.2.A$. \qed
+
+\section{7.3.H}
+We note that $X$ must be affine, say $\Spec A$. We then have a finite
+$k$-algebra $A$. If $A$ is an integral domain, then it is a field (by 3.2.G)
+and we are done. Recall that finiteness passes to quotients. Hence $A/\p$ is a
+integral domain which is a finite $k$-extension, hence $\p$ is maximal. Thus
+every point is closed, and thus the space is cofinite. Since $A$ is finite over
+$k$ it is obviously finitely generated, and hence noetherian. Hence by 3.6.15
+it may be written as a finite union of irreducible subsets. But we just
+identified these as the points of $\Spec A$. Hence $\Spec A$ is a finite,
+discrete space. \qed
+
+\section{7.3.I}
+This is trivial on morphisms of affine schemes, hence for all schemes.
+
+\section{7.3.J}
+
+\section{7.3.K}
+We first note that the arguments in 5.2.B(a) apply to finite morphisms. Let
+$\phi: B \to A$ be a finite morphism, and let $\p \subseteq B$ be prime. Then
+we have a finite morphism $\phi_{\p}: B/\p \to A/\p^{\text{e}}_\phi$ and a
+corresponding morphism of schemes $\pi_{\p}$. Then $\pi^{-1}(\p)$ is in one to
+one correspondence with $\pi_{\p}^{-1}((0))$. So we may reduce to the case
+where $\Spec B$ is an integral scheme and $\p=(0)$. Now, we localize at $(0)$
+to get $\phi': B_{(0)} \to \phi(B\setminus 0)^{-1}A$ and corresponding $\pi'$.
+Let $\q \in \pi^{-1}((0))$. Then $ff'/bb' \in \q$ implies $ff' \in \q$ and $f$
+or $f'$ is in $\q$. Thus we get a prime ideal of $A$. This process is clearly
+invertible as well, giving a bijection between primes in $A$ and primes in
+$\phi(B\setminus 0)^{-1}A$. Since finiteness is preserved by quotient and
+localization, we get a finite morphism over a field whose fiber is in one to
+one correspondence with the original fiber.
+
+\section{7.3.L}
+The ring map is given by $\C[x] \to C[x]_{(0)}$. This is obviously not finite.
+
+\section{7.3.M}
+An arbitrary closed subscheme is locally a closed subscheme of an affine
+scheme. Hence we may work over the affine case. Now, if we are given ideals as
+in the hint, we may quotient $\pi^{\#}$ to get an integral extension by
+7.2.B(b). By the lying over theorem, this is surjective. Hence the closed set
+cut out by $I$ maps surjectively to the closed set cut out by $J$, and hence
+the map is closed. \qed
+
+\section{7.3.N}
+We note that an integral relation for $a$ will also be an integral relation for
+$a \otimes c$. Since integrality is closed under addition and multiplication,
+and since every tensor is a sum of pure tensors, we have our result. \qed
+
+\section{7.3.O}
+\section{7.3.P}
+ (a) is trivial from the definitions. For (b) we note that it is true on the
+level of affine schemes. We only require that the morphism is locally of finite
+type. Then we note that if $\Spec A_i \subseteq \pi^{-1}(\Spec B_i)$ then it is
+a finite morphism of affine schemes. Since finite type requires this to hold
+for all open affines, we have our result.
+
+\end{document}

@@ -34,7 +34,7 @@ We assume that every irreducible closed subset covered by $n-1$ affine opens has
 Choose a point of a closed subset. The closed subset contains the irreducible subset corresponding to this point by definition of closure. Thus the closed set has a point which is closed in that closed set. By the above lemma, this must be closed in the entire scheme. \qed
 
 \section{5.1.F}
-\begin{itemize}
+\begin{enumerate}[a.]
     \item [$\implies$] Affine opens are quasicompact, hence their intersection is quasicompact by quasiseperatedness, hence they are a union of affine opens by 5.1.D.
     \item [$\impliedby$] Let $U, V$ be affine opens that meet. Since they are quasicompact and since $\Spec A$ is affine, they may be covered by distinguished opens ${U_i}_{i \in [0,n]}$ and ${V_j}_{j \in [0,m]}$. But now,
           \begin{align*}
@@ -42,7 +42,7 @@ Choose a point of a closed subset. The closed subset contains the irreducible su
                              & = \Union_{i=0}^n \Union_{j=0}^m U_i \intersect V_j
           \end{align*}
           $U_i \intersect V_j$ are intersections of distinguished opens, and thus distinguished opens themselves, and thus affine. Thus $U \intersect V$ is a finite union of affines so that $\Spec A$ is quasiseperated.
-\end{itemize}
+\end{enumerate}
 
 \section{5.1.G}
 Write two affine opens as $\Union_{i=0}^n \D(u_i), \Union_{j=0}^m \D(v_j)$. Then
@@ -88,15 +88,15 @@ This is true for arbitrary noetherian spaces. 3.6.15 shows that it has finitely 
 Suppose $X$ has multiple irreducible components. We note (by 5.3.B) that $X$ has finitely many (closed) irreducible components. Writing the scheme as a union of one of these and the union of the rest of them we find it must be covered by two closed sets. These two must meet, lest we disconnect the space. Hence every irreducible component meets every other one in at least one point. We consider an affine open $\Spec A$ containing any point in this intersection. On this open set, we find that the ring has two or more minimal primes, say $\V(\p)$ and $\V(\q)$. We also have that $\V(\p) \intersect \V(\q)\neq \emptyset$. The localization at any point of this intersection has two minimal primes, and thus isn't integral.
 
 \section{5.3.E}
-\begin{itemize}
-    \item [a.] This is obviously finite type. Suppose $I$ is radical. Then the quotient is reduced. Suppose it isn't radical. Then the quotient isn't reduced. \qed
-\end{itemize}
+\begin{enumerate}[a.]
+    \item This is obviously finite type. Suppose $I$ is radical. Then the quotient is reduced. Suppose it isn't radical. Then the quotient isn't reduced. \qed
+\end{enumerate}
 
 \section{5.3.F}
-\begin{itemize}
+\begin{enumerate}[a.]
     \item [$\implies$] Closed point implies maximal on any open affine. Since the open affine is locally finite, the quotient is a finite field extension.
     \item [$\impliedby$] Such a point is maximal on any open set, and hence closed globally.
-\end{itemize}
+\end{enumerate}
 Density can be checked on an affine cover, and by the above, closed points on affines are closed globally.
 
 \section{5.3.H}
@@ -119,6 +119,12 @@ where $s'_i \in S$. This is a monic equation with coefficients in $A$, and so $t
 \section{5.4.B}
 Any noetherian scheme is a finite union of connected components. By 5.3.C, each of these is then integral. The reverse implication is trivial.
 
+\section{5.4.C}
+Since it is an integral domain, $A$ clearly injects into $A_{\m}$. Let $s \in \intersect_{\m \subset A} A_{\m}$. Write $s=a/b$ where $a, b \in A$. Then $b \in \m$ for some $\m$. But then it must also be invertible in $A_{\m}$, and hence must be a unit of $A$ so that $s \in A$. \qed
+
+\section{5.4.D}
+We let $I$ be the ideal of denominators of $w/y=x/z$. Clearly $y, z \in I$ and $I$ is homogenous. Suppose $a \in I$ is homogenous and contains a term without a $y$ or $z$ in it. Such a term must take the form $w^nx^m$ where at most one of $n,m$ is zero. But then we have $w^{n+1}x^m/y \in A$ which cannot happen, as you cannot lose a $y$ term without gaining a $z$ term.
+
 \section{5.4.E}
 Let $x/y \in S^{-1}A$. Factorize $x$ and $y$ into irreducibles and clear denominators to get $(\prod_i x_i)/d$ where $x_i$ is irreducible. Suppose $(\prod_i x_i)/d=z/w$ where $z$ and $w$ are coprime. Since $d$ doesn't divide any of the $x_i$ we find that it must divide $w$, and vice versa. Thus we get that $\prod_i x_i=ag$ where $a$ is a unit in $A$. \qed
 
@@ -129,23 +135,51 @@ Let $x^n+\sum_{i=0}^{n-1} a_ix^i=0$. We write $x=r/s$ where $r, s \in A$ are rel
 Each of these admit a covering by UFD affines.
 
 \section{5.4.H}
-\begin{itemize}
-    \item [a.] We can assume the root is in $\operatorname{K}(B) \setminus \operatorname{K}(A)$ since otherwise $\overline{F}F$ would have be a polynomial in $A$ the root would then lie in $A$. Now, by gauss's lemma we have $F=(cP)(c^{-1}Q)$ where both the terms are in $A[x]$. Since $Q$ is monic, we must have $c^{-1} \in A$. Since $F$ and $Q$ are monic, we must have that $P$ is monic. So $c \in A$. But then $cc^{-1}Q \in A[x]$. Now, since 2 is invertible, $g\in A$. Thus, $h^2f \in A$. Since $f$ is square free and $s$ is coprime to $t$, we get $s^2f/t^2 \in A$ implies that $1/t^2$ is a unit, and thus $1/t$ is too. This shows that $\alpha \in B$. \qed
-    \item[b.] Let $t^2 \mid f$ where $t \in A$ is irreducible and let $g \in A$ be arbitrary. Then $g+z/t \in \operatorname{K}(B)$ is a root of $x^2-2gx+(g^2-f/t^2) \in A[x]$. But $t$ isn't a unit in $A$ (or $B$), so this root can't be in $B$.
-\end{itemize}
+\begin{enumerate}[a.]
+    \item We can assume the root is in $\operatorname{K}(B) \setminus \operatorname{K}(A)$ since otherwise $\overline{F}F$ would have be a polynomial in $A$ the root would then lie in $A$. Now, by gauss's lemma we have $F=(cP)(c^{-1}Q)$ where both the terms are in $A[x]$. Since $Q$ is monic, we must have $c^{-1} \in A$. Since $F$ and $Q$ are monic, we must have that $P$ is monic. So $c \in A$. But then $cc^{-1}Q \in A[x]$. Now, since 2 is invertible, $g\in A$. Thus, $h^2f \in A$. Since $f$ is square free and $s$ is coprime to $t$, we get $s^2f/t^2 \in A$ implies that $1/t^2$ is a unit, and thus $1/t$ is too. This shows that $\alpha \in B$. \qed
+    \item Let $t^2 \mid f$ where $t \in A$ is irreducible and let $g \in A$ be arbitrary. Then $g+z/t \in \operatorname{K}(B)$ is a root of $x^2-2gx+(g^2-f/t^2) \in A[x]$. But $t$ isn't a unit in $A$ (or $B$), so this root can't be in $B$.
+\end{enumerate}
 
 \section{5.4.I}
-\begin{itemize}
-    \item[a.] We proceed as in 5.4.H, concluding that $2g \in \Z$, $g^2-nh^2 \in \Z$. Now, if $g \in \Z$ then we are done, by the same argument as in 5.4.H. We have $r^2t^2/4t^2-4ns^2/4t^2 \in \Z$, so $r^2t^2 \equiv 0 \mod 4$. Therefore $4 \mid t^2$. But then $t^2 = 4$, indeed if $r^2/4-ns^2/t^2=z \in Z$ then $4z-r^2=ns^2/m^2$ then $m^2=1$ since $s^2$ and $t^2$ are coprime. So $r^2-ns^2 \equiv 0 \mod 4$. But $r^2 = 0 \mod 4$ or $r^2 = 1 \mod 4$. In the latter case, $1-3s^2 \equiv 1 \mod 4$ or $1-3s^2 \equiv 2 \mod 4$. So $r^2 \equiv 0 \mod 4$ and $s^2 \equiv 0 \mod 4$. A minor modification shows that the same thing holds for $n \equiv 2 \mod 4$ \qed
-    \item[b.] Write the ideal as $x_1^2-(-x_2^2-\dots-x_m^2)$. The latter element is irreducible, and hence square free. Applying 5.4.H we get the result.
+\begin{enumerate}[a.]
+    \item We proceed as in 5.4.H, concluding that $2g \in \Z$, $g^2-nh^2 \in \Z$. Now, if $g \in \Z$ then we are done, by the same argument as in 5.4.H. We have $r^2t^2/4t^2-4ns^2/4t^2 \in \Z$, so $r^2t^2 \equiv 0 \pmod{4}$. Therefore $4 \mid t^2$. But then $t^2 = 4$, indeed if $r^2/4-ns^2/t^2=z \in Z$ then $4z-r^2=ns^2/m^2$ then $m^2=1$ since $s^2$ and $t^2$ are coprime. So $r^2-ns^2 \equiv 0 \pmod{4}$. But $r^2 = 0 \pmod{4}$ or $r^2 = 1 \pmod{4}$. In the latter case, $1-3s^2 \equiv 1 \pmod{4}$ or $1-3s^2 \equiv 2 \pmod{4}$. So $r^2 \equiv 0 \pmod{4}$ and $s^2 \equiv 0 \pmod{4}$. A minor modification shows that the same thing holds for $n \equiv 2 \pmod{4}$ \qed
+    \item Write the ideal as $x_1^2-(-x_2^2-\dots-x_m^2)$. The latter element is irreducible, and hence square free. Applying 5.4.H we get the result.
           We wish to show that $x_2^2+\dots+x_m^2$ is square free. We reduce to the case where $m=3$. Then $x_2^2+x_3^2=(x_2+ix_3)(x_2-ix_3)$ or it is irreducible if $i \notin k$. Thus, it is square free. This shows that $x_1^2+x_2^2+x_3^2$ is irreducible, hence square free. The result follows by induction. \qed
-    \item[c.] Apply a linear change of coordinates from 5.4.J to reduce to part b. \qed
-\end{itemize}
+    \item Apply a linear change of coordinates from 5.4.J to reduce to part b. \qed
+\end{enumerate}
 
 \section{5.4.J}
-\begin{itemize}
-    \item[a.] Every quadratic form is represented by a symmetric matrix. By the spectral theorem, this can be diagonalized by an orthogonal matrix. The diagonal form is the desired quadratic form.
-    \item[b.] Clear from the definition of a quadratic form.
-\end{itemize}
+\begin{enumerate}[a.]
+    \item Every quadratic form is represented by a symmetric matrix. By the spectral theorem, this can be diagonalized by an orthogonal matrix. The diagonal form is the desired quadratic form.
+    \item Clear from the definition of a quadratic form.
+\end{enumerate}
+
+\section{5.4.K}
+$-5 \equiv 3 \pmod{4}$, so the hypotheses of 5.4.I(a) apply. The hint clearly shows that it isn't a UFD.
+
+\section{5.4.L}
+\begin{enumerate}[a.]
+    \item This is exactly 5.4.I(b) and 5.4.I(c).
+    \item If $A$ is a graded integral domain, then $fg \in A$ homogenous implies that $f$ and $g$ are homogenous since otherwise the lower degree parts
+\end{enumerate}
+
+\section{5.4.M}
+Let $b \in l$ and $a \in A$ be arbitrary. Then $a \otimes b = \sum_i a \otimes k_ib_i$ for some $k_i \in k$. Factoring out a $k_ia$ gives us the desired $A$-linear expression for $a \otimes b$. We show that this generating set is a basis next: Let $\sum_i a_ik_i(1 \otimes b_i)=0$. If the $k_i$ are nonzero and the $a_i$ are distinct, then the result cannot be zero, since such an element is a formal sum of distinct nonzero terms. So we may assume $a_i=a$. Thus we are reduced to the statement $a \otimes \sum_i b_ik_i=0$ which is zero iff $\sum_i b_ik_i=0$ which is true iff all the $k_i=0$. \qed
+
+The map on the top is clearly injective. The map on the left is injective since the latter is a free $A$-algebra. The map on the right is injective for the same reason. The map on the bottom is injective since it is the tensor of the top map in the category of $k$-modules. (We use flatness of $l$ over $k$).
+
+Let $a \otimes b \in A \otimes l$. Then $1/a \otimes 1/b \in \operatorname{K}(A) \otimes l$. Thus by universal property there is a map from $\operatorname{K}(A \otimes l) \to \operatorname{K}(A) \otimes l$. Showing that $\operatorname{K}(A) \otimes l$ satisfies the universal property is a trivial exercise.
+
+The intersection property states that the commutative diagram is a pullback in the category of rings. Let $a \otimes b \in A \otimes l \intersect \operatorname{K}(A)$. Pulling back along the right map we see $b=1$. Pulling back along the bottom map followed by the left map we see that $a \in A$ as desired.
+
+Let $f \in A[x]$ be a monic with a root $\alpha \in \operatorname{K}(A)$. Then we may tensor with $l$ to get $f \otimes 1 \in (A \otimes l)[x]$. Since $(A \otimes l)$ is normal, $\alpha \otimes 1 \in (A \otimes l)$. Thus by the above property, $\alpha \in A$. \qed
+
+\section{5.4.N}
+The isomorphism is given by $t \mapsto y/x$ so that $f(t)/(t^2+1)^n$ goes to
+\[x^{2n}f(y/x)/x^{2n}((y/x)^2+1)^n\]
+This is degree zero since all non-constant terms of $f(y/x)$ are degree zero. Consider $f(x,y)/(x^2+y^2)^n$. Dividing the numerator and denominator by $x^{2n}$ we get the desired denominator and a numerator of $f(x, y)/x^{2n}$. Every term of $f(x,y)$ has degree $2n$, so we can cancel out any $x$ terms to be left with terms that look like $y^i/x^i$ for some $i$. This shows that the given isomorphism is invertible.
+
+To show that $A$ is not a UFD we note that the only factorization of $xy/(x^2+y^2)$ would yeild terms of degree $-1$. \qed
+\qed
 
 \end{document}

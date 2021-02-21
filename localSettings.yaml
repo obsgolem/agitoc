@@ -1,2 +1,6 @@
 lookForAlignDelims:
   tikzcd: 1
+  pmatrix: 1
+modifyLineBreaks:
+  textWrapOptions:
+    columns: 80

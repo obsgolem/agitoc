@@ -8,6 +8,7 @@
 \usepackage{calligra}
 \usepackage{tikz-cd}
 \usepackage{mathrsfs}
+\usepackage[shortlabels]{enumitem}
 
 \newcolumntype{L}{>{$}l<{$}} % math-mode version of "l" column type
 
@@ -21,11 +22,12 @@
 \newcommand{\Intersect}{\bigcap}
 \newcommand{\Union}{\bigcup}
 \newcommand{\wa}[1]{\langle #1 \rangle}
-\newcommand{\ds}[1]{\mathds{#1}}
-\newcommand{\Z}{\mathds{Z}}
-\newcommand{\Q}{\mathds{Q}}
-\newcommand{\R}{\mathds{R}}
-\newcommand{\C}{\mathds{C}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
 \newcommand{\p}{\mathfrak{p}}
 \newcommand{\q}{\mathfrak{q}}
 \newcommand{\ai}{\mathfrak{a}}
@@ -33,6 +35,7 @@
 \newcommand{\m}{\mathfrak{m}}
 \newcommand{\defeq}{\vcentcolon=}
 
+\DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\Hom}{\mathscr{H}\text{\kern -3pt {\calligra\large om}}\,}
 \DeclareMathOperator{\Fsh}{\mathscr{F}}
 \DeclareMathOperator{\Gsh}{\mathscr{G}}
@@ -42,5 +45,8 @@
 \DeclareMathOperator{\coker}{coker}
 \DeclareMathOperator{\im}{im}
 \DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Proj}{Proj}
 \DeclareMathOperator{\V}{V}
 \DeclareMathOperator{\D}{D}
+
+\newcommand*{\rationalto}[1][]{\mathbin{\tikz [baseline=-0.25ex,-latex, dashed,->,densely dashed,#1] \draw [#1] (0pt,0.5ex) -- (1.3em,0.5ex);}}%

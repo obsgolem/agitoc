@@ -1,0 +1,59 @@
+\documentclass{article}
+\input{commands.tex}
+
+\title{Chapter 9 Problems}
+\author{Josiah Bills}
+\date{October 2020}
+
+\begin{document}
+
+\maketitle
+
+\section{9.1.A}
+Consider the following diagram:
+\[
+    \begin{tikzcd}
+                          & Y \ar[d] \ar[ddr]               \\
+        X \ar[r] \ar[rrd] & X \coprod Y \ar[dr, dotted]     \\
+                          &                             & Z
+    \end{tikzcd}
+\]
+We may define the dotted morphism on $Y$ as the morphism on the top and similarly for the morphism on $X$. Since morphisms glue, we get a unique morphism making the diagram commute. \qed
+
+\section{9.1.B}
+$\Spec$ is a contravariant equivalence of categories. \qed
+
+\section{9.1.C}
+Let $Z$ be arbitrary, and let $f: Z \to X$. Consider the following diagram:
+\[
+    \begin{tikzcd}
+        h_X(X) \ar[d, "\eta_X", swap] \ar[r, "\_ \after f"] & h_X(Z)  \ar[d, "\eta_Z"] \\
+        h_Y(X)                  \ar[r, "\_ \after f", swap] & h_Y(Z)
+    \end{tikzcd}
+    \begin{tikzcd}
+        \text{id} \ar[d] \ar[r] & f \ar[d]      \\
+        \phi             \ar[r] & \phi \after f
+    \end{tikzcd}
+\]
+Obviously, the natural transformation is uniquely determined by the destination of the identity. \qed
+
+\section{9.1.D}
+Suppose we have two morphisms of schemes $\sigma_X: X \to Z, \sigma_Y: Y \to Z$. Let $W$ be arbitrary. Then $h_X \times_{h_Z} h_Y(W)$ is given by a pair of morphsims $(f_X, f_Y)$ such that $f_X \after \sigma_X=f_Y \after \sigma_Y$. Let $U_i$ be an open cover of $W$. Consider a collection of morphisms $(f_{Xi}, f_{Yi})$ such that $f_{Xi} \after \sigma_X=f_{Yi} \after \sigma_Y$ for all $i$ and such that the components individually satisfy gluing. Then they glue to a pair of morphisms that satisfy the pullback condition. Identity is likewise trivial. \qed
+
+\section{9.1.E}
+The if direction follows from the existence of pullbacks of open embeddings (7.1.B). For the other direction, take $X=Z$ and pull back along the identity. \qed
+
+\section{9.1.F}
+\begin{enumerate}[a.]
+    \item Composition of pullback squares is a pullback square. \qed
+    \item Pullback $h'$ along $h''$, then consider the pullback $h' \after h_X$. You once again get a composed pullback square. \qed
+    \item All the pullbacks are of representable functors, so we may perform the pullback in $\catname{Scheme}$ where the result is obvious. \qed
+\end{enumerate}
+
+\section{9.1.G}
+\section{9.1.H}
+
+\section{9.1.I}
+Let $h_{U_i}$ be the open cover. Then the zariski condition ensures we may glue the $U_i$ together to get a scheme $X$. We need to show that $h \iso h_X$. For this we note that by the yoneda lemma, $\hom(h_X, h) \iso h(X)$. Now, choose the natural transformation which sends the identity to the identity.
+
+\end{document}
