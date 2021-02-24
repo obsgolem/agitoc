@@ -36,3 +36,7 @@ jobs:
             ch6.tex
             ch7.tex
             ch9.tex
+      - uses: actions/upload-artifact@v2
+        with:
+          name: pdfs
+          path: '*.pdf'
