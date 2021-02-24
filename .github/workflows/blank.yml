@@ -24,5 +24,15 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - name: Compile All LaTeX
-        uses: DanySK/compile-latex-action@0.1.0
+      - uses: xu-cheng/latex-action@v2
+        with:
+          root_file: |
+            ch1.tex
+            ch2.tex
+            ch2_pt2.tex
+            ch3.tex
+            ch4.tex
+            ch5.tex
+            ch6.tex
+            ch7.tex
+            ch9.tex
