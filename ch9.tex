@@ -10,22 +10,23 @@
 \maketitle
 
 \section{9.1.A}
-Consider the following diagram:
-\[
+Consider the following diagram: \[
     \begin{tikzcd}
                           & Y \ar[d] \ar[ddr]               \\
         X \ar[r] \ar[rrd] & X \coprod Y \ar[dr, dotted]     \\
                           &                             & Z
     \end{tikzcd}
-\]
-We may define the dotted morphism on $Y$ as the morphism on the top and similarly for the morphism on $X$. Since morphisms glue, we get a unique morphism making the diagram commute. \qed
+\] We may define the dotted
+morphism on $Y$ as the morphism on the top and similarly for
+the morphism on $X$. Since morphisms glue, we get a unique
+morphism making the diagram commute. \qed
 
 \section{9.1.B}
 $\Spec$ is a contravariant equivalence of categories. \qed
 
 \section{9.1.C}
-Let $Z$ be arbitrary, and let $f: Z \to X$. Consider the following diagram:
-\[
+Let $Z$ be arbitrary, and let $f: Z \to X$. Consider
+the following diagram: \[
     \begin{tikzcd}
         h_X(X) \ar[d, "\eta_X", swap] \ar[r, "\_ \after f"] & h_X(Z)  \ar[d, "\eta_Z"] \\
         h_Y(X)                  \ar[r, "\_ \after f", swap] & h_Y(Z)
@@ -34,26 +35,187 @@ Let $Z$ be arbitrary, and let $f: Z \to X$. Consider the following diagram:
         \text{id} \ar[d] \ar[r] & f \ar[d]      \\
         \phi             \ar[r] & \phi \after f
     \end{tikzcd}
-\]
-Obviously, the natural transformation is uniquely determined by the destination of the identity. \qed
+\] Obviously, the natural
+transformation is uniquely determined by the destination of the identity. \qed
 
 \section{9.1.D}
-Suppose we have two morphisms of schemes $\sigma_X: X \to Z, \sigma_Y: Y \to Z$. Let $W$ be arbitrary. Then $h_X \times_{h_Z} h_Y(W)$ is given by a pair of morphsims $(f_X, f_Y)$ such that $f_X \after \sigma_X=f_Y \after \sigma_Y$. Let $U_i$ be an open cover of $W$. Consider a collection of morphisms $(f_{Xi}, f_{Yi})$ such that $f_{Xi} \after \sigma_X=f_{Yi} \after \sigma_Y$ for all $i$ and such that the components individually satisfy gluing. Then they glue to a pair of morphisms that satisfy the pullback condition. Identity is likewise trivial. \qed
+Suppose we have two morphisms of schemes $\sigma_X: X \to Z, \sigma_Y: Y \to Z$. Let
+$W$ be arbitrary. Then $h_X \times_{h_Z} h_Y(W)$ is given by a
+pair of morphsims $(f_X, f_Y)$ such that $f_X \after \sigma_X=f_Y \after \sigma_Y$. Let
+$U_i$ be an open cover of $W$. Consider a
+collection of morphisms $(f_{Xi}, f_{Yi})$ such that $f_{Xi} \after \sigma_X=f_{Yi} \after \sigma_Y$
+for all $i$ and such that the components individually
+satisfy gluing. Then they glue to a pair of morphisms that satisfy the pullback
+condition. Identity is likewise trivial. \qed
 
 \section{9.1.E}
-The if direction follows from the existence of pullbacks of open embeddings (7.1.B). For the other direction, take $X=Z$ and pull back along the identity. \qed
+The if direction follows from the existence of pullbacks of open embeddings
+(7.1.B). For the other direction, take $X=Z$ and pull back
+along the identity. \qed
 
 \section{9.1.F}
 \begin{enumerate}[a.]
     \item Composition of pullback squares is a pullback square. \qed
-    \item Pullback $h'$ along $h''$, then consider the pullback $h' \after h_X$. You once again get a composed pullback square. \qed
-    \item All the pullbacks are of representable functors, so we may perform the pullback in $\catname{Scheme}$ where the result is obvious. \qed
+    \item Pullback $h'$ along $h''$, then consider the
+          pullback $h' \after h_X$. You once again get a composed pullback square.
+          \qed
+    \item All the pullbacks are of representable functors, so we may perform the pullback
+          in $\catname{Scheme}$ where the result is obvious. \qed
 \end{enumerate}
 
 \section{9.1.G}
+For the moment we assume that fiber products exist. Then we have
+$U\times_WV = U\times_ZY \intersect X\times_ZV$. If $\phi: T \to X\times_ZY$ then $\phi^{-1}(U\times_WV)=\phi^{-1}(U\times_ZY
+    ) \intersect \phi^{-1}(X\times_ZV)$.
+Clearly also $\phi^{-1}(U\times_ZY)=(\pi_X \after
+    \phi)^{-1}(U)$.
+
+Consider the following diagram: \[\begin{tikzcd}
+        {h'}                                                           \\
+                             & {h_T}                                   \\
+        {h_U\times_{h_W}h_V} &                         & {h_V}         \\
+                             & {h_X \times_{h_Z} h_Y } &       & {h_Y} \\
+        {h_U}                &                         & {h_W}         \\
+                             & {h_X}                   &       & {h_Z}
+        \arrow[from=6-2, to=6-4]
+        \arrow[from=4-4, to=6-4]
+        \arrow[from=4-2, to=6-2]
+        \arrow[from=4-2, to=4-4]
+        \arrow[hook, from=3-3, to=4-4]
+        \arrow[hook, from=5-1, to=6-2]
+        \arrow[hook, from=5-3, to=6-4]
+        \arrow[from=5-1, to=5-3]
+        \arrow[from=3-3, to=5-3]
+        \arrow[from=3-1, to=3-3]
+        \arrow[from=3-1, to=5-1]
+        \arrow[dashed, hook, from=3-1, to=4-2]
+        \arrow[from=2-2, to=4-2]
+        \arrow[hook, from=1-1, to=2-2]
+        \arrow[from=1-1, to=3-1]
+    \end{tikzcd}\] We wish to show that
+$h'$ is representable and that $h' \to h_T$ is
+represented by an open embedding. Consider the following slice of the above
+diagram: \[\begin{tikzcd}
+        {h_{S_1}}                                        \\
+        {h'}                 & {h_T}                & {} \\
+        {h_U\times_{h_W}h_V} & {h_X\times_{h_Z}h_Y}      \\
+        {h_U}                & {h_X}
+        \arrow[from=2-2, to=3-2]
+        \arrow[from=2-1, to=3-1]
+        \arrow[from=2-1, to=2-2]
+        \arrow[from=3-1, to=3-2]
+        \arrow[from=3-1, to=4-1]
+        \arrow[from=3-2, to=4-2]
+        \arrow[hook, from=4-1, to=4-2]
+        \arrow[hook, from=1-1, to=2-2]
+        \arrow[curve={height=30pt}, from=1-1, to=4-1]
+    \end{tikzcd}\] We find $h_{S_1}$ defined by
+applying the definition of the open embedding $h_U \to h_X$ to the
+vertical morphism. Likewise, we can find an $h_{S_2}$
+corresponding to $h_V$. Now, set $S=S_1 \intersect S_2$, as
+motivated by the first paragraph. We show $h'=h_S$. Let
+$R$ be an arbitrary scheme and consider:
+\[\begin{tikzcd}
+        {h''(R)}                                                  \\
+         & {h_S(R)}                & {h_T(R)}                & {} \\
+         & {h_U\times_{h_W}h_V(R)} & {h_X\times_{h_Z}h_Y(R)}
+        \arrow[from=2-3, to=3-3]
+        \arrow[from=2-2, to=3-2]
+        \arrow[from=2-2, to=2-3]
+        \arrow[from=3-2, to=3-3]
+        \arrow[from=1-1, to=3-2]
+        \arrow[from=1-1, to=2-3]
+        \arrow[dashed, from=1-1, to=2-2]
+    \end{tikzcd}\] Let $x \in h''(R)$. Then we get a pair
+$(f,g) \in h_U\times_{h_W}h_V(R)$ and a morphism $j \in h_T(R)$ whose image is
+$(f, g)$. We wish to show that $\im j \subseteq S$. Applying
+the definition of open embedding, we get two morphisms $f': R \to S_1, g': R \to S_2$
+both of which map to $j$ (and hence are equal). We made no
+choices during this process, so the morphism $x \to f'$ is unique.
+\qed
+
 \section{9.1.H}
+Trivial
 
 \section{9.1.I}
-Let $h_{U_i}$ be the open cover. Then the zariski condition ensures we may glue the $U_i$ together to get a scheme $X$. We need to show that $h \iso h_X$. For this we note that by the yoneda lemma, $\hom(h_X, h) \iso h(X)$. Now, choose the natural transformation which sends the identity to the identity.
+We first show that open immersions are injective. Let $f_X(x_1)=f_X(x_2)$
+with $x_1, x_2 \in h'(X)$. Then, abusing notation, we write
+$x_1, x_2: h_X \to h'$. By yoneda, we have $f\after x_1=f\after x_2: h_X \to h$. Now,
+pullback $f\after x_1$ along $f$ to get an open
+embedding $h_U \to h_X$. Now, by definition, $(f \after x_1)_X(\id)=f(x_1)$.
+Clearly, then $(x_1,\id) \in h_U(X)$ (regarded as the pullback). Likewise,
+$(x_2, \id) \in h_U(X)$, and these both go to the same element in
+$h_X(X)$. Thus they are equal, so that $x_1 = x_2$.
+
+The identity $h_{U_i}(U_i)$ determines an element
+$h(U_i)$. By the zariski condition we get an element
+$h(X)$. By the yoneda lemma we get a natural transformation
+$f: h_X \to h$. We wish to show that this is bijective.
+
+Let $Y$ be an arbitrary scheme with a pullback cover
+$V_i$. Let $x \in h(Y)$. Then we abuse notation to
+write $x: h_Y \to h$. Now, $\id \in h_Y(Y)$ is determined by the
+inclusions $V_i \to Y$. These pullback to the identity on
+$h_{V_i}(V_i)$, and determine a morphism $V_i \to U_i$. These
+morphisms glue to give a morphism $Y \to X$ which corresponds to
+$x$.
+
+Let $f_Y(x_1)=f_Y(x_2)$. A simple diagram chase shows that the restrictions
+of $x_1, x_2$ to the open cover are equal, hence they are equal.
+\qed
+
+\section{9.2.A}
+Trivial
+
+\section{9.2.B}
+We show that $A \otimes I \cong I^{\text{e}}$ as $A$-modules. The
+morphism is given by $a \otimes i \mapsto a\phi(i)$. We note that
+$a \otimes i = ai \otimes 1$. This map is obviously bijective. It is clear that the
+tensored morphism $I^{\text{e}} \to A$ is injective. \qed
+
+\section{9.2.D}
+We first note that the pullback of a quasicompact morphism along a quasicompact
+morphism is quasicompact (9.4.B(a)). This shows the latter property. Now, we
+may assume that $A$ is affine, say $\Spec A$.
+Let $\Spec B \subseteq X, \Spec C \subseteq Y$. It suffices to show that $A \to B \otimes_A C$ is
+finite type. We first note that for any $A$-algebras
+$B/I \otimes_A C \cong (B \otimes_A C)/J$ for some ideal $J$. Indeed, simply
+tensor $I \to B \to B/I$ with $C$ and take kernels. Now
+$A[X]/I \otimes_A A[Y]/J
+    \cong (A[X] \otimes_A A[Y])/K \cong A[X, Y]/J$. \qed
+
+\section{9.2.F}
+Define $b/s \to \phi(b)/\phi(s)$. Suppose we have $f: A \to C$ and
+$g: S^{-1}B \to C$ making the relevant diagram commute. Then we send
+$a/\phi(s) \to f(a)*g(1/s)$. This is clearly unique. \qed
+
+\section{9.2.G}
+ (INCOMPLETE)
+
+We first characterize monomorphisms. $f$ is mono iff the
+following diagram is a pullback: \[\begin{tikzcd}
+        W        \\
+         & X & X \\
+         & X & Y
+        \arrow["f", from=2-3, to=3-3]
+        \arrow["f"', from=3-2, to=3-3]
+        \arrow["{\text{id}}"', from=2-2, to=3-2]
+        \arrow["{\text{id}}", from=2-2, to=2-3]
+        \arrow[curve={height=6pt}, from=1-1, to=3-2]
+        \arrow[curve={height=-6pt}, from=1-1, to=2-3]
+        \arrow[dashed, from=1-1, to=2-2]
+    \end{tikzcd}\]
+
+Now, it is clear that if $f: U \to X$ is pulled back along
+$f$ then the result is $U$, and we are
+done.
+
+Now, let $f: \Spec S^{-1}A \to \Spec A$. We pull this back along the identity, getting
+$\Spec S^{-1}A \otimes_A A$. But by 9.2.F this is just $\Spec S^{-1}A$, and
+we are done.
+
+\section{9.2.H}
+$\A^n_A \cong \Spec A[x_1, \dots, x_n] \cong \Spec A
+    \otimes_{\Z} \Z[x_1, \dots, x_n]$.
 
 \end{document}

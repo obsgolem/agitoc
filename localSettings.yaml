@@ -4,3 +4,8 @@ lookForAlignDelims:
 modifyLineBreaks:
   textWrapOptions:
     columns: 80
+    perCodeBlockBasis: 1
+    all: 1
+  removeParagraphLineBreaks:
+    all: 1
+    beforeTextWrap: 1

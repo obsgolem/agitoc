@@ -1,0 +1,60 @@
+\documentclass{article}
+\input{commands.tex}
+
+\title{Chapter 8 Problems}
+\author{Josiah Bills}
+\date{March 2021}
+
+\begin{document}
+
+\maketitle
+
+\section{8.1.A}
+Choose an affine cover. Injectivity clearly holds on this cover, and so holds
+globally. The complement of the image on an element of the affine cover is
+open, so complement of the overall image is open. Hence the image is closed.
+\qed
+
+\section{8.1.B}
+Quotients are clearly finite over the base ring, and closed embeddings are
+affine by definition.
+
+\section{8.1.C}
+Composition of affines morphisms is affine. Composition of surjective morphisms
+of rings is surjective. \qed
+
+\section{8.1.D}
+Consider $A \to B$ surjective. Then $A_f \to B_f$ is also
+surjective. The latter part of the affine communication lemma is just gluing
+schemes along affine opens.
+
+\section{8.1.E}
+Apply 8.1.D. \qed
+
+\section{8.1.F}
+Let $f: Y \to X$ be a closed subscheme. There are only two closed sets
+in $X$, $X$ itself and
+${\m}$. For the latter, we must have a surjective morphism
+$k[x]_{(x)} \to l$ where $l$ is a field. The kernel of
+this must be the closed point $\m$, which is not
+$mathfrak{I}(X)$. Suppose we are given $f: X \to X$ an
+automorphism and closed embedding. Then $f^{-1}(\D_x)=f^{-1}({\eta})$, giving us
+$f^{\sharp}: k(x) \to B$. If the condition on ideals holds then the kernel is
+$k(x)$, meaning that $B$ is the empty set,
+contradicting $f$ being an automorphism. \qed
+
+\section{8.1.G}
+Let $\phi: B \to B_f$ be the natural map. Then there is an induced map
+$\phi': I(B)_f \to I(B_f) x/f \mapsto \phi(x)/f$. The result follows by exactness of localization.
+
+\section{8.1.H}
+It is easy to see that $\operatorname{I}(B)$ defines a sheaf on a base. The
+restriction maps are the ristriction to the ideal of the ring restriction maps.
+The hypothesis ensures this is well defined. It remains to conclude that
+$\Osh / \mathfrak{I}$, regarded as the cokernel in the category of presheaves,
+is in fact a sheaf. Consider $\to \Spec B_f / \operatorname{I}(B_f) \to \Spec B/\operatorname{I}(B)$. Regarding this as a sheaf
+on $\Spec B$, we see that regular scheme gluing and identity
+applies. We used the hypothesis in order to ensure open inclusions are well
+defined. \qed
+
+\end{document}
