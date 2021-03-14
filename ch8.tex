@@ -32,8 +32,8 @@ schemes along affine opens.
 Apply 8.1.D. \qed
 
 \section{8.1.F}
-Let $f: Y \to X$ be a closed subscheme. There are only two closed sets
-in $X$, $X$ itself and
+Let $f: Y \to X$ be a closed subscheme. There are only two closed
+sets in $X$, $X$ itself and
 ${\m}$. For the latter, we must have a surjective morphism
 $k[x]_{(x)} \to l$ where $l$ is a field. The kernel of
 this must be the closed point $\m$, which is not
@@ -56,5 +56,78 @@ is in fact a sheaf. Consider $\to \Spec B_f / \operatorname{I}(B_f) \to \Spec B/
 on $\Spec B$, we see that regular scheme gluing and identity
 applies. We used the hypothesis in order to ensure open inclusions are well
 defined. \qed
+
+\section{8.1.I}
+\begin{enumerate}[a.]
+    \item Consider the ideal $(s)$ on some affine open cover. Let
+          $\phi: A \to A_f$. Then $(\phi(s))=(s)_f$ so that we satisfy the
+          conditions of 8.1.H.
+    \item It is clear that on an affine open cover $(su)=(s)$. \qed
+    \item Using notation as in (a), we have $(\phi((S)))=(S)_f$ and we are done.
+\end{enumerate}
+
+\section{8.1.J}
+\begin{enumerate}[a.]
+    \item We check that if $I_1, I_2 \subseteq A$ are ideals, then $(I_1 \intersect I_2)_f = I_{1,f} \intersect
+              I_{2,f}$.
+          Let $x/f^n \in (I_1 \intersect I_2)_f$. Then since $x \in I_1 \intersect I_2$,
+          $x/f^n \in I_{1,f} \intersect
+              I_{2,f}$. The converse holds for similar reasons. Now consider
+          $(x_1+x_2)/f^n \in (I_1 + I_2)_f$ where $x_i \in I_i$. It is obvious that
+          $(x_1+x_2)/f^n=x_1/f^n+x_2/f^n \in I_{1,f} +
+              I_{2,f}$. Thus $(I_1 \intersect I_2)(B)$ and $(I_1 + I_2)(B)$
+          define closed embeddings by 8.1.H. \qed
+    \item We have $(y-x^2)+(y)=(y,x^2)$, so we have a closed subscheme
+          $\Spec A[x, y]/(x^2, y)$, a parabola intersect the x-axis. Now,
+          $A[x, y]/(x^2, y) \cong
+              A[x]/(x^2)$. The union is given by $(y-x^2) \intersect (y)$. \qed
+    \item Trivial
+    \item We have $(y^2-x^2)+(y)=(y, x^2)$, we also have $(y^2-x^2)=((y+x)(y-x))=(y+x)(y-x)$. Thus the
+          above ideal corresponds to $(\V(y+x)\union\V(y-x))\intersect\V(y)$. Now $\V(y+x)\intersect\V(y)=\V(x,y)$,
+          but $(x,y)(x,y) \neq (y, x^2)$. So while they give the same closed set, they don't
+          give the same closed subscheme.
+\end{enumerate}
+
+\section{8.1.K}
+Let $\pi: X \to \Spec A$ be a morphism which induces a homeomorphism. Then
+$X$ is affine. Let $B=\Osh_X(X)$. Then we have a
+morphism $\phi: X \to \Spec B$. It is clear that $\phi$ is a
+homeomorphism, so it remains to show that it is an isomorphism of sheaves. Let
+$\Spec C \subseteq X$. Then we have a morphism $\phi': B \to C$. Now,
+let $b \in B$ be such that $\phi^{-1}(\D(b)) \subseteq \Spec C$. But it is clear
+that $\phi^{-1}(\D(b)) = \D(\phi'(b))$. Now, let $b$ range over
+$B$ to get a cover of $\Spec B$ by affines. By
+affine locallity of affineness, we are done.
+
+The fact that closed immersions satisfy this property follows from 2.5.E. For
+the other direction, we immediately reduce to the case where
+$Y$ is affine, say $\Spec A$. We find that
+$\pi$ corresponds to a morphism $\pi^{\sharp}: A \to \Osh_X(X)$. Taking
+kernels, we find that $\pi=\psi \after \phi$ where $\psi: \Spec A/I \to \Spec A$ is a
+closed embedding. Since $\psi$ induces a homeomorphism, by the
+above lemma, $X$ is affine. Hence the morphism is affine.
+
+We change our notation now and write $\pi: A \to B$,
+$\psi: A \to A/I$, and $\phi: A/I \to B$, with $\phi$
+inducing a homeomorphism of spaces. By 8.1.H, the closed subscheme structure of
+$\psi$ is uniquely determined by the ideal
+$I=\ker \psi = \ker \pi$. Now, apply 2.4.E to the stalks of
+$\phi$. \qed
+
+\section{8.1.L}
+Closed embeddings are finite by 8.1.B. Finite morphisms are locally of finite
+type by 7.3.P. Open embeddings are locally of finite type by 7.3.Q(a), so the
+result follows by 7.3.Q(b). \qed
+
+\section{8.1.M}
+The intersection is defined as the pullback given in the hint. (i)
+$\iff$ (ii) follows directly from 7.2.B. (i)
+$\implies$ (iii) follows from 9.2.B.
+
+\section{8.1.N}
+Consider $f=f_2 \after g_2 \after f_1 \after g_1$ where $g_1, g_2$ are closed
+embeddings and $f_1, f_2$ are open embeddings. Then by 8.1.M we
+have $f=f_2 \after f_3 \after g_3 \after g_1$, where $g_3$ is a closed embedding
+and $f_3$ is an open embedding. \qed
 
 \end{document}
