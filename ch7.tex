@@ -467,8 +467,10 @@ just the generic point.
           point. By 3.6.B, each of the $U_i$ contain the generic point
           of $Z_i$. Hence, we can write the subspace as
           $\coprod_{i=1}^n Z_i$. \qed
-    \item Suppose $S$ is closed under generization. Let
-          $y \in S^{\text{c}}$ be such that $x \in \overline{y}$. If
+    \item Stability under generization means the following: if $y_2 \in \overline{y_1}$
+          and $y_2 \in U$ then $y_1 \in U$. Suppose
+          $S$ is closed under generization. Let
+          $y \in S^{\text{c}}$ and let $x \in \overline{y}$. If
           $x \in S$ then so would $y$, which is a
           contradiction. Thus $x \in S^{\text{c}}$. \qed
 \end{enumerate}
@@ -553,8 +555,7 @@ $\oplus_{i=0}^{n-2} M_{i+1}/M_i \cong
     \end{tikzcd}
 \]  Now consider \[
     \begin{tikzcd}
-        {M_{n-1}\oplus M_n/M_{n-1}} \\
-        {M_n} & {M_n/M_{n-1}}
+        {M_{n-1}\oplus M_n/M_{n-1}} \\{M_n} & {M_n/M_{n-1}}
         \arrow["\pi'",from=1-1, to=2-2]
         \arrow[two heads, from=2-1, to=2-2]
         \arrow["\phi_n"', dashed, from=1-1, to=2-1]

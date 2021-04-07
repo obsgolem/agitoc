@@ -39,9 +39,10 @@ stable too. \qed
 \section{5.1.D}
 Only if is trivial. Suppose you are given an open cover $\{U_i\}_{i \in I}$
 and a finite affine open cover $\{V_i\}_{i \in [0, n]}$. Then
-$\{U_i\intersect V_k\}_{i \in I}$ has a finite subcover for all $k$.
-The cover consisting of the union of these covers over all
-$k$ is then a finite subcover as desired. \qed
+$\{U_i\intersect V_k\}_{i \in I}$ has a finite subcover for all $k$
+(since affine opens are quasicompact, 3.6.G). The cover consisting of the union
+of these covers over all $k$ is then a finite subcover as
+desired. \qed
 
 \section{5.1.E}
 A closed point of a closed subset is closed in the whole space: indeed, the
@@ -73,15 +74,16 @@ must be closed in the entire scheme. \qed
           affine opens by 5.1.D.
     \item [$\impliedby$] Let $U, V$ be affine opens that meet.
           Since they are quasicompact and since $\Spec A$ is affine, they
-          may be covered by distinguished opens ${U_i}_{i \in [0,n]}$ and
-          ${V_j}_{j \in [0,m]}$. But now,
+          may be covered by distinguished opens $\{U_i\}_{i \in [0,n]}$ and
+          $\{V_j\}_{j \in [0,m]}$. But now,
           \begin{align*}
               U \intersect V & = \Union_{i=0}^n U_i \intersect \Union_{j=0}^m V_j \\
                              & = \Union_{i=0}^n \Union_{j=0}^m U_i \intersect V_j
           \end{align*}
           $U_i \intersect V_j$ are intersections of distinguished opens, and thus
           distinguished opens themselves, and thus affine. Thus $U \intersect V$ is
-          a finite union of affines so that $\Spec A$ is quasiseperated.
+          a finite union of affines, hence quasicompact so that $\Spec A$ is
+          quasiseperated.
 \end{enumerate}
 
 \section{5.1.G}
@@ -92,6 +94,9 @@ Write two affine opens as $\Union_{i=0}^n \D(u_i), \Union_{j=0}^m
                                                              & = \Union_{i=0}^n \Union_{j=0}^m \D(u_iv_j).
 \end{align*}
 \qed
+
+\section{5.1.H}
+Apply 5.1.D and 5.1.F. \qed
 
 \section{5.1.I}
 We note that $S_{\bullet} = A[x_0, \dots, x_n]/I$ where $I$ is

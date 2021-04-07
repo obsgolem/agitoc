@@ -10,22 +10,42 @@
 \maketitle
 
 \section{4.1.A}
-3.5.E classifies the $g$ such that $\D(f) \subseteq \D(g)$ as the invertible elements of $A_f$. \qed
+3.5.E classifies the $g$ such that $\D(f) \subseteq \D(g)$
+as the invertible elements of $A_f$. \qed
 
 \section{4.1.D}
-Tensor the exact sequence 4.1.3.1 with $M$. The result follows from exactness and adjointness of tensor.
+Tensor the exact sequence 4.1.3.1 with $M$. The result
+follows from exactness and adjointness of tensor.
 
 \section{4.3.A}
 Let $X=\Spec A$ and $X'=\Spec A'$.
 
-We show that if $\pi(\p)=\q$ then $\pi^{\#,-1}(\p)=\q$. Indeed, let $f$ be a global section of $X$ that vanishes at $\p$. Then $f \in \p$. Now, this pulls back to a unique function $g \in A'$. By the general theory of sheaves we get a isomorphism of local rings $A'_{\q} \to A_{\p}$. Projecting to these stalks we find that $g$ vanishes at $\q$, as desired. Performing the same argument with the inverse map shows the desired result.
+We show that if $\pi(\p)=\q$ then $\pi^{\#,-1}(\p)=\q$. Indeed,
+let $f$ be a global section of $X$ that
+vanishes at $\p$. Then $f \in \p$. Now, this
+pulls back to a unique function $g \in A'$. By the general theory
+of sheaves we get a isomorphism of local rings $A'_{\q} \to A_{\p}$.
+Projecting to these stalks we find that $g$ vanishes at
+$\q$, as desired. Performing the same argument with the
+inverse map shows the desired result.
 
-The inverse image of every distinguished open is a distinguished open, and the direct image of a distinguished open under a homeomorphism is a distinguished open. This corresponds to the algebraic fact that the extension of a principal ideal along a ring map is principal.
+The inverse image of every distinguished open is a distinguished open, and the
+direct image of a distinguished open under a homeomorphism is a distinguished
+open. This corresponds to the algebraic fact that the extension of a principal
+ideal along a ring map is principal.
 
-That this function is continuous with continuous inverse is trivial. To show the final result it suffices to show that the isomorphism $\Osh_{X'}(\D(g)) \to \pi_*\Osh_X(\D(g))$ is the isomorphism $A'_g \to A_f$ induced by $\pi^{\#}$. Indeed, we have that $\Osh_{X'}(\D(g))=A'_g$ and $\pi_*\Osh_X(\D(g))=A_f$. From here the rest follows from the definition of the structure sheaves.
+That this function is continuous with continuous inverse is trivial. To show
+the final result it suffices to show that the isomorphism
+$\Osh_{X'}(\D(g)) \to \pi_*\Osh_X(\D(g))$ is the isomorphism $A'_g \to A_f$ induced by
+$\pi^{\#}$. Indeed, we have that $\Osh_{X'}(\D(g))=A'_g$ and
+$\pi_*\Osh_X(\D(g))=A_f$. From here the rest follows from the definition of the
+structure sheaves.
 
 \section{4.3.C}
-We first note that the intersection of an affine open with an arbitrary open is covered by distinguished opens of the affine open since it is open in the subspace topology. This gives us an open cover of $U$ by (distinguished) affine opens.
+We first note that the intersection of an affine open with an arbitrary open is
+covered by distinguished opens of the affine open since it is open in the
+subspace topology. This gives us an open cover of $U$ by
+(distinguished) affine opens.
 
 \section{4.3.D}
 Follows trivially from the previous exercise.
@@ -33,34 +53,62 @@ Follows trivially from the previous exercise.
 \section{4.3.E}
 \begin{itemize}
     \item [a.] Apply 4.3.A to the scheme $\coprod_{i=0}^n \Spec A_i \simeq \Spec \prod_{i=0}^n A_i$. \qed
-    \item [b.] Consider the infinite disjoint union of one point spaces. Then the one point open sets are an infinte cover of the space without a finite subcover.
+    \item [b.] Consider the infinite disjoint union of one point spaces. Then the one
+          point open sets are an infinte cover of the space without a finite subcover.
 \end{itemize}
 
 \section{4.3.F}
-This is essentially noting that localization at a prime is a colimit over the finite subsets of the complement of that prime. See exercise 1.something.
+This is essentially noting that localization at a prime is a colimit over the
+finite subsets of the complement of that prime. See exercise 1.something.
 
 \section{4.3.G}
 \begin{itemize}
     \item [a.]
-          If $f$ doesn't vanish at $\p$ then it is invertible at $A_{\p}$. So there is a genuine open set where it is invertible, say $U$. This set can't contain a point where $f$ vanishes, otherwise $f$ wouldn't be invertible. The result follows easily from this.
-    \item[b.] $f$ has an inverse on every stalk. Thus the inverses at the level of stalks give a set of compatible germs. Thus $f$ is invertible globally.
+          If $f$ doesn't vanish at $\p$ then it is
+          invertible at $A_{\p}$. So there is a genuine open set where it is
+          invertible, say $U$. This set can't contain a point where
+          $f$ vanishes, otherwise $f$ wouldn't be
+          invertible. The result follows easily from this.
+    \item[b.] $f$ has an inverse on every stalk. Thus the inverses at
+          the level of stalks give a set of compatible germs. Thus $f$
+          is invertible globally.
 
-          Second proof: it is clearly invertible on an affine open cover. These inverses glue to give a global inverse. \qed
+          Second proof: it is clearly invertible on an affine open cover. These inverses
+          glue to give a global inverse. \qed
 \end{itemize}
 
 \section{4.4.A/2.5.D}
-We take the basis suggested in 2.5.D. The sheaf on this base is then the obvious one where $\Fsh(U)=\Fsh_i(U)$. The cocyle condition ensures everything here is well defined.
+We take the basis suggested in 2.5.D. The sheaf on this base is then the
+obvious one where $\Fsh(U)=\Fsh_i(U)$. The cocyle condition ensures
+everything here is well defined.
 
-The global sections are explicitly this: A tuple of sections on each affine such that they are compatible in the obvious way.
+The global sections are explicitly this: A tuple of sections on each affine
+such that they are compatible in the obvious way.
 
 \section{4.4.B}
-Consider $\Gamma(X,\Osh_D)$ and $\Gamma(Y,\Osh_D)$ where $D$ is the line with the doubled origin. These two rings are isomorphic via the obvious isomorphism, and any two isomorphic sections are identical on the overlaps. The global sections are thus isomorphic to the sections on $X$. But then it can't be affine since $D \not \simeq X=\Spec k[x]$.
+Consider $\Gamma(X,\Osh_D)$ and $\Gamma(Y,\Osh_D)$ where
+$D$ is the line with the doubled origin. These two rings
+are isomorphic via the obvious isomorphism, and any two isomorphic sections are
+identical on the overlaps. The global sections are thus isomorphic to the
+sections on $X$. But then it can't be affine since
+$D \not \simeq X=\Spec k[x]$.
 
 \section{4.4.C}
-The definition of the space is obvious. The two affine sets which intersect at a non affine set are the two copies of the affine plane which intersect at the punctured plane.
+The definition of the space is obvious. The two affine sets which intersect at
+a non affine set are the two copies of the affine plane which intersect at the
+punctured plane.
 
 \section{4.4.D}
-We denote three open subsets $U_i, U_j, U_k$. These correspond to the rings $R_i=k[X_{n/i}]/(x_{i/i}-1), R_j=k[X_{n/j}]/(x_{j/j}-1), R_k=k[X_{n/k}]/(x_{k/k}-1)$ where we say $X_{n/i}=x_{0/i},x_{1/i}, \dots x_{n/i}$. The intersections $U_{ij}$ then correspond to the rings $R_{ix_{j/i}} \underset{\phi_{ij}}{\simeq} R_{jx_{i/j}}$ where $\phi_{ij}$ is the given isomorphism. The triple intersections are then $R_{ix_{j/i}x_{k/i}}$ and the other two variants.
+We denote three open subsets $U_i, U_j, U_k$. These correspond to the
+rings $R_i=k[X_{n/i}]/(x_{i/i}-1),
+    R_j=k[X_{n/j}]/(x_{j/j}-1),
+    R_k=k[X_{n/k}]/(x_{k/k}-1)$ where we say $X_{n/i}=x_{0/i},x_{1/i}, \dots
+    x_{n/i}$. The
+intersections $U_{ij}$ then correspond to the rings
+$R_{ix_{j/i}} \underset{\phi_{ij}}{\simeq}
+    R_{jx_{i/j}}$ where $\phi_{ij}$ is the given isomorphism.
+The triple intersections are then $R_{ix_{j/i}x_{k/i}}$ and the other two
+variants.
 
 We wish to show that $\phi_{ij}=\phi_{kj} \after \phi_{ik}$. Let $l \in [0,n]$. Then
 \begin{align*}
@@ -73,81 +121,184 @@ We wish to show that $\phi_{ij}=\phi_{kj} \after \phi_{ik}$. Let $l \in [0,n]$. 
 \qed
 
 \section{4.5.A}
-We consider $\Spec k[x_{0/2},x_{1/2}] / (x_{0/2}^2+x_{1/2}^2-1)$ and $\Spec k[x_{0/1},x_{2/1}] / (x_{0/1}^2+1-x_{2/1}^2)$. The gluing morphisms are the same ones as in $4.4.D$ sending e.g. $x_{0/1}=x_{0/2}/x_{1/2}$. We check that this is indeed an isomorphism: Let $\phi_{12}(f/x_{2/1}^n)=0$. We have $\phi_{12}(f)/x_{1/2}^n=0$ so that $\phi_{12}(f)=0$. Then $\phi_{12}(f)=ax_{0/2}^2+ax_{1/2}^2-a$
+We consider $\Spec k[x_{0/2},x_{1/2}] /
+    (x_{0/2}^2+x_{1/2}^2-1)$ and $\Spec k[x_{0/1},x_{2/1}] /
+    (x_{0/1}^2+1-x_{2/1}^2)$. The gluing
+morphisms are the same ones as in $4.4.D$ sending e.g.
+$x_{0/1}=x_{0/2}/x_{1/2}$. We check that this is indeed an isomorphism: Let
+$\phi_{12}(f/x_{2/1}^n)=0$. We have $\phi_{12}(f)/x_{1/2}^n=0$ so that
+$\phi_{12}(f)=0$. Then $\phi_{12}(f)=ax_{0/2}^2+ax_{1/2}^2-a$
 
 \section{4.5.C}
 \begin{itemize}
-    \item[a.] The if side is obvious. For the only if side, consider an element $a$. This element is written as a sum of homogenous elements. Since sum doesn't change the degree, the homogenous piece of degree $n$ must be contained in the ideal. \qed
-    \item[b.] For the sum, take the union of the generating sets. We note that the product of two elements is homogenous if the two elements are homogenous. Since products of ideals are generated by products of generators, we have the result. For intersection, simply recall part a. For radicals, let $x^n \in I$. Let $x_k$ be the top degree component of $x$. Then the top degree component of $x^n$ must have degree $kn$. The product of components of degree lower than $k$ won't have degree $kn$, so $x_k^n$ must be the top degree component of $x^n$. Thus $x_k \in \sqrt{I}$. The result follows by induction on the degree of $x^n$. \qed
-    \item[c.] Let $ab \in I$ for $a,b \in S_{\bullet}$. Let $(ab)_k$ be the degree $k$ component of $ab$. Now, choose $k$ arbitrarily. Then for $a_kb$, either all the possible $b_i$ are in $I$ or $a_k \in I$. But this holds for arbitrary $a_k$, so either all the $a_k \in I$ or all the $b_i \in I$. \qed
+    \item[a.] The if side is obvious. For the only if side, consider an element
+          $a$. This element is written as a sum of homogenous
+          elements. Since sum doesn't change the degree, the homogenous piece of degree
+          $n$ must be contained in the ideal. \qed
+    \item[b.] For the sum, take the union of the generating sets. We note that the
+          product of two elements is homogenous if the two elements are homogenous. Since
+          products of ideals are generated by products of generators, we have the result.
+          For intersection, simply recall part a. For radicals, let
+          $x^n \in I$. Let $x_k$ be the top degree component
+          of $x$. Then the top degree component of
+          $x^n$ must have degree $kn$. The product of
+          components of degree lower than $k$ won't have degree
+          $kn$, so $x_k^n$ must be the top degree
+          component of $x^n$. Thus $x_k \in \sqrt{I}$. The result
+          follows by induction on the degree of $x^n$. \qed
+    \item[c.] Let $ab \in I$ for $a,b \in S_{\bullet}$. Let
+          $(ab)_k$ be the degree $k$ component of
+          $ab$. Now, let $k$ be the top degree of
+          $a$ and $j$ the top degree of
+          $b$. Then $a_kb_j \in I$, so $a_k \in I$
+          or $b_j \in I$. WLOG assume $a_k \in I$. Then we may
+          replace $a$ with $a-a_k$ and repeat the
+          process. This may be done finitely many times, until either
+          $a$ or $b$ has been replaced with 0. In
+          either case we find that all the homogenous parts of $a$ are
+          in $I$ or all the homogenous parts of $b$
+          are in $I$, hence $a \in I$ or
+          $b \in I$. \qed
 \end{itemize}
 
 \section{4.5.D}
 \begin{itemize}
-    \item [a.] Let $S_+=(s_0, \dots, s_n)$ where the $s_i$ are homogenous. Let $g$ be arbitrary. If $g$ is degree 0 then we are done. Otherwise, $g \in S_+$. WLOG assume $g$ is homogenous. Then $g=\sum_{i=0}^n b_is_i$ for $b_i \in S_{\bullet}$. Then the $b_i$ necessarily have degree smaller than $g$. The result follows by induction. The reverse direction is trivial. \qed
+    \item [a.] Let $S_+=(s_0, \dots, s_n)$ where the $s_i$ are
+          homogenous. Let $g$ be arbitrary. If
+          $g$ is degree 0 then we are done. Otherwise,
+          $g \in S_+$. WLOG assume $g$ is homogenous.
+          Then $g=\sum_{i=0}^n b_is_i$ for $b_i \in S_{\bullet}$. Then the
+          $b_i$ necessarily have degree smaller than
+          $g$. The result follows by induction. The reverse direction
+          is trivial. \qed
     \item [b.]
           \begin{itemize}
-              \item[$\implies$] Noetherian implies $A$ is noetherian, and also that $S_+$ is finitely generated. \qed
-              \item[$\impliedby$] A finitely generated algebra over a noetherian ring is noetherian by Hilbert's basis theorem. \qed
+              \item[$\implies$] Noetherian implies $A$ is
+                    noetherian, and also that $S_+$ is finitely generated. \qed
+              \item[$\impliedby$] A finitely generated algebra over a noetherian ring is
+                    noetherian by Hilbert's basis theorem. \qed
           \end{itemize}
 \end{itemize}
 
 \section{Sanity check}
-We verify that $(k[x_0, \dots, x_n]_{x_i})_0$
-is isomorphic to the specified ring.
-Let $f/x_i^n$ have degree 0. Then $f$ is homogenous and $\deg f = n*\deg x_i$. We write $f=\prod_j x_j^{n_j}$ where $\sum_j n_j=n$.
-The isomorphism then sends $x_j/x_i$ to $x_{j/i}$ as desired.
+We verify that $(k[x_0, \dots, x_n]_{x_i})_0$ is isomorphic to the specified ring. Let
+$f/x_i^n$ have degree 0. Then $f$ is
+homogenous and $\deg f = n*\deg x_i$. We write $f=\prod_j x_j^{n_j}$ where
+$\sum_j n_j=n$. The isomorphism then sends $x_j/x_i$ to
+$x_{j/i}$ as desired.
 
 \section{4.5.E}
 \begin{itemize}
     \item[a.]
-          Let $a \in Q_i$. Then $(a^{\deg f}/f^i)^2 \in P_0$ so that $a^2 \in Q_i$. The reverse follows by the fact that $P_0$ is radical. $a_1+a_2 \in Q_i$ follows from this result. Let $a \in A$ be homogenous of degree $n$ and $b \in Q_i$. Then $ab$ has degree $in$. We have that $(ab)^{\deg f}/f^{in}=(a)^{\deg f}/f^{n}*b^{\deg f}/f^{i} \in P_0$ so that $P$ is a homogenous ideal. Now let $ab \in Q_i$ where $a, b$ are homogenous of degree $m$ and $n$ respectively (so that $m+n=i$). Then $(ab)^{\deg f}/f^{i} \in P_0$ so that $a^{\deg f}/f^{m}*b^{\deg f}/f^{n} \in P_0$. Then $a^{\deg f}/f^{m}$ or $b^{\deg f}/f^{n}$ is in $\P_0$, so $a$ or $b$ is in $P$.
+          Let $a \in Q_i$. Then $(a^{\deg f}/f^i)^2 \in P_0$ so that
+          $a^2 \in Q_i$. The reverse follows by the fact that
+          $P_0$ is radical. $a_1+a_2 \in Q_i$ follows from this
+          result. Let $a \in A$ be homogenous of degree
+          $n$ and $b \in Q_i$. Then $ab$
+          has degree $in$. We have that $(ab)^{\deg f}/f^{in}=(a)^{\deg f}/f^{n}*b^{\deg f}/f^{i} \in P_0$ so that
+          $P$ is a homogenous ideal. Now let $ab \in Q_i$
+          where $a, b$ are homogenous of degree $m$
+          and $n$ respectively (so that $m+n=i$). Then
+          $(ab)^{\deg f}/f^{i} \in P_0$ so that $a^{\deg f}/f^{m}*b^{\deg f}/f^{n} \in P_0$. Then
+          $a^{\deg f}/f^{m}$ or $b^{\deg f}/f^{n}$ is in $\P_0$,
+          so $a$ or $b$ is in
+          $P$.
 
-          It remains to show that every homogenous prime ideal arises this way. Let $P$ be a homogenous prime. Then $P=\bigoplus Q_i$ where $Q_0$ is prime in $A_0$. Let $a \in Q_i$. Then clearly $a^{\deg f}/f^{i} \in Q_0$. Let $a^{\deg f}/f^{i} \in Q_0$ for some $a$. Then $a^{\deg f} \in P$ so $a \in Q_i$. \qed
+          It remains to show that every homogenous prime ideal arises this way. Let
+          $P$ be a homogenous prime. Then $P=\bigoplus Q_i$ where
+          $Q_0$ is prime in $A_0$. Let
+          $a \in Q_i$. Then clearly $a^{\deg f}/f^{i} \in Q_0$. Let
+          $a^{\deg f}/f^{i} \in Q_0$ for some $a$. Then
+          $a^{\deg f} \in P$ so $a \in Q_i$. \qed
 
-    \item[b.] We describe a bijection between relevant homogenous ideals not containing $f$ and homogenous ideals in $(S_{\bullet})_f$. Let $P \subset (S_{\bullet})_f$ be homogenous. We wish to show that $P^{\text{c}}$ is relevant, homogenous, and doesn't contain $f$. The latter is clear, otherwise $P=(1)$. This also shows that $P$ is relevant, since $f$ has positive degree. It remains to show that it is homogenous. Let $a \in P^{\text{c}}$. Then $P$ contains all of $a$'s homogenous components(by homomorphism). Thus these components are in $P^{\text{c}}$. \qed
+    \item[b.] We describe a bijection between relevant homogenous ideals not containing
+          $f$ and homogenous ideals in $(S_{\bullet})_f$. Let
+          $P \subset (S_{\bullet})_f$ be homogenous. We wish to show that
+          $P^{\text{c}}$ is relevant, homogenous, and doesn't contain
+          $f$. The latter is clear, otherwise $P=(1)$.
+          This also shows that $P$ is relevant, since
+          $f$ has positive degree. It remains to show that it is
+          homogenous. Let $a \in P^{\text{c}}$. Then $P$ contains
+          all of $a$'s homogenous components(by homomorphism). Thus
+          these components are in $P^{\text{c}}$. \qed
 \end{itemize}
 
 \section{4.5.F}
 This follows directly from 4.5.E(b).
 
 \section{4.5.G}
-The sum of two homogenous ideals of positive degree is surely positive degree, so $\V(I)$ is $\V(\sum_{i \in I} (i))$, where the sum is (possibly) infinite. \qed
+The sum of two homogenous ideals of positive degree is surely positive degree,
+so $\V(I)$ is $\V(\sum_{i \in I} (i))$, where the sum is
+(possibly) infinite. \qed
 
 \section{4.5.H}
 \begin{itemize}
-    \item[a.] This says that if $f \in \p$ for all $\p \in \V(I)$ then $f \in \sqrt{I}$ (the other direction is trivial). Consider an arbitary prime $\q$ containing $I$. We wish to show that $f \in \q$. Indeed, let $\q^{\text{h}}$ be the ideal generated by homogenous elements of $\q$. Clearly then, $\q^{\text{h}} \subseteq \q$. Also, it is prime since primeness can be checked on homogenous elements. Now, $f \in \q^{\text{h}}$, so $f \in \q$. \qed
-    \item[b.] Take the intersection of all these homogenous primes. This is necessarily homogenous. We note that it is radical since the intersection of primes is always radical. That $\operatorname{I}(Z_1 \union Z_2) = \operatorname{I}(Z_1) \intersect \operatorname{I}(Z_2)$ is clear from the definition.
-    \item[c.] $\V(\operatorname{I}(Z)) \supseteq \overline{Z}$ essentially by definition. Note that $\overline{Z}=\V(\operatorname{I}(\overline{Z}))$. But clearly $\operatorname{I}(\overline{Z}) \subseteq \operatorname{I}(Z)$. \qed
+    \item[a.] This says that if $f \in \p$ for all $\p \in \V(I)$
+          then $f \in \sqrt{I}$ (the other direction is trivial). Consider an
+          arbitary prime $\q$ containing $I$. We
+          wish to show that $f \in \q$. Indeed, let $\q^{\text{h}}$
+          be the ideal generated by homogenous elements of $\q$.
+          Clearly then, $\q^{\text{h}} \subseteq \q$. Also, it is prime since primeness can be
+          checked on homogenous elements. Now, $f \in \q^{\text{h}}$, so
+          $f \in \q$. \qed
+    \item[b.] Take the intersection of all these homogenous primes. This is necessarily
+          homogenous. We note that it is radical since the intersection of primes is
+          always radical. That $\operatorname{I}(Z_1 \union Z_2) = \operatorname{I}(Z_1) \intersect
+              \operatorname{I}(Z_2)$ is clear from the definition.
+    \item[c.] $\V(\operatorname{I}(Z)) \supseteq \overline{Z}$ essentially by definition. Note that
+          $\overline{Z}=\V(\operatorname{I}(\overline{Z}))$. But clearly $\operatorname{I}(\overline{Z}) \subseteq \operatorname{I}(Z)$. \qed
 \end{itemize}
 
 \section{4.5.I}
-a $\iff$ b is clear from the proof of 4.5.G. Suppose a. Then every homogenous prime ideal containing $I$ containst $S_+$. Suppose b. Every homogenous prime ideal containing $I$ then contains $S_+$, thus there are no relevant homogenous primes in $\V(I)$. \qed
+a $\iff$ b is clear from the proof of 4.5.G. Suppose a. Then
+every homogenous prime ideal containing $I$ containst
+$S_+$. Suppose b. Every homogenous prime ideal containing
+$I$ then contains $S_+$, thus there are
+no relevant homogenous primes in $\V(I)$. \qed
 
 \section{4.5.J}
-Let $\V(I) \intersect \D(f)$ be closed. Since $f \notin I$ we may pull back $I$ to get an ideal in $S_{\bullet, f, 0}$. Then by 4.5.E we get that the prime ideals containing this ideal are in one to one correspondence with the ideals in $\V(I) \intersect \D(f)$. \qed
+Let $\V(I) \intersect \D(f)$ be closed. Since $f \notin I$ we may
+pull back $I$ to get an ideal in $S_{\bullet, f, 0}$.
+Then by 4.5.E we get that the prime ideals containing this ideal are in one to
+one correspondence with the ideals in $\V(I) \intersect \D(f)$. \qed
 
 \section{4.5.K}
-Let $a=g^{\deg f}/f^{\deg g}$ and let $x = b/f^n \in S_{\bullet, f, 0}$. Then $x/a^m \in S_{\bullet, f, 0, a, 0}$. We see that
-\[
-    \frac{x}{a^m} = \frac{b}{f^na^m} = \frac{bf^{\deg g}}{f^ng^{\deg f}} \in S_{\bullet, fg, 0}
-\]
-The reverse direction is similar.
+Let $a=g^{\deg f}/f^{\deg g}$ and let $x = b/f^n \in S_{\bullet, f, 0}$. Then
+$x/a^m \in S_{\bullet, f, 0, a, 0}$. We see that \[
+    \frac{x}{a^m} = \frac{b}{f^na^m} =
+    \frac{bf^{\deg g}}{f^ng^{\deg f}} \in
+    S_{\bullet, fg, 0}
+\] The reverse
+direction is similar.
 
 \section{4.5.L}
-This argument should be identical to the one in 4.4, just with some added exponents.
+This argument should be identical to the one in 4.4, just with some added
+exponents.
 
 \section{4.5.M}
 \section{4.5.N}
-Note that the homogenous ideal generated by the $x_i$ is the irrelevant ideal, then apply 4.5.I. \qed
+Note that the homogenous ideal generated by the $x_i$ is the
+irrelevant ideal, then apply 4.5.I. \qed
 
 \section{4.5.O}
-We get a maximal ideal generated by $x_{i/j}-a_{i/j} \in \Spec S_{\bullet, x_j, 0}$. This yeilds a homogenous ideal generated by $x_i-a_ix_j$.
+We get a maximal ideal generated by $x_{i/j}-a_{i/j} \in \Spec S_{\bullet, x_j, 0}$. This yeilds a
+homogenous ideal generated by $x_i-a_ix_j$.
 
 \section{4.5.P}
-We note that $\operatorname{Proj}(S/I) \simeq \V(I)$ as topological spaces. Indeed, this follows from the same lattice isomorphism as in $\Spec S$. We check that the inverse image of a homogenous ideal is homogenous. Indeed, consider an arbitrary $j \in J \in \V(I)$. Then all the homogenous components of $\pi(j)$ are in $J^{\text{e}}_{\pi}$. We note that $(j+I)_k = j_k+I$. Since $I \subseteq J$, $j_k \in J$. \qed
+We note that $\operatorname{Proj}(S/I) \simeq \V(I)$ as topological spaces. Indeed, this
+follows from the same lattice isomorphism as in $\Spec S$. We
+check that the inverse image of a homogenous ideal is homogenous. Indeed,
+consider an arbitrary $j \in J \in \V(I)$. Then all the homogenous
+components of $\pi(j)$ are in $J^{\text{e}}_{\pi}$. We note
+that $(j+I)_k = j_k+I$. Since $I \subseteq J$,
+$j_k \in J$. \qed
 
 \section{4.5.Q}
-We are reduced immediately to the case $k[x_0,\dots, x_n]$ where $k$ is algebraically closed. Then by 4.5.O we get projective coordinates say $[a_0, \dots, a_n]$. Then $\sum_i a_ix_i$ is well defined up to scalar multiples, i.e. the projective coordinates uniquely determine a line with respect to those coordinates.
+We are reduced immediately to the case $k[x_0,\dots, x_n]$ where
+$k$ is algebraically closed. Then by 4.5.O we get
+projective coordinates say $[a_0, \dots, a_n]$. Then
+$\sum_i a_ix_i$ is well defined up to scalar multiples, i.e. the
+projective coordinates uniquely determine a line with respect to those
+coordinates.
 
 \end{document}

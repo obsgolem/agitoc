@@ -6,7 +6,7 @@
 \usepackage{dsfont}
 \usepackage{array}   % for \newcolumntype macro
 \usepackage{calligra}
-\usepackage{tikz-cd}
+% \usepackage{tikz-cd}
 \usepackage{mathrsfs}
 \usepackage{quiver}
 \usepackage[shortlabels]{enumitem}
@@ -54,3 +54,30 @@
 \DeclareMathOperator{\D}{D}
 
 \newcommand*{\rationalto}[1][]{\mathbin{\tikz [baseline=-0.25ex,-latex, dashed,->,densely dashed,#1] \draw [#1] (0pt,0.5ex) -- (1.3em,0.5ex);}}%
+
+\usepackage{tikz, environ, etoolbox}
+\usetikzlibrary{cd, external}
+\tikzexternalize
+% activate the following such that you can check the macro expansion in
+% *-figure0.md5 manually
+%\tikzset{external/up to date check=diff}
+
+\def\temp{&} \catcode`&=\active \let&=\temp
+
+\newcommand{\mytikzcdcontext}[2]{
+    \begin{tikzpicture}[baseline=(maintikzcdnode.base)]
+        \node (maintikzcdnode) [inner sep=0, outer sep=0] {\begin{tikzcd}[#2]
+                #1
+            \end{tikzcd}};
+    \end{tikzpicture}}
+
+\NewEnviron{etikzcd}[1][]{%
+    % In the following, we need \BODY to expanded before \mytikzcdcontext
+    % such that the md5 function gets the tikzcd content with \BODY expanded.
+    % Howerver, expand it only once, because the \tikz-macros aren't
+    % defined at this point yet. The same thing holds for the arguments to
+    % the tikzcd-environment.
+    \def\myargs{#1}%
+    \edef\mydiagram{\noexpand\mytikzcdcontext{\expandonce\BODY}{\expandonce\myargs}}%
+    \mydiagram%
+}

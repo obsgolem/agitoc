@@ -27,6 +27,7 @@ jobs:
       - uses: xu-cheng/latex-action@v2
         with:
           root_file: |
+            notation.tex
             ch1.tex
             ch2.tex
             ch2_pt2.tex

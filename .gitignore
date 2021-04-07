@@ -4,3 +4,6 @@
 *.log
 *.fdb_latexmk
 *.fls
+*.dpth
+*.md5
+*.auxlock
