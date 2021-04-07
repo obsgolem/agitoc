@@ -1,0 +1,130 @@
+\documentclass{article}
+\input{../commands.tex}
+
+\title{Chapter 9.2 Problems}
+\author{Josiah Bills}
+\date{March 2021}
+
+\begin{document}
+
+\maketitle
+
+\section{9.2.A}
+Trivial
+
+\section{9.2.B}
+We show that $A \otimes I \cong I^{\text{e}}$ as $A$-modules. The
+morphism is given by $a \otimes i \mapsto a\phi(i)$. We note that
+$a \otimes i = ai \otimes 1$. This map is obviously bijective. It is clear that the
+tensored morphism $I^{\text{e}} \to A$ is injective. \qed
+
+\section{9.2.C}
+\begin{enumerate}[a.]
+    \item We consider an affine open set $\Spec A \subseteq X$. By affineness, we have
+          the the following commutative diagram: \[\begin{tikzcd}
+                  A                             & {A/J}
+                  \\{A/I} & {A/I \otimes_A A/J}
+                  \arrow[from=1-1, to=2-1] \arrow[from=2-1, to=2-2] \arrow[from=1-1, to=1-2]
+                  \arrow["\phi", from=1-2, to=2-2]
+              \end{tikzcd}\] By 9.2.B we see
+          that the tensor product is isomorphic to $(A/J)/(\phi(I))$. It is clear by
+          examinination that the kernel of this map is $I+J$, so the
+          tensor product is $A/(I+J)$, i.e. the closed embedding
+          corresponding to the intersection of closed subschemes. \qed
+    \item Consider the following diagram: \[\begin{tikzcd}
+                  {Z_1\times_XZ_2}                       & {Z_2\times_VW} &
+                  {Z_2}
+                  \\{Z_1\times_UW} & W              & V
+                  \\{Z_1}          & U              & X
+                  \arrow["{\text{open}}", hook, from=2-3, to=3-3]
+                  \arrow["{\text{closed}}", hook, from=1-3, to=2-3]
+                  \arrow["{\text{open}}"', hook, from=3-2, to=3-3]
+                  \arrow["{\text{closed}}"', hook, from=3-1, to=3-2]
+                  \arrow[hook, from=2-2, to=3-2]
+                  \arrow[hook, from=2-2, to=2-3]
+                  \arrow[hook, from=1-2, to=1-3]
+                  \arrow[hook, from=1-2, to=2-2]
+                  \arrow[hook, from=2-1, to=3-1]
+                  \arrow[hook, from=2-1, to=2-2]
+                  \arrow[hook, from=1-1, to=2-1]
+                  \arrow[hook, from=1-1, to=1-2]
+                  \arrow[dashed, hook, from=1-1, to=2-2]
+              \end{tikzcd}\] where the upper left is
+          the pullback because it is the composition of two pullback squares in two
+          different ways. The top left box is the pullback of two closed embeddings, the
+          bottom right box is the pullback of two open embeddings. Hence the overall
+          morphism is a locally closed embedding. \qed
+    \item Apply induction to (b). \qed
+\end{enumerate}
+
+\section{9.2.D}
+We first note that the pullback of a quasicompact morphism along a quasicompact
+morphism is quasicompact (9.4.B(a)). This shows the latter property. Now, we
+may assume that $A$ is affine, say $\Spec A$.
+Let $\Spec B \subseteq X, \Spec C \subseteq Y$. It suffices to show that $A \to B \otimes_A C$
+is finite type. We first note that for any $A$-algebras
+$B/I \otimes_A C \cong (B \otimes_A C)/J$ for some ideal $J$. Indeed, simply
+tensor $I \to B \to B/I$ with $C$ and take kernels.
+Now $A[X]/I \otimes_A A[Y]/J
+    \cong (A[X] \otimes_A A[Y])/K \cong A[X, Y]/J$. \qed
+
+\section{9.2.F}
+Define $b/s \to \phi(b)/\phi(s)$. Suppose we have $f: A \to C$ and
+$g: S^{-1}B \to C$ making the relevant diagram commute. Then we send
+$a/\phi(s) \to f(a)*g(1/s)$. This is clearly unique. \qed
+
+\section{9.2.G}
+We first characterize monomorphisms. $f$ is mono iff the
+following diagram is a pullback: \[\begin{tikzcd}
+        W                                                                     \\
+        & X & X                                                              \\
+        & X & Y \arrow["f", from=2-3, to=3-3] \arrow["f"', from=3-2, to=3-3]
+        \arrow["{\text{id}}"', from=2-2, to=3-2]
+        \arrow["{\text{id}}", from=2-2, to=2-3] \arrow[curve={height=6pt}, from=1-1, to=3-2]
+        \arrow[curve={height=-6pt}, from=1-1, to=2-3] \arrow[dashed, from=1-1, to=2-2]
+    \end{tikzcd}\]
+
+Now, it is clear that if $f: U \to X$ is pulled back along
+$f$ then the result is $U$, and we are
+done.
+
+It is clear from 9.1.C(a) that the pullback of a closed subscheme along itself
+is itself again, so we are done.
+
+Now, let $f: \Spec S^{-1}A \to \Spec A$. We pull this back along the identity, getting
+$\Spec S^{-1}A \otimes_A A$. But by 9.2.F this is just $\Spec S^{-1}A$, and
+we are done. \qed
+
+\section{9.2.H}
+$\A^n_A \cong \Spec A[x_1, \dots, x_n] \cong \Spec A
+    \otimes_{\Z} \Z[x_1, \dots, x_n]$. Now, cover $\P^n_A$ with affine opens,
+so by the first part, the result holds. \qed
+
+\section{9.2.I}
+We note that equality of morphisms can be checked on an open cover. We then
+cover $X$ with affine opens such that we have
+$\Spec A \otimes_k \ell \to \Spec A$ as an open cover of $X \times_k \Spec \ell$. We do the
+same with $Y$, reducing to the case
+$Y=\Spec B$. Consider the following diagram: \[\begin{tikzcd}
+        B                & {B\otimes_k\ell}           & B \\
+        A                &
+        {A\otimes_k\ell} & A \arrow[from=1-2, to=2-2]
+        \arrow[hook, from=1-1, to=1-2] \arrow["\phi", hook, from=2-1, to=2-2] \arrow["\pi"', from=1-1, to=2-1]
+        \arrow["\rho", from=1-3, to=2-3] \arrow[hook, from=2-3, to=2-2] \arrow[hook, from=1-3, to=1-2]
+    \end{tikzcd}\]
+The horizontal morphisms are injections. Let $\pi(x)=y$. Then
+clearly $\phi(x\otimes 1)=y\otimes 1$ so that $\rho(x)=y$. \qed
+
+\section{9.2.J}
+We repeat the above reduction to affine opens. Then  \[\begin{tikzcd}
+        B & {B\otimes_k\ell} \\
+        A &
+        {A\otimes_k\ell} \arrow["\phi", two heads, from=1-2, to=2-2]
+        \arrow[hook, from=1-1, to=1-2] \arrow[hook, from=2-1, to=2-2] \arrow["\pi"', from=1-1, to=2-1]
+    \end{tikzcd}\] We
+have surjective $\pi$ by assumption. Let
+$y \in A$. Then there exists an $x$ such that
+$\pi(x\otimes 1)=y\otimes 1$. Then by injectivity we have $\phi(x)=y$
+and we are done. \qed
+
+\end{document}

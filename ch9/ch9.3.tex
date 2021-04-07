@@ -1,0 +1,251 @@
+\documentclass{article}
+\input{../commands.tex}
+
+\title{Chapter 9.3 Problems}
+\author{Josiah Bills}
+\date{March 2021}
+
+\begin{document}
+
+\maketitle
+
+\section{9.3.A}
+Consider the following diagram: \[\begin{tikzcd}
+        Z                                              \\
+        & F & X                                       \\
+        & x & Y \arrow["{\phi_x}"', from=2-2, to=3-2]
+        \arrow["\iota", from=2-2, to=2-3] \arrow["\phi", from=2-3, to=3-3] \arrow["\iota"', from=3-2, to=3-3]
+        \arrow["{\pi_1}"', curve={height=12pt}, from=1-1, to=3-2]
+        \arrow["{\pi_2}", curve={height=-12pt}, from=1-1, to=2-3]
+        \arrow["f"{description}, dashed, from=1-1, to=2-2]
+    \end{tikzcd}\] where
+$F=\phi^{-1}(x)$ and $\phi_x=\phi|_F$. We define the universal
+map by $f(z)=\pi_2(z)$. It is obvious that this diagram commutes in
+$\catname{Set}$, so we merely need to show that $f$
+is continuous. Let $U \intersect F \subseteq F \subseteq X$ be open in the subspace topology.
+Then by continuity of $\pi_2$, $\pi_2^{-1}(U)$ is open
+in $Y$. Thus, $f^{-1}(U \intersect F)=\pi_2^{-1}(U)
+    \intersect \pi_2^{-1}(F)=\pi_2^{-1}(U)$ is an open subset of
+$Z$. \qed
+
+\section{9.3.B}
+We reduce immediately to the case of $f: \Spec B \to \Spec A$ with corresponding
+ring morphism $\phi: A \to B$. Let $\p \subseteq B$ be prime.
+Then clearly $\V(\p) \to \Spec A$ pulls back to the closed immersion
+$\V(\p^{\text{e}}) \to \Spec B$. By 3.2.I(a) this is identified with the topological
+fiber of that pullback. Thus, we may reduce to the case where
+$A$ is an integral domain and $\p = (0)$. Then
+the pullback corresponds to the ring $\phi(A \setminus 0)^{-1}B$. Let
+$f(\q)=(0)$ so that $\phi^{-1}(\q)=(0)$. Since
+$(0)$ is principal, we see that $\q \intersect \im \phi = 0$. Thus
+$\q$ avoids $\phi(A \setminus 0)^{-1}$, so that it is a prime
+ideal of $\phi(A \setminus 0)^{-1}B$. Finally, suppose $\q \subseteq \phi(A \setminus 0)^{-1}B$ is
+prime. Then $\phi(A \setminus 0) \nsubseteq \q$ so that $\phi^{-1}(\q)=(0)$. \qed
+
+\section{9.3.C}
+It suffices to show that $\tau \after \iota_p$ (where $\iota_p$
+is the inclusion) factors through $\iota_{\tau(p)}$. Indeed, choose an
+affine open $\Spec A \subseteq Z$ and an affine open $\Spec B \subseteq \tau^{-1}(\Spec A)$.
+Then we have $f \after i: A \to B \to \kappa(p)$. By 3.2.P(a), we may factor this as
+$A \to A/\tau(p) \to \kappa(p)$. By universal property of localization, we may factor
+this as $A \to A/\tau(p) \to \kappa(\tau(p)) \to
+    \kappa(p)$. \qed
+
+\section{9.3.D}
+Let $(p) \subset \Z$ be prime. We are interested in
+$\Z_{(p)}/(p)_{(p)}
+    \otimes_{\Z} \Z[i]$. If $p=0$ then we have
+$\Q \otimes_{\Z} \Z[i] \cong
+    \Q[i]$, a degree two field extension of
+$\Q$. If $p=2$ then we have
+$\Z_2[i] \cong \Z_2[x]/(x^2+1) \cong
+    \Z_2[x]/(x+1)^2$, a double point.
+
+Next, we consider $\Z_p[i]$ for odd primes. We first prove
+Euler's criterion, $(\frac{a}{p})=a^{((p-1)/2}$. Indeed, since
+$\Z_p$ is a field, $x^2=a$ has at most two
+solutions over it. There are $p-1$ units of
+$\Z_p$. Send $x \mapsto x^2$. The range of this map
+are the residues, and at most two values can map to the same value. Thus the
+range has size lower bounded by $p-1/2$. Now, by Fermat's
+little theorem, $a^(p-1)=1 \mod p$ for all $a$. This
+factors as $(a^{p-1/2}-1)(a^{p-1/2}+1)$. Quadratic residues clearly fall into the
+former case. Now $(a^{p-1/2}-1)$ has at most $p-1/2$
+roots. But then these must be precisely the quadratic residues. Hence the other
+factor must be the quadratic non-residues, as desired.
+
+Now, consider $(-1)^{p-1/2} \mod p$. If we want this to be 1 then
+$p-1/2$ must be even, say $2k$. Then
+$p=4k+1$ so that $p = 1 \mod 4$. In this case, we have
+a number $a$ such that $a^2=-1$. Thus
+$\Z_p[x]/(x^2+1) \cong \Z_p[x]/(x+a) \times
+    \Z_p[x]/(x-a)$. This is another double point. In the case
+$p=3 \mod 4$ we find that $x^2+1$ is irreducible,
+hence maximal, hence $\Z_p[i] \cong \F_{p^2}$. This is another degree two field
+extension of the field of fractions.
+
+\section{9.3.E}
+$k[y] \cong k[x, y]/(y^2-x)$. Thus
+\begin{align*}
+    k[y] \otimes_{k[x]} k[z] & \cong \frac{k[x,y]}{(y^2-x)} \otimes_{k[x]} \frac{k[x,z]}{(z^2-x)} \\
+                             & \cong \frac{k[x,y,z]}{(y^2-x, z^2-x)}                              \\
+                             & \cong \frac{k[x,y,z]}{(z^2-y^2)}                                   \\
+                             & \cong \frac{k[x,y,z]}{((z-y)(z+y))}
+\end{align*}
+In characteristic 2 we have $-1=1$ so that we have an
+irreducible but non-reduced scheme. \qed
+
+\section{9.3.F}
+Suppose we are given a point $[a : b] \in \mathbb{P}^1_k$. Then we have
+$xb=ya$, which clearly shows that $(x, y)$ must
+lie on a line with slope $a/b$ or $b/a$.
+Thus the fibers are the lines with slope determined by the projective point.
+
+We examine the fiber of $(a, b) \in \A^2_k$. Clearly this is the pair
+$(a,b), [a : b]$. WLOG assume that $a \neq 0$. Then we may
+examine $\D_{u, x} \to \D_x$. This is given by the ring
+$\Spec k[x, y, v]_x/(xv-y)$. The projection gives a ring morphism
+$k[x, y]_x \to k[x, y, v]_x/(xv-y)$. This is an isomorphism sending $y/x$
+to $v$.
+
+On the open set $\D_u$ we have find that the blowup is the
+affine scheme $\Spec k[x, y, v]/(xv-y)$. Consider $\V(x)$. This
+gives $\Spec k[x, y, v]/(xv-y,x) \cong \Spec
+    k[x, y, v]/(x, y) \cong \Spec
+    k[v] \cong \Spec k \otimes_{k[x, y]}
+    k[x,y,v]/(xv-y)$, i.e. the fiber over $(0, 0)$. On
+the open set $\D_v$, we find this subscheme is cut out by
+$y$.
+
+\section{9.3.G}
+We first reduce to the case of Noetherian $Y$. Indeed, if
+the result holds for a Noetherian open subset of $Y$, then
+it holds for $Y$. So we assume $Y$ is
+Noetherian.
+
+Suppose the result is true for irreducible $Y$. Then for
+reducible $Y$ we get a locally closed subset
+$U_i \intersect Z_i$ where the result holds for each irreducible component
+$Z_i$. Since $Y$ is Noetherian, the index
+set is finite. Now note that $\Union_j (\Intersect_i U_i) \intersect Z_j = \Intersect_i U_i$ is open in
+$Y$, and so the result holds for $\Intersect_i U_i$.
+Thus we may assume $Y$ is irreducible.
+
+Now, following the hint, we show that $A$ is integral over
+$B$. We have that $A \otimes_B \operatorname{K}(B)$ is integral over
+$\operatorname{K}(B)$. Writing $A=B[X]/I$ we find an integral
+relation for $x_i \otimes 1$, for example $f_i(x_i)=x_i^n \otimes 1+\sum_{j=0}^{n-1} x_i^j \otimes b_j/b_j'=0$.
+Replacing $B$ with the localization at all the denominators
+in these relations (and also replacing $A$ with the
+relevant inverse image), we find
+\begin{align*}
+    f_i(x_i) & =x_i^n \otimes 1+\sum_{j=0}^{n-1} x_i^j \otimes b_j  \\
+             & =x_i^n \otimes 1+\sum_{j=0}^{n-1} b_jx_i^j \otimes 1 \\
+             & = (x_i^n+\sum_{j=0}^{n-1} b_jx_i^j) \otimes 1        \\
+             & =0
+\end{align*}
+
+We find that either $x_i^n+\sum_{j=0}^{n-1} b_jx_i^j=0$, in which case we are done, or it
+is annihilated by some $b_i''$ by replacing 1 with
+$b_i''/b_i''$. Replacing $B$ with the
+localization at these $b_i''$, we recall that an element of the
+localization is zero iff the product with a denominator is zero. Hence,
+$f_i(x_i)=0$ in $A$. \qed
+
+\section{9.3.H}
+Note that the following diagram is a pushout: \[\begin{tikzcd}
+        {\Z[x_1, \dots, x_N]} & B \\{\frac{\Z[x_1,\dots, x_N,y_1, \dots, y_M]}{I}}
+        & {\frac{B[y_1, \dots, y_M]}{I}}
+        \arrow[from=1-2, to=2-2]
+        \arrow[from=1-1, to=1-2]
+        \arrow[from=2-1, to=2-2]
+        \arrow[from=1-1, to=2-1]
+    \end{tikzcd}\] where the
+top map is described by the hint. This shows the result for affine
+$X$.
+
+Lemma: Suppose $\phi \after \pi: B \to B[X]/I \to
+    B[Y]/J$ is a composition of morphism of rings,
+where $X, Y$ are finite sets of variables, and
+$I, J$ are finitely generated ideals. Then we may find a ring
+$B[X']/I' \cong B[Y]/I$ such that $X \subset X'$ and
+$I \subset I'$. Indeed, let $x \in X$. Then we may form
+$B[Y, x]/(J+(x-\phi(x)))$. Repeat this for all $x \in X$ and call
+this ring $B[X, Y]/I'$. I claim this ring has the desired property.
+Let $\iota: B[Y]/J \to B[X, Y]/I'$ be the inclusion. Let $x \in X \subset B[X, Y]/I'$. Then
+$\iota(\phi(x))=x$, so that $\iota$ is surjective. Let
+$a \in \ker \iota$. Then either $a \in J$ or
+$a \in (x-\phi(x))$ for some $x \in X$. But since
+$x \notin R[Y]/J$, we must have $a = 0$. Now, the fact
+that $I \subset I'$ follows by examining the map
+$B[X] \to B[X, Y] \to
+    B[X, Y]/I'$.
+
+Now, suppose $X$ is a scheme as in the original problem,
+and it is covered by finitely many affine opens, all with affine intersections.
+Let $\Spec B[y_1, \dots, y_M]/I$ be such an affine open, and let
+$\Spec B[y'_1, \dots, y'_{M'}]/J$ be the intersection with an arbitrary other affine
+open. Then by the above lemma we have the following diagram:
+\[\begin{tikzcd}
+        {\Z[x_1, \dots, x_N]}                                                  & B
+        \\{\frac{\Z[x_1,\dots, x_N,y_1, \dots, y_M]}{I}} &
+        {\frac{B[y_1, \dots, y_M]}{I}}                                                          \\
+        {\frac{\Z[x'_1, \dots x'_{N'}, y'_1, \dots, y'_{M'}]}{I'}}             & {\frac{B[y'_1,
+        \dots, y'_{M'}]}{I'}}
+        \arrow[from=1-2, to=2-2]
+        \arrow[from=1-1, to=1-2]
+        \arrow[from=2-1, to=2-2]
+        \arrow[from=1-1, to=2-1]
+        \arrow[from=2-2, to=3-2]
+        \arrow[from=2-1, to=3-1]
+        \arrow[from=3-1, to=3-2]
+    \end{tikzcd}\] where the upper right map is the map of global sections
+and the lower right map is the restriction. The maps on the left are defined by
+using the properties of $I$ guaranteed by the lemma.
+Applying $\Spec$, we see that the upper square is a pullback,
+and the whole rectangle is a pullback, hence the bottom square is a pullback.
+Hence, since the lower right map is an open embedding, so is the lower left
+map.
+
+TODO: Check triple intersections, show the result when intersections aren't
+finite.
+
+\section{9.3.I}
+\begin{enumerate}[a.]
+    \item We recall that locally closed embeddings are preserved by base change. Now, the
+          given morphism $\pi$ is the pullback of a morphism
+          $\pi'$ of Noetherian schemes by 9.3.H. Thus the image of
+          $\pi'$ is a finite union of locally closed subsets, which may
+          be realized by finitely many locally closed embeddings. Now examine the
+          following diagram: \[\begin{tikzcd}
+                  {H_i'}                         &   & {H_i}
+                  \\
+                  & X &       & {X'}
+                  \\{Z'_i} &   & {Z_i}        \\
+                  & Y &       & {Y'}
+                  \arrow[from=2-2, to=4-2]
+                  \arrow[from=2-2, to=2-4]
+                  \arrow[from=2-4, to=4-4]
+                  \arrow[from=4-2, to=4-4]
+                  \arrow[hook, from=3-3, to=4-4]
+                  \arrow[hook, from=1-3, to=2-4]
+                  \arrow[from=1-3, to=3-3]
+                  \arrow[hook, from=1-1, to=2-2]
+                  \arrow[hook, from=3-1, to=4-2]
+                  \arrow[from=3-1, to=3-3]
+                  \arrow[from=1-1, to=3-1]
+                  \arrow[from=1-1, to=1-3]
+              \end{tikzcd}\] Where $\{Z_i\}_{i\in I} \to Y'$ is the
+          covering by locally closed embeddings. Clearly the $H_i$ cover
+          $X'$, so the $H'_i$ must cover
+          $X$. Thus the $Z'_i$ cover the image. \qed
+    \item We first note that being a locally closed embedding is stable under base
+          change. Cover $Y$ with finitely many affines
+          $\{\Spec B_i\}_{i \in I}$ and $X$ with finitely many affines
+          $\{\Spec A_{ij}\}_{i \in I,j \in J}$ such that $B_i \to A_{ij}$ realizes
+          $A_{ij}$ as finitely presented. By (a), the image of this is a
+          finite union of locally closed subsets. Taking the union across all
+          $i, j$ (which is finite), we get our result. \qed
+\end{enumerate}
+
+\end{document}
