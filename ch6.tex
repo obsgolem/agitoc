@@ -10,18 +10,20 @@
 \maketitle
 
 \section{6.2.A}
-Consider $\Hom(\pi^{-1}\Osh_Y, \Osh_X)$. This is a sheaf on $X$, so the
-\[\pi^{\#}_i \in \Hom(\pi^{-1}\Osh_Y, \Osh_X)(U_i)\]
-glue. \qed
+Consider $\Hom(\pi^{-1}\Osh_Y, \Osh_X)$. This is a sheaf on $X$, so
+the \[\pi^{\#}_i \in \Hom(\pi^{-1}\Osh_Y, \Osh_X)(U_i)\] glue. \qed
 
 \section{6.2.B}
-A map of rings $f: A \to B$ induces a functor $\catname{Mod}_B \to \catname{Mod}_A$ given by $ax=f(a)x$. The same idea applies to sheaves of modules.
+A map of rings $f: A \to B$ induces a functor $\catname{Mod}_B \to \catname{Mod}_A$
+given by $ax=f(a)x$. The same idea applies to sheaves of modules.
 
 \section{6.2.C}
 The map is the map of stalks induced by a map of sheaves.
 
 \section{6.2.D}
-We note that given any multiplicative set $S \subset A$ and a ring morphism $\phi : A \to B$ the image $\phi(S)$ is multiplicatively closed. We then observe the following commutative diagram:
+We note that given any multiplicative set $S \subset A$ and a ring
+morphism $\phi : A \to B$ the image $\phi(S)$ is
+multiplicatively closed. We then observe the following commutative diagram:
 \[
     \begin{tikzcd}
         A \ar[r] \ar[d, "\phi", swap] & S^{-1}A \ar[d, dotted] \\
@@ -29,174 +31,346 @@ We note that given any multiplicative set $S \subset A$ and a ring morphism $\ph
     \end{tikzcd}
 \]
 
-Where the dotted morphism exists by universal property. From this we find the map of distinguished open sets is induced by the map of global sections. Showing that the natural transformations squares commute is routine.
+Where the dotted morphism exists by universal property. From this we find the
+map of distinguished open sets is induced by the map of global sections.
+Showing that the natural transformations squares commute is routine.
 
 \section{6.2.E}
-We first examine the open sets of $Y=\Spec k[y]_(y)$. These are ${(0)}, {(0), (y)}$. Clearly the inverse image of these is open in $X=\Spec k(x)$. The map of global sections is given by $f(y)/g(y) \mapsto f(x)/g(x)$ where $g(y)$ has no root at 0. Now, we see that the $\pi_*\Osh_X=k(x)$ for every open set of $Y$ so that this does indeed give a map of locally ringed spaces. However the map of affine schemes sends $(0)$ to $(0)$ rather than to $(y)$.
+We first examine the open sets of $Y=\Spec k[y]_(y)$. These are
+${(0)}, {(0), (y)}$. Clearly the inverse image of these is open in
+$X=\Spec k(x)$. The map of global sections is given by
+$f(y)/g(y) \mapsto f(x)/g(x)$ where $g(y)$ has no root at 0. Now, we
+see that the $\pi_*\Osh_X=k(x)$ for every open set of
+$Y$ so that this does indeed give a map of locally ringed
+spaces. However the map of affine schemes sends $(0)$ to
+$(0)$ rather than to $(y)$.
 
 \section{6.3.A}
-Stalks may be checked on an open cover, so we can simply pass to the morphisms we are glueing.
+Stalks may be checked on an open cover, so we can simply pass to the morphisms
+we are glueing.
 
 \section{6.3.B}
 This is just the fact that $\pi^{\#,-1}(\p) = \q$.
 
 \section{6.3.C}
-For the first fact, note that we have an induced morphism of schemes $\Spec A \to \Spec B$ where the sheaf map is given by the restriction of the original sheaf map. Since all morphisms of locally ringed spaces between affine schemes are of the desired form, we have our result.
+For the first fact, note that we have an induced morphism of schemes
+$\Spec A \to \Spec B$ where the sheaf map is given by the restriction of the
+original sheaf map. Since all morphisms of locally ringed spaces between affine
+schemes are of the desired form, we have our result.
 
 The second fact is proved by noting that morphisms of schemes glue.
 
-We also note that there always exists such an open cover. Given an open affine cover $\Spec B_i$ of $Y$ take an affine open cover of $\pi^{-1}(\Spec B_i)$. Taking the union of all such covers gives a pair of covers with the desired property.
+We also note that there always exists such an open cover. Given an open affine
+cover $\Spec B_i$ of $Y$ take an affine open
+cover of $\pi^{-1}(\Spec B_i)$. Taking the union of all such covers gives a
+pair of covers with the desired property.
 
 \section{6.3.E}
-Let $A=k[x_0, \dots, x_n]$. Consider the inclusion $A_{x_i,0} \to A_{x_i}$. As these morphisms range over the $x_i$ we get a cover of $\Spec A \setminus (0)$. They glue to give a morphism from from $\Spec A \setminus (0) \to \Proj A$. The primes of $\Spec A \setminus (0)$ go to their homogenization in $\Proj A$.
+Let $A=k[x_0, \dots, x_n]$. Consider the inclusion $A_{x_i,0} \to A_{x_i}$. As
+these morphisms range over the $x_i$ we get a cover of
+$\Spec A \setminus (0)$. They glue to give a morphism from from
+$\Spec A \setminus (0) \to \Proj A$. The primes of $\Spec A \setminus (0)$ go to their
+homogenization in $\Proj A$.
 
 \section{6.3.F}
-This is easily seen to be true when $X$ is affine. We also easily see that for arbitrary $X$ we get a ring morphism of the given form. Now, suppose we are given a ring morphism $\pi: A \to \Gamma(X, \Osh_X)$. Cover $X$ with open affines. We wish to give a morphism from each affine such that they glue to $\pi$. Consider the following diagram:
-\[
+This is easily seen to be true when $X$ is affine. We also
+easily see that for arbitrary $X$ we get a ring morphism of
+the given form. Now, suppose we are given a ring morphism
+$\pi: A \to \Gamma(X, \Osh_X)$. Cover $X$ with open affines. We wish
+to give a morphism from each affine such that they glue to
+$\pi$. Consider the following diagram: \[
     \begin{tikzcd}
         A \ar[r, "\pi"] \ar[d, "\text{id}", swap] & \Gamma(X, \Osh_X) \ar[d, "\operatorname{res}_{X, \Spec B}"] \\
         A \ar[r, dotted]                          & \Gamma(\Spec B, \Osh_{\Spec B})
     \end{tikzcd}
 \]
-The bottom morphism is then the composition of the top and left morphism, and so we get morphisms of affine schemes which glue to the top.
+The bottom morphism is then the composition of the top and left morphism, and
+so we get morphisms of affine schemes which glue to the top.
 
 \section{6.3.G}
-A morphism $X \to \Spec A$ induces morphisms $\Spec B \to \Spec A$ where the $\Spec B$ is any affine open of $X$. Thus $B$ is an $A$-algebra.
+A morphism $X \to \Spec A$ induces morphisms $\Spec B \to \Spec A$
+where the $\Spec B$ is any affine open of $X$.
+Thus $B$ is an $A$-algebra.
 
 \section{6.3.H}
 Glue the induced morphisms $\Spec S_{\bullet, f, 0} \to \Spec A$.
 
 \section{6.3.I}
-Suppose $X$ is a scheme covered by affines $\Spec A_i$. Then we have uniquely determined morphisms $\Spec A_i \to \Spec \Z$. These morphisms agree on the overlap since the ring morphism $\Z \to \Gamma(U, \Osh_X)$ is uniquely determined. Glue these to get the unique morphism to $\Spec \Z$.
-We want a commutative diagram of the following form:
-\[
+Suppose $X$ is a scheme covered by affines
+$\Spec A_i$. Then we have uniquely determined morphisms
+$\Spec A_i \to \Spec \Z$. These morphisms agree on the overlap since the ring
+morphism $\Z \to \Gamma(U, \Osh_X)$ is uniquely determined. Glue these to get the
+unique morphism to $\Spec \Z$. We want a commutative diagram of
+the following form: \[
     \begin{tikzcd}
         X \ar[rr] \ar[dr] &         & \Spec k \ar[dl, "\text{id}"] \\
                           & \Spec k
     \end{tikzcd}
-\]
-Thus the top arrow must be the structure morphism itself. \qed
+\] Thus the top arrow must be the
+structure morphism itself. \qed
 
 \section{6.3.J}
 \begin{enumerate}[a.]
-    \item Choose an affine $\Spec A \ni \p$. Then we have an inclusion $A \to A_{\p}$. Compose this with the inclusion $\Spec A \to X$. Consider the following diagram:
-          \[
+    \item Choose an affine $\Spec A \ni \p$. Then we have an inclusion
+          $A \to A_{\p}$. Compose this with the inclusion $\Spec A \to X$.
+          Consider the following diagram: \[
               \begin{tikzcd}
                   \Gamma(X, \Osh_X) \ar[d, "\operatorname{res}_{\Spec A}", swap] \ar[r, "\operatorname{res}_{\Spec B}"] & B\ar[d, "\operatorname{res}_{\Spec C}"] \\
                   A \ar[r, "\operatorname{res}_{\Spec C}"]                                                              & C
               \end{tikzcd}
-          \]
-          where $\p \in \Spec C$ and $\Spec C$ is distinguished in $\Spec A$ and $\Spec B$. From this we get the compositions $\Spec C_{\p} \to \Spec C \to \Spec A \to X = \Spec C_{\p} \to \Spec C \to \Spec B \to X = \Spec A_{\p} \to \Spec A \to X$. \qed
+          \] where
+          $\p \in \Spec C$ and $\Spec C$ is distinguished in
+          $\Spec A$ and $\Spec B$. From this we get the
+          compositions $\Spec C_{\p} \to \Spec C \to \Spec A \to X = \Spec
+              C_{\p} \to \Spec C \to \Spec B \to X = \Spec
+              A_{\p} \to \Spec A \to X$. \qed
     \item Compose the above with the morphism $\Spec k(\p) \to \Spec \Osh_{X, \p}$. \qed
 \end{enumerate}
 
 \section{6.3.K}
-We first note that the only open set of $\Spec A$ which contains $\m$ is $\Spec A$ itself. Consider any open set containing $\pi(\m)$. Then the inverse image must be $\Spec A$, so that the open set contains the image of every point.
+We first note that the only open set of $\Spec A$ which contains
+$\m$ is $\Spec A$ itself. Consider any open
+set containing $\pi(\m)$. Then the inverse image must be
+$\Spec A$, so that the open set contains the image of every
+point.
 
-Let $\Spec B$ be an affine open containing $\pi(\m)$. Then we get the following diagram:
+Let $\Spec B$ be an affine open containing
+$\pi(\m)$. Then we get the following diagram:
 \[
     \begin{tikzcd}
         B \ar[r] \ar[d, "\pi^{\#}", swap] & B_{\pi(\m)} \ar[dl, dotted] \\
         A
     \end{tikzcd}
-\]
-where the dotted morphism exists by universal property. Thus $\pi$ factors through the cannonical morphism $\Osh_{X,\m} \to X$ and is uniquely determined by that ring morphism.
+\] where the dotted morphism exists by universal property.
+Thus $\pi$ factors through the cannonical morphism
+$\Osh_{X,\m} \to X$ and is uniquely determined by that ring morphism.
 
 \section{6.3.L}
 \begin{enumerate}[a.]
-    \item Let $f: X \to Y$ be a morphism. Then $h^Z(\bullet)=\hom(Z, \bullet)$ is a functor with $h^Z(f)=f \after \bullet$. \qed
+    \item Let $f: X \to Y$ be a morphism. Then $h^Z(\bullet)=\hom(Z, \bullet)$ is a
+          functor with $h^Z(f)=f \after \bullet$. \qed
     \item Consider the two maps $\Spec \C \to \Spec \C$ given by identity and conjugation.
 
-          Let $f, g: X \to Y$ be morphisms with the same effect on $Z$-valued points for all $Z$. Unravelling this definition gives us that $h^Z(f)=h^Z(g)$ for all $Z$. In particular, $h^X(f)(\id)=f=h^X(g)(\id)=g$. \qed
+          Let $f, g: X \to Y$ be morphisms with the same effect on
+          $Z$-valued points for all $Z$. Unravelling
+          this definition gives us that $h^Z(f)=h^Z(g)$ for all
+          $Z$. In particular, $h^X(f)(\id)=f=h^X(g)(\id)=g$. \qed
 \end{enumerate}
 
 \section{6.3.M}
-We are given that the intersection of the supports of the $f_i$ is empty. From this we ascertain that the restrictions of the functions are jointly nonzero on every affine open.
+We are given that the intersection of the supports of the
+$f_i$ is empty. From this we ascertain that the restrictions
+of the functions are jointly nonzero on every affine open.
 
-We now consider the case $X=\Spec A$ affine so that $A$ is a $B$-algebra. Let $C=B[x_0, \dots, x_n]$. We are given $(f_0, \dots, f_n) \neq (1)$. Define a ring morphism $C_{x_i,0} \to A_{f_i}$ by $x_j/x_i \mapsto f_j/f_i$. The intersections $C_{x_ix_k,0} \to A_{f_if_k}$ are defined in the obvious manner, and compatibility is easily checked.
+We now consider the case $X=\Spec A$ affine so that
+$A$ is a $B$-algebra. Let
+$C=B[x_0, \dots, x_n]$. We are given $(f_0, \dots, f_n) \neq (1)$. Define a ring
+morphism $C_{x_i,0} \to A_{f_i}$ by $x_j/x_i \mapsto f_j/f_i$. The intersections
+$C_{x_ix_k,0} \to A_{f_if_k}$ are defined in the obvious manner, and compatibility is
+easily checked.
 
-Consider now a general $X$. Cover it with affine opens and define the morphisms as above. The intersection of two affines can be covered by affines that are distinguished opens of both affines simultaniously. Since these are all compatible, the the morphisms glue to a unique morphism on the intersection.
+Consider now a general $X$. Cover it with affine opens and
+define the morphisms as above. The intersection of two affines can be covered
+by affines that are distinguished opens of both affines simultaniously. Since
+these are all compatible, the the morphisms glue to a unique morphism on the
+intersection.
 
-For part b, note that morphisms are identical on the open cover since the divisions cancel.
+For part b, note that morphisms are identical on the open cover since the
+divisions cancel.
 
 \section{6.4.A}
-Note that $\phi(S_+) \subseteq \p$ then $\p \notin \D(\phi(f))$ for $f \in S_+$. Thus, the $\D(f)$ cover the $\Proj R_{\bullet} \setminus \V(\phi(S_+))$. We have a morphism $\phi_f : S_{\bullet, f} \to R_{\bullet, \phi(f)}$, and since $\phi$ preserves the grading, this morphism preserves the degree 0 elements. It is clear that these morphisms agree on the intersections. \qed
+Note that $\phi(S_+) \subseteq \p$ then $\p \notin \D(\phi(f))$ for
+$f \in S_+$. Thus, the $\D(f)$ cover the
+$\Proj R_{\bullet} \setminus \V(\phi(S_+))$. We have a morphism $\phi_f : S_{\bullet, f} \to R_{\bullet, \phi(f)}$, and since
+$\phi$ preserves the grading, this morphism preserves the
+degree 0 elements. It is clear that these morphisms agree on the intersections.
+\qed
+
+\section{6.4.D}
+We first note that $\D(f)=\D(f^n)$ as subsets of
+$\Proj S_{\bullet}$. Thus, any cover of $\Proj S_{\bullet}$ can be
+converted to a cover by elements of degree divisible by
+$n$. It remains to show that we can identify the open
+subsets with each other. To do this we show that given $f$
+of degree $nm$ we may identify $S_{\bullet, f, 0}$ with
+$S_{n\bullet, f, 0}$. Indeed, the latter injects into the former. Given
+$g/f^k \in S_{\bullet, f, 0}$ we find that $\deg g = k \deg f = knm$ so that
+$g \in S_{n\bullet, f, 0}$. \qed
+
+\section{6.4.E}
+The generators are just the monomials of degree $n$. \qed
+
+\section{6.4.F}
+This is just a simple application of 6.4.D. \qed
+
+\section{6.4.G}
+Following the hint we let $d = \prod_i d_i$. Now, suppose that for
+$i > 1$ we have $d_ia_i < d$. Then, summing these
+relations, we find $\sum_{i=2}^n d_ia_i=(n-1)d$. Subtracting this from the
+constraint $\sum_{i=1}^n \geq nd$ we get $a_1d_1 \geq nd-(n-1)d = d$, as desired.
+
+Now, let $\sum_{i=1}^n b_i = n, b_i \geq 0$. Then $\prod_i x_i^{b_id/d_i}$ has degree
+$nd$. We will show that every monomial of degree greater
+than or equal to $nd$ is divisible by such a monomial. We
+induct on the number of generators $n$. The base case
+$n=1$ is trivial. Now suppose the result holds for
+$1 \geq N < n$. Given a monomial $f=\prod_{i=1}^n x_i^{a_i}$ of arbitrary
+degree $k \geq nd$ we get an index, which we may as well set to be
+$n$, such that $a_i \geq d/d_i$. We may then form
+the monomial $f/x_n^{a_n}=\prod_{i=1}^{n-1} x_i^{a_i}$ of degree $k-a_id_i$. This
+element is contained in the subring generated by $x_1, \dots, x_{n-1}$, which
+is graded with $n-1$ generators. Combining our inequalities,
+we have $k-a_id_i \geq nd-d=(n-1)d$. By induction then this element is divisible by
+$\prod_{i=1}^{n-1} x_i^{b_id/d_i}$ where $\sum b_i = n-1$. Then
+$f$ is divisible by $x_n\prod_{i=1}^{n-1} x_i^{b_id/d_i}$ and we are
+done. \qed
 
 \section{6.5.A}
-We do this exercise in greater generality. We say a continuous map is dominant if the image is dense.
+We do this exercise in greater generality. We say a continuous map is dominant
+if the image is dense.
 
-Let $X, Y$ be irreducible, sober topological spaces and let $f: X \to Y$ be continuous. Then $f$ is dominant iff $f$ preserves the generic point.
+Let $X, Y$ be irreducible, sober topological spaces and let
+$f: X \to Y$ be continuous. Then $f$ is dominant
+iff $f$ preserves the generic point.
 
 \begin{itemize}
-    \item[$\implies$] Let $p\in X$ be the generic point. Consider $f^{-1}(\overline{f}(p))$. This must be closed by continuity, and it must contain $p$, so it must be $X$. But then $Y = \overline{f(X)} = \overline{f}(p)$ so that $f(p)$ is the unique generic point of $Y$. \qed
-    \item[$\impliedby$] $f(p)$ is dense in $Y$, so clearly $f(X)$ is dense in $Y$. \qed
+    \item[$\implies$] Let $p\in X$ be the generic point.
+          Consider $f^{-1}(\overline{f}(p))$. This must be closed by continuity, and it must
+          contain $p$, so it must be $X$. But then
+          $Y = \overline{f(X)} = \overline{f}(p)$ so that $f(p)$ is the unique generic
+          point of $Y$. \qed
+    \item[$\impliedby$] $f(p)$ is dense in
+          $Y$, so clearly $f(X)$ is dense in
+          $Y$. \qed
 \end{itemize}
 
 \section{6.5.B}
-Choose an arbitrary representative and localize at the generic point. By 6.5.A and integrality, the localization is the function field of both schemes.
+Choose an arbitrary representative and localize at the generic point. By 6.5.A
+and integrality, the localization is the function field of both schemes.
 
 \section{6.5.C}
-The hint gives us a morphism whose image is a single point. The closure is irreducible, hence has a unique generic point. Localizing at this point gives an isomorphim of function fields.
+The hint gives us a morphism whose image is a single point. The closure is
+irreducible, hence has a unique generic point. Localizing at this point gives
+an isomorphim of function fields.
 
 \section{6.5.D}
-Clearly, every integral $k$-variety is birational to an affine open set, giving the first equivalence.
+Clearly, every integral $k$-variety is birational to an
+affine open set, giving the first equivalence.
 
-The second equivalence follows by recalling that integral affine $k$-varieties are finitely generated by definition. 6.5.B then gives the maps between finitely generated field extensions. Consider $k \subset K$ a finitely generated field extension. Then 6.5.C gives a $k$-variety whose function field is $K$.
+The second equivalence follows by recalling that integral affine
+$k$-varieties are finitely generated by definition. 6.5.B
+then gives the maps between finitely generated field extensions. Consider
+$k \subset K$ a finitely generated field extension. Then 6.5.C gives
+a $k$-variety whose function field is
+$K$.
 
-To see the "in particular" remark, note that the field of fractions of affine $n$ space is $k(x_1,\dots, x_n)$.
+To see the "in particular" remark, note that the field of fractions of affine
+$n$ space is $k(x_1,\dots, x_n)$.
 
 \section{6.5.8 clarification}
-Let $A=\Q[x,y]/(x^2+y^2-1)$. The map $(x, y) \mapsto y/(x-1)$ corresponds to the ring morphism $\Q[t] \to A_{x-1}$ given by $t \mapsto y/(x-1)$. A $\Q$-point corresponds to an assignment of values in $\Q$ to $x$ and $y$, yielding a map $t \mapsto y/(x-1)$ where $x, y \in \Q$.
+Let $A=\Q[x,y]/(x^2+y^2-1)$. The map $(x, y) \mapsto y/(x-1)$ corresponds to the
+ring morphism $\Q[t] \to A_{x-1}$ given by $t \mapsto y/(x-1)$. A
+$\Q$-point corresponds to an assignment of values in
+$\Q$ to $x$ and $y$,
+yielding a map $t \mapsto y/(x-1)$ where $x, y \in \Q$.
 
-To convert the two different projective coordinate representations, we consider at the following: $[y, x-1]=[y^2, y(x-1)]=[(x+1)(-x+1), y(x-1)]=[x+1, -y]$, where we use the fact that $x^2+y^2=1$.
+To convert the two different projective coordinate representations, we consider
+at the following: $[y, x-1]=[y^2, y(x-1)]=[(x+1)(-x+1),
+    y(x-1)]=[x+1, -y]$, where we use the fact that
+$x^2+y^2=1$.
 
 \section{6.5.E}
-The map $m \mapsto (m^2-1)/(m^2+1), -2m/(m^2+1)$ described in the notes is the desired formula. Simply clear denominators.
+The map $m \mapsto (m^2-1)/(m^2+1), -2m/(m^2+1)$ described in the notes is the desired formula.
+Simply clear denominators.
 
 \section{6.5.F}
-The results of 6.5.8 give us a rational map on ${[x : y : z] \mid z \neq 0}$ given by $[x/z : y/z : 1] \mapsto [y/z : x/z-1]$ when $x/z \neq 1$ and $[x/z : y/z : 1] \mapsto [x/z+1 : -y/z]$ when $x/z \neq -1$. We wish to define a map that extends this over the set $z=0$. To do this, we set $x=1$ getting the equation $z^2-y^2=1$. From this we get a rational map $[1 : y : z] \mapsto [y : z-1]$ defined on the locus $z \neq 1$, in particular defined at $z=0$. It is easy to check the gluing relations for this morphism.
+The results of 6.5.8 give us a rational map on ${[x : y : z] \mid z \neq 0}$ given by
+$[x/z : y/z : 1] \mapsto [y/z : x/z-1]$ when $x/z \neq 1$ and
+$[x/z : y/z : 1] \mapsto [x/z+1 : -y/z]$ when $x/z \neq -1$. We wish to define a map
+that extends this over the set $z=0$. To do this, we set
+$x=1$ getting the equation $z^2-y^2=1$. From this
+we get a rational map $[1 : y : z] \mapsto [y : z-1]$ defined on the locus
+$z \neq 1$, in particular defined at $z=0$. It
+is easy to check the gluing relations for this morphism.
 
 \section{6.5.G}
-At the level of rings, we use the map $k[t] \to k[x, y], t \mapsto y/x$. This yields a rational map $(x, y) \mapsto y/x$ defined except at $x=y=0$. The inverse of this map is given by $m \mapsto (m^2-1, m^3-m)$ defined everywhere.
+At the level of rings, we use the map $k[t] \to k[x, y], t \mapsto
+    y/x$. This yields a
+rational map $(x, y) \mapsto y/x$ defined except at $x=y=0$.
+The inverse of this map is given by $m \mapsto (m^2-1, m^3-m)$ defined everywhere.
 
 \section{6.5.H}
-We first change coordinates by noting that $x^2+y^2-z^2-w^2=(x+z)(x-z)-(w-y)(w+y)$. Thus we can rewrite this variety as $xz-wy$. Now, consider the open set $x \neq 0$. Over this set we get $wy=z$ or as a ring, $\Q[y, z, w]/(z-wy)$. We write $\mathbb{P}^2_{\Q}$ as $\Proj \Q[a, b, c]$ and form an isomorphim with $c \neq 0$, i.e. $\Q[a, b]$, call it $\phi$. For this isomorphim we send $w \mapsto a, y \mapsto b, z \mapsto ab$. Surjectivity is trivial. Let $f \in \Q[y, z, w]/(z-wy)$ be such that $\phi(f)=0$. Then $f=0$ every variable maps to something nonzero.
+We first change coordinates by noting that $x^2+y^2-z^2-w^2=(x+z)(x-z)-(w-y)(w+y)$. Thus we can
+rewrite this variety as $xz-wy$. Now, consider the open set
+$x \neq 0$. Over this set we get $wy=z$ or as a
+ring, $\Q[y, z, w]/(z-wy)$. We write $\mathbb{P}^2_{\Q}$ as
+$\Proj \Q[a, b, c]$ and form an isomorphim with $c \neq 0$,
+i.e. $\Q[a, b]$, call it $\phi$. For this
+isomorphim we send $w \mapsto a, y \mapsto b, z \mapsto ab$. Surjectivity is trivial. Let
+$f \in \Q[y, z, w]/(z-wy)$ be such that $\phi(f)=0$. Then
+$f=0$ every variable maps to something nonzero.
 
-This gives a rational map $\Proj \Q[a, b, c] \rationalto Q$ given in coordinates by $[a : b : 1] \mapsto [1 : b : ab : a]$. Looking at it the other way around, we see that $[1: y : z : w] \mapsto [w : y : 1]$.
+This gives a rational map $\Proj \Q[a, b, c] \rationalto Q$ given in coordinates by
+$[a : b : 1] \mapsto [1 : b : ab : a]$. Looking at it the other way around, we see that
+$[1: y : z : w] \mapsto [w : y : 1]$.
 
-Geometrically this is simple: we have the affine variety $z=xy$, and we are just discarding the $z$ coordinate.
+Geometrically this is simple: we have the affine variety
+$z=xy$, and we are just discarding the $z$
+coordinate.
 
 \section{6.5.I}
-Define the ring map $k[x, y, z] \to k[x, y, z], x \mapsto yz, y \mapsto xz, z \mapsto xy$. The image of $(x, y, z)$ is $(yz, xz, xy)$. $\V(yz)=\V(y) \union \V(z)$. It is easily seen that this gives us a vanishing set of $[1 : 0 : 0], [0 : 1 : 0], [0 : 0 : 1]$. \qed
+Define the ring map $k[x, y, z] \to k[x, y, z], x \mapsto
+    yz, y \mapsto xz, z \mapsto xy$. The image of
+$(x, y, z)$ is $(yz, xz, xy)$. $\V(yz)=\V(y) \union \V(z)$. It
+is easily seen that this gives us a vanishing set of $[1 : 0 : 0],
+    [0 : 1 : 0],
+    [0 : 0 : 1]$.
+\qed
 
 \section{6.6.A}
 Simply apply 6.3.F again. \qed
 
 \section{6.6.B}
-Suppose we have a rational map $X \rationalto \A^1_{\Z}$. If this map is dominant, then we get an extension of fields $\Q[t] \to \operatorname{K}(X)$. The image of $t$ is a rational function, and this process is invertible.
+Suppose we have a rational map $X \rationalto \A^1_{\Z}$. If this map is
+dominant, then we get an extension of fields $\Q[t] \to \operatorname{K}(X)$. The image
+of $t$ is a rational function, and this process is
+invertible.
 
-The above only works if $\operatorname{K}(X)$ is characteristic 0. If it is not invertible then the image of the generic point is the generic point of the image. We get a field of the form $F(t)$ for some field $F$. We may then follow the same argument as above.
+The above only works if $\operatorname{K}(X)$ is characteristic 0. If it is
+not invertible then the image of the generic point is the generic point of the
+image. We get a field of the form $F(t)$ for some field
+$F$. We may then follow the same argument as above.
 
 \section{6.6.C}
 Trivial \qed
 
 \section{6.6.D}
-$\Spec \Z$ is the desired representing functor. Indeed, $h_{\Spec \Z}(X)=\{*\}$, the unique terminal morphism. \qed
+$\Spec \Z$ is the desired representing functor. Indeed,
+$h_{\Spec \Z}(X)=\{*\}$, the unique terminal morphism. \qed
 
 \section{6.6.E}
 \begin{enumerate}[a.]
-    \item We have a morphism $\Z[x_1, \dots, x_n] \to \Gamma(X, \Osh_X)$. The image of the $x$s are global functions on $X$. This process can be reversed.
+    \item We have a morphism $\Z[x_1, \dots, x_n] \to \Gamma(X, \Osh_X)$. The image of the
+          $x$s are global functions on $X$. This
+          process can be reversed.
 
-          We have two obvious morphisms $\A^2_{\Z} \to \A^1_{\Z}$. Let $X$ be a scheme with two morphisms $\pi_1: X \to \A^1_{\Z}, \pi_2: X \to \A^1_{\Z}$. Writing $\A^1_{\Z}$ as $\Spec \Z[t]$, we have two functions $x, y$ as the image of the two copies of $t$. This assignment is functorial, and so is represented by $\A^2_{\Z}$. \qed
-    \item Given an invertible function $f$, send $t$ to $f$. \qed
+          We have two obvious morphisms $\A^2_{\Z} \to \A^1_{\Z}$. Let
+          $X$ be a scheme with two morphisms $\pi_1: X \to \A^1_{\Z}, \pi_2: X \to \A^1_{\Z}$.
+          Writing $\A^1_{\Z}$ as $\Spec \Z[t]$, we have two functions
+          $x, y$ as the image of the two copies of
+          $t$. This assignment is functorial, and so is represented by
+          $\A^2_{\Z}$. \qed
+    \item Given an invertible function $f$, send
+          $t$ to $f$. \qed
 \end{enumerate}
 
 \section{6.6.F}
-Given a morphism $X \to \Spec A$ we get a morphism of the desired type. By 6.3.F, this process is reversible. \qed
+Given a morphism $X \to \Spec A$ we get a morphism of the desired type.
+By 6.3.F, this process is reversible. \qed
 
 \section{6.7 comment}
-The given basis determines an isomorphim with $A^n$. Under that isomorphism our matrix has this form:
-\[
+The given basis determines an isomorphim with $A^n$. Under
+that isomorphism our matrix has this form: \[
     \begin{pmatrix}
         1          &            &        &            \\
                    & 1          &        &            \\
@@ -209,13 +383,23 @@ The given basis determines an isomorphim with $A^n$. Under that isomorphism our 
     \end{pmatrix}
 \]
 
-Given a set of generators for a $k$-plane, we may write the matrix for those with respect to the $v$ basis. If the submatrix spanned by the first $k$ rows has nonzero determinant, then it may be rewritten in the above form. That is clearly an open condition since it involves a certain determinant being nonzero.
+Given a set of generators for a $k$-plane, we may write the
+matrix for those with respect to the $v$ basis. If the
+submatrix spanned by the first $k$ rows has nonzero
+determinant, then it may be rewritten in the above form. That is clearly an
+open condition since it involves a certain determinant being nonzero.
 
 \section{6.7.A}
-A basis $v$ determines an isomorphism sending standard basis to $v$. Suppose $v, u$ are basis with isomorphisms $\phi_v, \phi_u$. Then $\phi_u \after \phi^{-1}_v$ is the desired isomorphism.
+A basis $v$ determines an isomorphism sending standard
+basis to $v$. Suppose $v, u$ are basis
+with isomorphisms $\phi_v, \phi_u$. Then $\phi_u \after \phi^{-1}_v$ is the
+desired isomorphism.
 
 \section{6.7.B}
-We take the open sets to be such that the upper $k\times k$ matrix has nonzero determinant in both bases. Now, the isomorphism is given simply by applying the change of basis, changing to row echelon form, then identifying the $a_{ij}$s.
+We take the open sets to be such that the upper $k\times k$ matrix
+has nonzero determinant in both bases. Now, the isomorphism is given simply by
+applying the change of basis, changing to row echelon form, then identifying
+the $a_{ij}$s.
 
 \section{6.7.C}
 Trivial?

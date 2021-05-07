@@ -108,10 +108,10 @@ closed embedding. Since $\psi$ induces a homeomorphism, by the
 above lemma, $X$ is affine. Hence the morphism is affine.
 
 We change our notation now and write $\pi: A \to B$,
-$\psi: A \to A/I$, and $\phi: A/I \to B$, with $\phi$
-inducing a homeomorphism of spaces. By 8.1.H, the closed subscheme structure of
-$\psi$ is uniquely determined by the ideal
-$I=\ker \psi = \ker \pi$. Now, apply 2.4.E to the stalks of
+$\psi: A \to A/I$, and $\phi: A/I \to B$, with
+$\phi$ inducing a homeomorphism of spaces. By 8.1.H, the
+closed subscheme structure of $\psi$ is uniquely determined by
+the ideal $I=\ker \psi = \ker \pi$. Now, apply 2.4.E to the stalks of
 $\phi$. \qed
 
 \section{8.1.L}
@@ -127,14 +127,211 @@ $\implies$ (iii) follows from 9.2.B.
 \section{8.1.N}
 Consider $f=f_2 \after g_2 \after f_1 \after g_1$ where $g_1, g_2$ are closed
 embeddings and $f_1, f_2$ are open embeddings. Then by 8.1.M we
-have $f=f_2 \after f_3 \after g_3 \after g_1$, where $g_3$ is a closed embedding
-and $f_3$ is an open embedding. \qed
+have $f=f_2 \after f_3 \after g_3 \after g_1$, where $g_3$ is a closed
+embedding and $f_3$ is an open embedding. \qed
+
+\section{Some remarks on $\Proj A$}
+We first note that $\Proj A \subseteq \Spec A$ has the subset topology. In
+particular, if $\Spec A$ is irreducible then so is
+$\Proj A$. Indeed, a nontrivial closed cover
+$Z \union X = \Proj A$ yields a nontrivial closed cover
+$Z' \union X' = \Spec A$.
+
+\section{8.2.A}
+\begin{enumerate}[a.]
+    \item It suffices to show that $\V((z-x^3, x^2-y)) \subseteq k[x, y ,z]$ is irreducible, then by 9.5.L
+          we will be done. Now, we map $k[x, y ,z] \to k[x]$ by $x \mapsto x, y \mapsto x^2, z \mapsto x^3$.
+          Clearly the kernel of this map is $(z-x^3, x^2-y)$, and this map is
+          clearly surjective. \qed
+    \item The above isomorphism shows that on each open it is isomorphic to
+          $\A^1_k$, hence after gluing it is $\P^1_k$.
+\end{enumerate}
+
+\section{8.2.B}
+Let $\phi: S_{\bullet} \to R_{\bullet}$ be a surjective map of graded rings. Then
+$\ker \phi$ is homogenous. Indeed, we get induced morphisms of
+$S_0$-modules $\phi_i: S_i \to R_{di}$. These are surjective,
+hence their kernel is graded with degree $i$. Then clearly
+$\ker \phi = \Union_i \ker \phi_i$. Next, we note that $d=1$. From this
+we immediately see that $\phi(S_+)=R_+$, hence we have an induced
+morphism $\Proj R_{\bullet} \to \Proj S_{\bullet}$. Finally, note that if $\ker \phi = I$
+then $\Proj R_{\bullet} \supseteq \D(f) = \Spec
+    S_{\bullet, f, 0}/I_{f, 0}$ by exactness of localization. \qed
+
+\section{8.2.C}
+Lemma: Let $S_{\bullet}$ be an arbitrary graded ring and let
+$f \in S_{\bullet}$ be homogenous of degree $d$.
+Suppose $I \subset S_{\bullet, f, 0}$ is an arbitrary ideal. Let
+$\phi: S_{\bullet, f, 0} \to S_{\bullet}$ be the obvious inclusion. Then $\V(I^{\text{eh}})=\V(I^{\text{e}})$
+(with notation as in the proof of 4.5.H(a)). Indeed, if $g=\sum_{i=0}^n g_{id}/f^i$
+then clearly $f^ng$ is homogenous of degree
+$dn$ and hence is contained in $I^{\text{eh}}$. But
+then any homogenous prime ideal must contain either $f^n$ or
+$g$. Clearly it cannot contain the former, hence it must
+contain the latter. Hence it also contains $I^{\text{e}}$. \qed
+
+Note also that $I = I^{\text{ehc}}$. Indeed, Let $x \in I^{\text{eh}}$ and
+$x \in \im \phi$. WLOG assume that $x$ is
+homogenous. The former relationship says that $x=ay$ where
+$y \in I$ and $a$ is homogenous. The latter
+implies that $a$ must have degree zero, hence
+$a \in I$ so that $x \in I$.
+
+Next we reduce to the case of a graded ring finitely generated in degree one by
+applying 6.4.G followed by 6.4.D. Such a ring is a finitely generated
+$A$-algebra, yielding a closed embedding into
+$\P^n_A$ for some $n$ (by 8.2.B). Since the
+composition of two closed embeddings is a closed embedding, we are reduced to
+the case of an arbitrary closed embedding into $\P^n_A$.
+
+We cover $\P^n_A$ by affine opens $\D(x_1), \dots \D(x_n)$. Now,
+on each $\D(x_i)$ we have a closed subscheme defined by an ideal
+$\Ish(\D(x_i))=I_i$. Now, applying the above lemmas we find that we have a
+homogenous ideal $(I_i)^{eh} \subset
+    A[x_1, \dots, x_n]_{x_i}$ and a corresponding relevant
+homogenous ideal of $J_i \subset A[x_1, \dots, x_n]$ which doesn't contain
+$x_i$. This ideal corresponds to a closed subset of
+$X$. Taking the union of these across the
+$\D(x_i)$ we get a open cover of $X$ which
+corresponds to the homogenous ideal $\Intersect_i J_i$.
+
+\section{8.2.D}
+Injective linear maps of (finite dimensional) vector spaces induce surjective
+maps of their duals. This extends to a surjective map of the symmetric algebra,
+hence (by 8.2.B) to a closed embedding. \qed
+
+\section{8.2.E}
+Let $f \in k[x, y]$ be homogenous of degree $d$. We
+show that this has exactly $d$ nontrivial roots. There are
+two cases. If $f$ has degree $d$ when
+dehomogenized with respect to $x$ (resp.
+$y$) then we do not have a factorization
+$f=x^ig$, hence $[0, 1]$ is not a root. Because
+$[0, 1]$ is the only point not contained in
+$\D(x)$, we find that it has exactly $d$
+roots. Now, suppose $f$ has degree less than
+$d$ when dehomogenized with respect to
+$x$. Then we have a factorization $f=x^ig$
+where $x \nmid g$. Then $g$ has
+$d-i$ roots, and we have a root with multiplicity
+$i$ at $[0, 1]$.
+
+We now reduce the general case to the above theorem. Let
+$\P^n_k$ be given by $k[x_0, \dots, x_n]$. Given an arbitrary
+line we may perform a projective transform so that the line is defined by the
+ideal $(x_0, \dots, x_{n-2})$. Now, the degree of $f$ is
+preserved by projective transform, and since $f$ does not
+contain our line we see that $x_i \nmid f$ for
+$i \in [0, n-2]$. Thus $f$ contains at least one
+monomial (of degree $d$) in only $x_{n-1}, x_n$.
+\qed
+
+\section{8.2.F}
+By 3.6.F this morphism is surjective. The same theorem describes the kernel of
+this map as the defining equations of 8.2.A. \qed
+
+\section{8.2.G}
+I proved this as part of my proof of 8.2.C. \qed
+
+\section{8.2.H}
+Let $p \in \D(x_0) \subseteq \Proj S_{\bullet}$ be a closed point inducing a closed subscheme
+$\Spec \kappa(p) \to \Proj S_{\bullet}$. Thus we have a surjective morphism
+$S_{\bullet, x_0, 0} \to \kappa(p)$ whose kernel is necessarily $p$. We
+know that $S_{\bullet, x_0, 0} \cong k[x_1, \dots, x_n]/I$ for some ideal $I$.
+Hence, by the Nullstellensatz we know $p=(x_1-a_1, \dots, x_n-a_n)$. This prime ideal
+corresponds to the homogenous prime ideal $(x_1-a_1x_0, \dots x_n-a_nx_0) \subset S_{\bullet}$. But this is
+indeed a line in $\Spec S_{\bullet}$, as we have $n-1$
+linear equations (which are clearly linearly independent) in a space with
+$n$ variables. \qed
+
+\section{8.2.I}
+Trivial. \qed
+
+\section{8.2.J}
+This will follow from 3.6.F(b). Indeed, that exercise shows that we have a
+surjection of rings $k[x_0, \dots, x_n] \to S_{d\bullet}$. This gives us the desired closed
+embedding by 8.2.C. \qed
+
+\section{8.2.K}
+The desired result is equivalent to the following problem: We wish to count the
+number of $n+1$-tuples $(a_i)_{i \in [0, n]}$ such that
+$\sum_{i=0}^n a_i = d$. This is equivalent to counting the number of ways to
+divide up an ordered list of $d$ indistinguishable objects
+using $n$ partitions. But this is equivalent to choosing
+$d$ items from an ordered list of $n+d$
+indistinguishable items. (We think of this as choosing which of the
+$n+d$ items will be partitions and which will be objects).
+This number is clearly ${n+d \choose d}$. \qed
+
+\section{8.2.L}
+We have a surjection $k[y_0, y_1, y_2, y_3, y_4, y_5] \to k[x_0, x_1, x_2]_{2\bullet}$ which, for example, sends
+$y_0 \mapsto x_0x_0$. Now, note that the cofactors of each entry in the
+lower triangle of the determinant are zero, and are clearly linearly
+independent. Pulling back these cofactors along the surjection, we get our
+desired 6 quadratics.
+
+\section{8.2.M}
+Lemma: suppose we have finitely generated graded rings over a field
+$k[x_0, \dots, x_m]/I, k[a_0, \dots, a_n]/J$ and a map which sends the closed point
+$[a_0, \dots, a_n] \mapsto [f_1, \dots, f_m]$ where the $f_i$ are homogenous
+polynomials, not all zero, in the $a_i$. Then this map is a
+map of projective schemes. Indeed, we choose the map which sends
+$x_i \mapsto f_i$. This is clearly a map of graded rings, and we may
+check that it gives the polynomial map by applying 3.2.P to the distinguished
+open sets. \qed
+
+\begin{enumerate}[a.]
+    \item By the above lemma, this gives a map of schemes. This is also clearly a closed
+          embedding, since the map is surjective. We need only check that the image is a
+          line. Indeed, a line in $\P^n_k$ is given by the span of two
+          linearly independent vectors. Thus, if we have a function
+          $[c, d] \to [f_0, \dots, f_n]$ where the $f_i$ are linear and have
+          linearly independent coefficients, then we have a line. Furthermore, all lines
+          must be of this form. The function given is clearly one of this form, as is the
+          function $[c, d] \mapsto [a_0c, a_0d, b_0c, b_0d]$. These are the two rulings of lines. \qed
+    \item Suppose $[w, x, y, z]$ is a point on the quadric surface. WLOG assume
+          $w \neq 0$. Then we may take $a_0=w$ and
+          $b_0=x$, then set $c=1, d=y$. For the other ruling
+          we take $a_0=w$ and $b_0=y$, and set
+          $c=1, d=x$. \qed
+    \item In part (a) we classified lines in $\P^n_k$. Now, a plane cannot
+          be simultaniously parallel to all the planes $\D(x_i)$. Thus, in
+          our case we assume WLOG that we can find two points on the line with
+          $w=1$. Thus we have $[a, b] \mapsto [a+b, ax+bx', ay+by', az+bz']$. Again, WLOG assume
+          that $a \neq 0$, then we may rewrite this point as
+          $[1+t, x+tx', y+ty', z+tz']$ where $t=b/a$ is arbitrary. Now, since
+          the point lies on the quadric surface, $(1+t)(z+tz')=(x+tx')(y+ty')$. Set
+          $t=-1$ and we get $(x-x')(y-y')=0$. The former
+          corresponds to the first ruling, the latter corresponds to the second ruling.
+          \qed
+\end{enumerate}
+
+\section{8.2.N}
+Let $R_{\bullet}$ be the ring $k[x_0, x_1, x_2]$ with
+$x_2$ given grading of two. Now, $R_{2\bullet}$ is
+generated by 4 monomials, $x_0x_0, x_1x_0, x_1x_1, x_2$. Clearly the relation
+$(x_1x_0)^2=(x_0x_0)(x_1x_1)$ holds. \qed
+
+\section{8.2.O}
+Follows from 8.2.P
+
+\section{8.2.P}
+We prove this for an arbitrary graded ring $R_{\bullet}$. Let
+$R_+=(\{f_i\}_{i \in I})$. Then we have ring maps $R_{\bullet, f_i, 0} \to R_{\bullet, f_i}$. The
+latter are the $\D(f_i)$, and clearly cover
+$\Spec R_{\bullet} \setminus \V(R_+)$. The ring maps are also clearly compatible, hence glue
+to give the desired map. \qed
+
+\section{8.2.Q}
+First note that $R[T]/(T) \cong R$ for any ring $R$.
+This proves the first fact. Second note that $\D(T) \cong \Spec R_{\bullet}[T]_{T, 0} = \Spec
+    R_{\bullet}[T]/(T-1)=\Spec R_{\bullet}$
 
 \section{8.4.A}
 Suppose $tx=0$ in $A_{\p}$. Then
 $stx=0$ where $s \not \in \p$, so that
-$sx=0$. Thus $x=0$ in $A_{\p}$.
-\qed
+$sx=0$. Thus $x=0$ in
+$A_{\p}$. \qed
 
 \section{8.4.C}
 We see that $\sqrt{(t)}=\sqrt{(t')}$.
