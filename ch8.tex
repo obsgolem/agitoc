@@ -94,18 +94,19 @@ $X$ is affine. Let $B=\Osh_X(X)$. Then we have a
 morphism $\phi: X \to \Spec B$. It is clear that $\phi$ is a
 homeomorphism, so it remains to show that it is an isomorphism of sheaves. Let
 $\Spec C \subseteq X$. Then we have a morphism $\phi': B \to C$. Now,
-let $b \in B$ be such that $\phi^{-1}(\D(b)) \subseteq \Spec C$. But it is clear
-that $\phi^{-1}(\D(b)) = \D(\phi'(b))$. Now, let $b$ range over
-$B$ to get a cover of $\Spec B$ by affines. By
-affine locallity of affineness, we are done.
+let $b \in B$ be such that $\phi^{-1}(\D(b)) \subseteq \Spec C$. But it is
+clear that $\phi^{-1}(\D(b)) = \D(\phi'(b))$. Now, let $b$ range over
+$B$ to get a cover of $\Spec B$ by affines.
+By affine locallity of affineness, we are done.
 
 The fact that closed immersions satisfy this property follows from 2.5.E. For
 the other direction, we immediately reduce to the case where
 $Y$ is affine, say $\Spec A$. We find that
-$\pi$ corresponds to a morphism $\pi^{\sharp}: A \to \Osh_X(X)$. Taking
-kernels, we find that $\pi=\psi \after \phi$ where $\psi: \Spec A/I \to \Spec A$ is a
-closed embedding. Since $\psi$ induces a homeomorphism, by the
-above lemma, $X$ is affine. Hence the morphism is affine.
+$\pi$ corresponds to a morphism $\pi^{\sharp}: A \to \Osh_X(X)$.
+Taking kernels, we find that $\pi=\psi \after \phi$ where
+$\psi: \Spec A/I \to \Spec A$ is a closed embedding. Since $\psi$
+induces a homeomorphism, by the above lemma, $X$ is affine.
+Hence the morphism is affine.
 
 We change our notation now and write $\pi: A \to B$,
 $\psi: A \to A/I$, and $\phi: A/I \to B$, with
@@ -327,6 +328,69 @@ First note that $R[T]/(T) \cong R$ for any ring $R$.
 This proves the first fact. Second note that $\D(T) \cong \Spec R_{\bullet}[T]_{T, 0} = \Spec
     R_{\bullet}[T]/(T-1)=\Spec R_{\bullet}$
 
+\section{Note on definition of scheme theoretic image}
+Suppose the image of $\pi: X \to Y$ lies in $Z$.
+Then $\pi$ factors through the closed embedding
+$\iota: Z \to Y$. On an open cover this corresponds to 9.2.B.
+
+Now, suppose $X_1, X_2, \dots$ is the (not necessarily countable) family
+of closed subschemes schemes such that the image of $\pi$
+lies in each $X_i$. Then the scheme theoretic image is
+defined to be the limit of the following diagram: \[\begin{tikzcd}
+        {X_1} & {X_2} & \dots \\
+              & Y
+        \arrow[from=1-1, to=2-2]
+        \arrow[from=1-2, to=2-2]
+        \arrow[from=1-3, to=2-2]
+    \end{tikzcd}\] which
+exists by 8.1.J(a). Now, by definition of a limit, since we have a map
+$\pi: X \to X_i \to Y$, we also have a map $X \to \lim X_i$.
+
+\section{8.3.A}
+Note that under the hypothesis, the scheme theoretic image is computable
+affine-locally. Reducedness is also affine local. Hence it suffices to show
+that the kernel of a map to a reduced ring is radical. Indeed, let
+$f(a^n)=0$. Then $f(a)^n=0$ so that
+$f(a)=0$, by reducedness. Thus, $a \in \ker f$. \qed
+
+\section{8.3.C}
+\[\begin{tikzcd}
+          &   & Z \\
+        V & U & X
+        \arrow[from=1-3, to=2-3]
+        \arrow[hook, from=2-2, to=2-3]
+        \arrow[hook, from=2-1, to=2-2]
+    \end{tikzcd}\]
+We wish to show, under the hypotheses of 8.3.4, that the pullback of
+$U \to X$ along $Z\to X$ is the same as the
+pullback of $V \to X$ along $Z \to X$. By 8.3.4
+this can be checked affine locally. Choose $\Spec A \subset U$. Then this
+statement reduces to the triviality $A/I \otimes_A A/I \cong A/I$. \qed
+
+\section{8.3.E}
+\begin{itemize}
+    \item[(i) $\iff$ (ii)] We note that $W$ is
+          reduced (since reducedness is stalk local), hence by 8.3.4, we may check the
+          image affine locally. We will consider $\Spec B \to \Spec A$, where
+          $\Spec B=W$. Then the image is given by an ideal
+          $I$ such that if $x \in I$ then
+          $x$ is zero in every residue field of
+          $A$. But this means that $x$ is in every
+          prime ideal, hence $I=\sqrt{(0)}$.
+    \item[(iii) $\iff$ (i)] We note that both definitions can be checked
+          on an affine open cover. Then this reduces to the statement that
+          $\V(0)=\V(\sqrt{(0)})$.
+\end{itemize}
+\qed
+
+\section{8.3.F}
+For the first, just use the second definition, clearly the image is the entire
+space. For the second, again use the second definition and recall that
+reducedness is stalk-local. \qed
+
+\section{8.3.G}
+This is just the first of the three definitions in 8.3.9.
+
 \section{8.4.A}
 Suppose $tx=0$ in $A_{\p}$. Then
 $stx=0$ where $s \not \in \p$, so that
@@ -334,6 +398,113 @@ $sx=0$. Thus $x=0$ in
 $A_{\p}$. \qed
 
 \section{8.4.C}
-We see that $\sqrt{(t)}=\sqrt{(t')}$.
+We see that $\sqrt{(t)}=\sqrt{(t')}$. Let $(a)=\sqrt{(t)}$ and let
+$(a')=\sqrt{(t')}$. Then both $a$ and
+$a'$ vanish to the same order on $\V(t)=\V(t')$
+(since these are identical as subschemes), hence $a^n=t$ and
+$a'^n=t'$. Now, it is clear that $a'=sa$ where
+$s$ is a unit, hence the result follows. \qed
+
+\section{8.4.D}
+Condition (ii) fails because the localization of a non-zero module can be zero.
+
+The property is preserved by localization since being a non-zero divisor is
+preserved by localization. Indeed, let $x \in A$ be a non-zero
+divisor, and suppose $xm/s=0 \in S^{-1}M$. Then $s'xm=0$ for
+some $s' \in S$. But $x$ isn't a zero divisor,
+so $s'm=0$. Thus $m=0 \in S^{-1}M$. \qed
+
+\section{8.4.E}
+We prove this by induction. The result is clear by hypothesis when
+$N=1$. Now suppose it holds for all $n<N$.
+Now, by way of contradiction suppose $y$ is a zero-divisor
+modulo $(x^N)M$. Then $ym=x^Nm'$. Now,
+$x^Nm' \in (x)M$, so $m \in (x)M$ by hypothesis. Also by
+hypothesis, $x$ is not a zero divisor, so
+$ym''=x^{N-1}m'$ for $m''=xm$. But by the induction
+hypothesis, this can only hold if $m'' \in (x^{N-1})M$. \qed
+
+\section{8.4.F}
+We begin by considering $x_1, x_2 \in M$ to be a regular sequence. Now,
+we may also define maps $m_{x_1}: M \to M, m_{x_2}: M \to
+    M$ given by multiplication. Now,
+$x_1$ being a zero divisor is equivalent to the statement
+that $m_{x_1}$ is injective. We wish to prove that
+$m_{x_2}$ is injective, and also that $m'_{x_1}: M/(x_2)M \to M/(x_2)M$ is
+injective. For the latter, note that if $x_1a=x_2a'$ then
+$a'=x_1a''$ by regularity. Thus since $x_1$ is
+not a zero divisor, $a=x_2a''$.
+
+For the former, let $a \in \ker m_{x_2}$. Then $x_2a=0 \in (x_1)M$, so
+$a = x_1a' \in (x_1)M = \im m_{x_1}$. Now, $x_1x_2a'=0$ so that
+$x_2a'=0$, thus $a' \in \ker m_{x_2}$. Thus we see that
+$m_{x_1}$ maps $\ker m_{x_2}$ onto
+$\ker m_{x_2}$. It is also injective by definition. Thus,
+$\ker m_{x_2}=(x_1)\ker m_{x_2}$, so that Nakayama version 2 applies. Thus
+$\ker m_{x_2}=0$.
+
+Finally, to show the general case recall that any permutation can be written as
+a composition of transpositions. Thus it suffices to show the case where
+$x_1, \dots x_i, x_{i+1}, \dots x_n$ are transposed to give $x_1, \dots x_{i+1}, x_{i},
+    \dots x_n$. This
+follows by the above argument applied to $M/(x_1, \dots x_{i-1})M$. \qed
+
+\section{8.4.G}
+Let $f \after g: Z \to U \to X$ be a locally closed embedding. We follow the hints
+by first noting that since $U$ is open in
+$X$ any open subset of $U$ is itself
+open, hence we may replace $X$ with $U$
+and consider only a closed embedding. Now, choose an affine open containing
+$\p$ and the same argument lets us reduce to the affine
+case. Let us set $Z=\Spec A/I$ and let $I_{\p}=(x_1, \dots, x_n)$ where
+the $x_i$ form a regular sequence for
+$A_{\p}$.
+
+We note that if $x, y$ is a regular sequence and
+$s$ is a unit, then $sx, y$ and
+$x, sy$ are both regular sequences. Indeed, multiplication by a
+unit doesn't change the ideal generated by a set of elements. Likewise, if
+$asx=0$ then clearly $ax=0$, and likewise for
+$y$. Thus we may take the $x_i$ to lie in
+$A$.
+
+Lemma: Suppose we have any finitely generated module $M$
+and $M_{\p}=0$. Then we may choose generators
+$x_1, \dots, x_n$ for $M$ as well as annihilators
+$s_1, \dots, s_n \in S = A \setminus \p$. If $s=\prod_i s_i$ then clearly
+$M_s=0$.
+
+Next we must prove that $I_{\p}=(x_1, \dots,
+    x_n)_{\p}$ implies $I=(x_1, \dots, x_n)$
+on an open set. We do this by following the hint. Let $I, J \subset M$
+where $M$ is an arbitrary module over a Noetherian ring
+$A$. Suppose $I_{\p}=J_{\p}$ for a prime
+$\p$. Then there exists an $a \in A$ such that
+$I_a=J_a$. Indeed, suppose $(I \intersect J)_a=I_a$ and
+$(I \intersect J)_b=J_b$. Then clearly $I_{ab}=J_{ab}$. Thus we reduce
+to the case where $I \subset J$. Now, apply the above lemma to
+$J/I$.
+
+Let $x_1, \dots, x_n$ be set whose images are a regular sequence that
+generates the ideal $I_{\p}$. Then $x_1, \dots, x_n$ is a
+regular sequence on $I_a$ for some $a$.
+Indeed, recall that since $A$ is noetherian, we have that
+$\ker m_{x_1}$ (with notation as in 8.4.F) is a finitely generated
+ideal. Choose generators $\ker m_{x_1}=(a_1, \dots, a_k)$. In $A_{\p}$ we
+have that $a_i=0$ so that $s_ia_i=0$ in
+$A$ for some $s_i \in A \setminus \p$. Now, then, we may
+simply take the product of the $s_i$, which clearly
+annihilates $\ker m_{x_1}$. We may continue likewise for the other
+$x_i$ to prove the desired result.
+
+\qed
+
+\section{8.4.H}
+\begin{itemize}
+    \item[$\implies$] By 8.4.G, for every point $p$ we
+          have an open set $U$ on which the closed subscheme is given
+          by a single non zero divisor. \qed
+    \item[$\impliedby$] Follows immediately from 8.4.D. \qed
+\end{itemize}
 
 \end{document}

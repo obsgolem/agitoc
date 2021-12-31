@@ -89,9 +89,9 @@ is surjective. It suffices to show \[\begin{tikzcd}
         \arrow["g"', from=1-1, to=2-1]
         \arrow[from=1-2, to=2-2]
         \arrow[from=2-1, to=2-2]
-    \end{tikzcd}\] is non-zero.
-Consider $A \otimes_C B$ Indeed, the pure tensor $a \otimes b = 0$
-iff $a=0$ or $b=0$ or $a=cx$
+    \end{tikzcd}\] is non-zero. Consider
+$A \otimes_C B$ Indeed, the pure tensor $a \otimes b = 0$ iff
+$a=0$ or $b=0$ or $a=cx$
 where $c \in C$ and $ca=0$. Consider
 $1 \otimes 1 \in k[x_1, \dots,x_n]_p \otimes \kappa(r)$. Suppose $a \in x_1, \dots, x_m]_q$ be such that
 $f(a)=0$. Then $a \in r$ so that
@@ -168,8 +168,8 @@ $f \in \q$.
 \section{9.5.H}
 Let $X$ be a topological space and let
 $p \in X$. Consider the set of connected subsets containing
-$p$. Let $\{S_i\}_{i \in I}$ be a chain in this poset and
-consider $S=\Union_i S_i$. Let $S=U \union V$. Then they
+$p$. Let $\{S_i\}_{i \in I}$ be a chain in this poset
+and consider $S=\Union_i S_i$. Let $S=U \union V$. Then they
 intersect on some element of the chain, hence they intersect. Hence
 $S$ is connected. Hence by Zorn's lemma,
 $p$ is contained in a maximal connected set.
@@ -240,5 +240,60 @@ Monomorphisms are injective: indeed, the category of schemes has a morphism
 $\kappa(p) \to X$ for every point of $X$ the same
 proof from $\catname{Set}$ goes through without change. It is also
 clear that monomorphisms are preserved by base change. \qed
+
+\section{9.5.P}
+This follows from 9.5.Q(iii). \qed
+
+\section{9.5.Q}
+ (i) implies (ii): Let $p \in X$ and let
+$q=\pi(p)$. Suppose $f_1, f_2: \Spec K \to X$ factor through
+$\pi_p:\Spec \kappa(p) \to \Spec \kappa(q)$ and $\pi_p \after f_1=\pi_p\after f_2$. Then we get two induced
+maps $g_1,g_2: \Spec K \to X \times_Y \Spec K$ arising as the product of $f_1$
+and $f_2$ with the identity. By universal injectivity,
+$X \times_Y \Spec K$ is a single point, hence $g_1, g_2$ factor
+through a map $\Spec E \to X \times_Y \Spec K$. Now, looking at maps of fields we see we
+have a map $K \to E \to K$ which is equal to the identity. Now, both
+$K \to E$ and both morphisms $E \to K$ are
+injective, hence as maps of sets they must be bijections. Thus
+$E \cong K$. Since inverses are unique, we see that both maps
+$E \to K$ are in fact equal. Hence, the two maps
+$\Spec K \to X$ are in fact equal.
+
+(ii) implies (i): Let $k \to E$ and $k \to L$ be
+field extensions. Then $L \otimes_k E$ is a nonzero ring, hence has a
+maximal ideal. This allows us to realize $L$ and
+$E$ as subfields of a common field. Now, if
+$\Spec \kappa(p), \Spec \kappa(q)$ are two points of $X \times_Y Z$ that map to
+the same point in $Y$, then they are contained in a common
+field $\Spec K$ making the below diagram commute. The result then
+follows from the hypothesis.
+
+\[\begin{tikzcd}
+        {\operatorname{Spec} K} \\{X\times_Y Z} & Z \\
+        X & Y
+        \arrow[from=2-1, to=3-1]
+        \arrow[from=2-1, to=2-2]
+        \arrow[from=3-1, to=3-2]
+        \arrow[from=2-2, to=3-2]
+        \arrow[shift left=1, from=1-1, to=2-1]
+        \arrow[shift right=1, from=1-1, to=2-1]
+    \end{tikzcd}\]
+
+(ii) implies (iii):
+Suppose we are given a non purely inseparable extension
+$k \to K$. Then we may find two distinct morphisms
+$K \to \overline{K}$. Indeed, given a separable element
+$x \in K$ with minimal polynomial $f$ of
+degree greater than 1, we may find an automorphism of $\overline{K}$
+taking any root to any other root. (See for example Aluffi VII.2.8). This
+yields two embeddings in the algebraic closure and we are done.
+
+(iii) implies (i):
+Apply 9.5.7.
+
+\section{9.5.R}
+Trivial \qed
+
+\qed
 
 \end{document}
