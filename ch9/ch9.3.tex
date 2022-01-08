@@ -12,26 +12,26 @@
 \section{9.3.A}
 Consider the following diagram: \[\begin{tikzcd}
         Z                                              \\
-        & F & X                                       \\
-        & x & Y \arrow["{\phi_x}"', from=2-2, to=3-2]
+         & F & X                                       \\
+         & x & Y \arrow["{\phi_x}"', from=2-2, to=3-2]
         \arrow["\iota", from=2-2, to=2-3] \arrow["\phi", from=2-3, to=3-3] \arrow["\iota"', from=3-2, to=3-3]
         \arrow["{\pi_1}"', curve={height=12pt}, from=1-1, to=3-2]
         \arrow["{\pi_2}", curve={height=-12pt}, from=1-1, to=2-3]
         \arrow["f"{description}, dashed, from=1-1, to=2-2]
     \end{tikzcd}\] where
-$F=\phi^{-1}(x)$ and $\phi_x=\phi|_F$. We define the universal
-map by $f(z)=\pi_2(z)$. It is obvious that this diagram commutes in
+$F=\phi^{-1}(x)$ and $\phi_x=\phi|_F$. We define the universal map
+by $f(z)=\pi_2(z)$. It is obvious that this diagram commutes in
 $\catname{Set}$, so we merely need to show that $f$
 is continuous. Let $U \intersect F \subseteq F \subseteq X$ be open in the subspace topology.
-Then by continuity of $\pi_2$, $\pi_2^{-1}(U)$ is open
-in $Y$. Thus, $f^{-1}(U \intersect F)=\pi_2^{-1}(U)
+Then by continuity of $\pi_2$, $\pi_2^{-1}(U)$ is open in
+$Y$. Thus, $f^{-1}(U \intersect F)=\pi_2^{-1}(U)
     \intersect \pi_2^{-1}(F)=\pi_2^{-1}(U)$ is an open subset of
 $Z$. \qed
 
 \section{9.3.B}
 We reduce immediately to the case of $f: \Spec B \to \Spec A$ with corresponding
-ring morphism $\phi: A \to B$. Let $\p \subseteq B$ be prime.
-Then clearly $\V(\p) \to \Spec A$ pulls back to the closed immersion
+ring morphism $\phi: A \to B$. Let $\p \subseteq B$ be prime. Then
+clearly $\V(\p) \to \Spec A$ pulls back to the closed immersion
 $\V(\p^{\text{e}}) \to \Spec B$. By 3.2.I(a) this is identified with the topological
 fiber of that pullback. Thus, we may reduce to the case where
 $A$ is an integral domain and $\p = (0)$. Then
@@ -56,28 +56,27 @@ Let $(p) \subset \Z$ be prime. We are interested in
 $\Z_{(p)}/(p)_{(p)}
     \otimes_{\Z} \Z[i]$. If $p=0$ then we have
 $\Q \otimes_{\Z} \Z[i] \cong
-    \Q[i]$, a degree two field extension of
-$\Q$. If $p=2$ then we have
-$\Z_2[i] \cong \Z_2[x]/(x^2+1) \cong
+    \Q[i]$, a degree two field extension of $\Q$.
+If $p=2$ then we have $\Z_2[i] \cong \Z_2[x]/(x^2+1) \cong
     \Z_2[x]/(x+1)^2$, a double point.
 
-Next, we consider $\Z_p[i]$ for odd primes. We first prove
-Euler's criterion, $(\frac{a}{p})=a^{((p-1)/2}$. Indeed, since
-$\Z_p$ is a field, $x^2=a$ has at most two
-solutions over it. There are $p-1$ units of
-$\Z_p$. Send $x \mapsto x^2$. The range of this map
-are the residues, and at most two values can map to the same value. Thus the
-range has size lower bounded by $p-1/2$. Now, by Fermat's
-little theorem, $a^(p-1)=1 \mod p$ for all $a$. This
-factors as $(a^{p-1/2}-1)(a^{p-1/2}+1)$. Quadratic residues clearly fall into the
-former case. Now $(a^{p-1/2}-1)$ has at most $p-1/2$
-roots. But then these must be precisely the quadratic residues. Hence the other
-factor must be the quadratic non-residues, as desired.
+Next, we consider $\Z_p[i]$ for odd primes. We first prove Euler's
+criterion, $(\frac{a}{p})=a^{((p-1)/2}$. Indeed, since $\Z_p$ is a
+field, $x^2=a$ has at most two solutions over it. There are
+$p-1$ units of $\Z_p$. Send
+$x \mapsto x^2$. The range of this map are the residues, and at most two
+values can map to the same value. Thus the range has size lower bounded by
+$p-1/2$. Now, by Fermat's little theorem, $a^(p-1)=1 \mod p$
+for all $a$. This factors as $(a^{p-1/2}-1)(a^{p-1/2}+1)$.
+Quadratic residues clearly fall into the former case. Now
+$(a^{p-1/2}-1)$ has at most $p-1/2$ roots. But then these
+must be precisely the quadratic residues. Hence the other factor must be the
+quadratic non-residues, as desired.
 
 Now, consider $(-1)^{p-1/2} \mod p$. If we want this to be 1 then
 $p-1/2$ must be even, say $2k$. Then
-$p=4k+1$ so that $p = 1 \mod 4$. In this case, we have
-a number $a$ such that $a^2=-1$. Thus
+$p=4k+1$ so that $p = 1 \mod 4$. In this case, we have a
+number $a$ such that $a^2=-1$. Thus
 $\Z_p[x]/(x^2+1) \cong \Z_p[x]/(x+a) \times
     \Z_p[x]/(x-a)$. This is another double point. In the case
 $p=3 \mod 4$ we find that $x^2+1$ is irreducible,
@@ -98,8 +97,8 @@ irreducible but non-reduced scheme. \qed
 \section{9.3.F}
 Suppose we are given a point $[a : b] \in \mathbb{P}^1_k$. Then we have
 $xb=ya$, which clearly shows that $(x, y)$ must
-lie on a line with slope $a/b$ or $b/a$.
-Thus the fibers are the lines with slope determined by the projective point.
+lie on a line with slope $a/b$ or $b/a$. Thus
+the fibers are the lines with slope determined by the projective point.
 
 We examine the fiber of $(a, b) \in \A^2_k$. Clearly this is the pair
 $(a,b), [a : b]$. WLOG assume that $a \neq 0$. Then we may
@@ -155,7 +154,7 @@ $f_i(x_i)=0$ in $A$. \qed
 \section{9.3.H}
 Note that the following diagram is a pushout: \[\begin{tikzcd}
         {\Z[x_1, \dots, x_N]} & B \\{\frac{\Z[x_1,\dots, x_N,y_1, \dots, y_M]}{I}}
-        & {\frac{B[y_1, \dots, y_M]}{I}}
+                              & {\frac{B[y_1, \dots, y_M]}{I}}
         \arrow[from=1-2, to=2-2]
         \arrow[from=1-1, to=1-2]
         \arrow[from=2-1, to=2-2]
@@ -215,14 +214,14 @@ finite.
     \item We recall that locally closed embeddings are preserved by base change. Now, the
           given morphism $\pi$ is the pullback of a morphism
           $\pi'$ of Noetherian schemes by 9.3.H. Thus the image of
-          $\pi'$ is a finite union of locally closed subsets, which may
-          be realized by finitely many locally closed embeddings. Now examine the
-          following diagram: \[\begin{tikzcd}
+          $\pi'$ is a finite union of locally closed subsets, which may be
+          realized by finitely many locally closed embeddings. Now examine the following
+          diagram: \[\begin{tikzcd}
                   {H_i'}                         &   & {H_i}
                   \\
-                  & X &       & {X'}
+                                                 & X &       & {X'}
                   \\{Z'_i} &   & {Z_i}        \\
-                  & Y &       & {Y'}
+                                                 & Y &       & {Y'}
                   \arrow[from=2-2, to=4-2]
                   \arrow[from=2-2, to=2-4]
                   \arrow[from=2-4, to=4-4]
@@ -235,8 +234,8 @@ finite.
                   \arrow[from=3-1, to=3-3]
                   \arrow[from=1-1, to=3-1]
                   \arrow[from=1-1, to=1-3]
-              \end{tikzcd}\] Where $\{Z_i\}_{i\in I} \to Y'$ is the
-          covering by locally closed embeddings. Clearly the $H_i$ cover
+              \end{tikzcd}\] Where $\{Z_i\}_{i\in I} \to Y'$ is the covering by
+          locally closed embeddings. Clearly the $H_i$ cover
           $X'$, so the $H'_i$ must cover
           $X$. Thus the $Z'_i$ cover the image. \qed
     \item We first note that being a locally closed embedding is stable under base

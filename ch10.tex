@@ -101,8 +101,7 @@ $\tau=\id$ and $\pi=\sigma$. If $\mu$ is
 separated then 10.1.19(ii) applies in the same manner. \qed
 
 \section{10.1.N}
-We note first that $p_2: X \times_Y Y^{\text{red}} \to
-    Y^{\text{red}}$ is in P since P is stable under
+We note first that $p_2: X \times_Y Y^{\text{red}} \to Y^{\text{red}}$ is in P since P is stable under
 pullback. Next we note that $p_1: X \times_Y Y^{\text{red}} \to X$ is a closed embedding (hence
 separated) for the same reason. Since $X^{\text{red}} \to X$ is a closed
 embedding, cancellation holds, so $\phi: X^{\text{red}} \to X \times_Y
@@ -141,22 +140,22 @@ is easily checked that these two processes are inverses.
 \end{enumerate}
 
 \section{10.2.A}
-Theorem: \[\begin{tikzcd}
+Lemma: \[\begin{tikzcd}
         Z & Y           \\
         X & {Y\times Y}
         \arrow["{(\operatorname{id}, \operatorname{id})}", from=1-2, to=2-2]
         \arrow[from=1-1, to=2-1]
         \arrow["{(f, f')}"', from=2-1, to=2-2]
         \arrow[from=1-1, to=1-2]
-    \end{tikzcd}\] is a pullback iff  \[\begin{tikzcd}
+    \end{tikzcd}\] is a pullback iff	\[\begin{tikzcd}
         Z & X           \\
         X & {Y\times X}
         \arrow["{(f', \operatorname{id})}", from=1-2, to=2-2]
         \arrow[from=1-1, to=2-1]
         \arrow["{(f, \operatorname{id})}"', from=2-1, to=2-2]
         \arrow[from=1-1, to=1-2]
-    \end{tikzcd}\] is a
-pullback. Let $\pi_1: Y \times X \to Y$ and $\pi_2: Y \times X \to X$ be the
+    \end{tikzcd}\]
+is a pullback. Let $\pi_1: Y \times X \to Y$ and $\pi_2: Y \times X \to X$ be the
 projections. Suppose the top diagram is a pullback. Suppose we have maps
 $g, g': W \to X$ making the bottom diagram commute. Then we see
 $\pi_2 \after (f', \id) \after g' = \pi_2 \after (f, \id) \after g$ so that $g'=g$. Also,
@@ -165,20 +164,150 @@ $\pi_1 \after (f,\id) \after g = \pi_1 \after (f',\id) \after g:
 $h$. Then $\Delta_Y \after h=(h, h)$. But also
 $(f, f') \after g = (h, h)$, hence we get a unique morphism $W \to Z$.
 This morphism also satisfies the universal property of the bottom diagram. We
-omit the other direction as it is similar. We prove a more general result than
-desired. Note first that we are asked to prove that the slice category
-$\catname{Scheme}/Z$ has all equalizers. Supppose a category has all fiber
-products(/pullbacks) and a final object. Then it has all equalizers. Indeed,
-the bottom diagram in the theorem above realizes $Z \to X$ as the
-equalizer of $f$ and $f'$. The first
-diagram shows that it is locally closed, and that it is closed if
-$\Delta_X$ is separated. \qed
+omit the other direction as it is similar.
+
+We next prove a more general result than the problem asks for. Note first that
+we are asked to prove that the slice category $\catname{Scheme}/S$ has all
+equalizers. Supppose a category has all fiber products(/pullbacks) and a final
+object. Then it has all equalizers. Indeed, the bottom diagram in the theorem
+above realizes $Z \to X$ as the equalizer of
+$f$ and $f'$. The first diagram shows that
+it is locally closed, and that it is closed if $Y \to S$ is
+separated, i.e. $\Delta_Y$ is closed. \qed
 
 \section{10.2.C}
-The two inclusions $\Spec k[x] \to X$ will suffice. \qed
+The two inclusions $\Spec k[x] \to X$ will suffice. The domain of agreement
+for these is the line without an origin, which is an open subscheme. \qed
 
 \section{10.2.D}
-Reducedness is necessary Separatedness is necessary, indeed, see 10.2.C and
-note that removing the two origins leaves a dense open.
+Reducedness is necessary. Consider the given maps of schemes. On
+$\D(x)$ we have $(k[x,y]/(y^2, xy))_x \cong
+    k[x,y]_x/(y^2, xy) \cong
+    k[x,y]_x/(y) \cong k[x]_x$ so that
+$t \mapsto x$ under both maps. But the maps are clearly distinct maps
+of $k$-algebras when considered globally.
+
+Separatedness is necessary, indeed, see 10.2.C and note that removing the two
+origins leaves a dense open. \qed
+
+\section{10.2.E}
+We will use different notation than in the problem. Suppose
+$\pi':U \to Y$ is a representative of $\pi$. Then we
+will say $\Gamma_{\pi'}: U \to U \times Y$ is the graph of $\pi'$. We
+will define $\Gamma_\pi$ to be the scheme theoretic closure of
+$\iota_U \after \Gamma_{\pi'}$ where $\iota_U: U\times Y \to X \times Y$ is the inclusion.
+
+Suppose $\xi: U \to Y$ and $\xi': V \to Y$ are representatives
+of $\pi$. 8.3.A and 8.3.9 together imply that the scheme
+theoretic closure of $\iota_U \after \Gamma_\xi$ is uniquely determined by the set
+theoretic closure. The same obviously holds true for $\Gamma_\xi$,
+so the following diagram commutes: \[\begin{tikzcd}
+          & {Z'}        & Z            \\
+        U & {U\times Y} & {X \times Y}
+        \arrow["{\iota_U}"', from=2-2, to=2-3]
+        \arrow["{\Gamma_\xi}"', from=2-1, to=2-2]
+        \arrow["{\Gamma_\pi}", from=1-3, to=2-3]
+        \arrow[from=1-2, to=1-3]
+        \arrow[from=1-2, to=2-2]
+        \arrow[from=2-1, to=1-2]
+    \end{tikzcd}\] In addition, the
+square is a pullback. Thus $\Gamma_\pi$ is determined by
+$\Gamma_\xi$, not just $\iota_U \after \Gamma_\xi$. In particular, if
+$U$ is the domain of definition of $\pi$,
+then $\Gamma_\pi$ is determined by $\Gamma_\xi: U \to U \times Y$. Thus,
+without loss of generality, we may replace $X$ with
+$U$ and may assume that $V \subseteq U$. Now, since
+$V$ is dense, $V^\text{C}=U$. But then the same
+holds scheme theoretically, so we are done. \qed
+
+\section{10.2.F}
+Let $\phi: \A_k^1 \rationalto \P_k^1$ be the given map. Suppose for the sake of
+contradiction that we had a morphism $\phi': \A_k^1 \to \P_k^1$ extending
+$\phi$ over $(0, 0)$. Consider
+$X=\Spec k[x, y]/(y-1) \subset \P_k^1$. Let $\Spec k[x, y]_f \subseteq \phi^{-1}(X)$ where
+$f \notin (x, y)$. Now, we know that $k[t] \to (k[x, y]_f)_x$ must be
+given by $t \mapsto y/x$. Thus there must exist some
+$g \in k[x, y]_f$ such that $g$ restricts to
+$y/x$ in $(k[x, y]_f)_x$. But by definition of
+localization, we must have $xg-y=0$. We know
+$g=g'/f^n$ for some $g' \in k[x, y]$. Since
+$f \notin (x, y)$ and $k[x,y]$ is an integral domain, we
+know $xg'/f^n \neq y$. But this condradicts the existence of
+$\phi'$. Hence $\phi'$ cannot exist.
+
+Next we wish to study the graph of $\phi$. Let
+$U$ be the domain of $\Gamma_\phi$. Consider the
+affine open subset of $\A_k^2 \times \P^1_k$ given by $\Spec k[x,y] \times \Spec
+    k[t]$
+where $\Spec k[t] = \D(u) \subset \Proj
+    k[u, v]$. Pulling back $\Gamma_\phi$ along the
+inclusion of this open subset, we obtain a closed subscheme, say
+$Z \to \Spec k[x,y,t]$. We know that on $\Spec k[x,y,t]_x \subset \Spec
+    k[x,y,t]$ this subscheme
+corresponds to the ideal $(y/x-t)$. But this ideal pulls back to
+$(y-tx)$ in $\Spec k[x,y,t]$. Hence
+$Z=\V(y-tx)$. But this is exactly the equation satisfied by the
+blowup of 9.3.F on $\D(u)$. \qed
+
+\section{10.2.G}
+Cover $X$ with affine opens $\Spec A_i$ such
+that on each open, $D=\V(t_i)$ is the vanishing scheme of a single
+non zero-divisor. If we have a morphism $X \setminus D \to Y$ that extends to
+$X \to Y$ then we necessarily have morphisms
+$\Spec A_i \setminus \V(t_i) \to Y$ that extends to morphisms $\Spec A_i$ (and
+satisfies the cocyle condition). Suppose there is a no such extension on the
+affine cover. Then by contrapositive we have no extension globally. Suppose we
+have a unique extension on the affines. Then, if the cocycle condition holds,
+we necessarily have a unique global extension (by gluing). Hence we have
+reduced to the affine case.
+
+Suppose we have $\Spec A \setminus \D(t) \to Y$. This is the same as a morphism
+$\Spec A_t \to Y$. Suppose $\zeta: \Spec A \to Y$ and
+$\zeta': \Spec A \to Y$ both restrict to $\Spec A_t \to Y$. Then we know
+they agree on $\Spec A_t \to \Spec A$. By 10.2.A, the largest subscheme on
+which they agree must be closed, hence it must be a superscheme of the closure
+of $\Spec A_t \to \Spec A$. Since $t$ is a non
+zero-divisor, we know that $A \to A_t$ must be injective. But the
+closure is given by quotient by the kernel on affines, hence
+$\id_A$ is the closure of $\Spec A_t \to \Spec A$. \qed
+
+\section{10.3.A}
+Consider $\A^2_\C \to \A^1_\C$ given by $(x,y) \mapsto y$. The
+nontrivial closed sets of $\A^1_\C$ are finite sets of points,
+but the image of $\V(x^2+y^2-1)$ is clearly both nontrivial and
+non-finite.
+
+\section{10.3.B}
+Suppose $S \to Y$ is the image of $\pi$.
+Suppose $Z' \to Z$ is arbitrary. Then we may form the following
+diagram: \[\begin{tikzcd}
+         &   &      & {S'}     \\{X'} &&& {Y'} \\
+         &   & {Z'} & {}   & S \\
+         & X &      &      & Y \\
+         &   &      & Z
+        \arrow["\pi"{pos=0.7}, from=4-2, to=4-5]
+        \arrow["\tau"', from=4-2, to=5-4]
+        \arrow["\rho", from=4-5, to=5-4]
+        \arrow[from=3-5, to=4-5]
+        \arrow[from=1-4, to=3-5]
+        \arrow[from=2-4, to=4-5]
+        \arrow[from=1-4, to=2-4]
+        \arrow[from=2-1, to=4-2]
+        \arrow[from=2-1, to=2-4]
+        \arrow[from=2-1, to=3-3]
+        \arrow[from=2-4, to=3-3]
+        \arrow[from=3-3, to=5-4]
+    \end{tikzcd}\] Under the hypotheses of the theorem, we know
+by 10.3.4(e) that $\pi$ is proper, hence quasicompact and
+closed. Hence $\pi(X)=S$. Then any closed subset of
+$S$ comes from a closed subset of $X$.
+But under $\tau$ the image is closed in
+$Z$. Hence $S \to Y \to Z$ is closed. It is also
+universally closed, since $X' \to Z'$ is proper and
+$Y' \to Z'$ is separated and finite type, causing the pullback
+diagram to be identical to the original diagram. Thus, since
+$S \to Y$ is proper and $\rho$ is separated and
+finite type, $S \to Z$ is separated,finite type, and universally
+closed, hence proper. \qed
 
 \end{document}
