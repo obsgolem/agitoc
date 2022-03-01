@@ -49,13 +49,13 @@ $\phi': I(B)_f \to I(B_f) x/f \mapsto \phi(x)/f$. The result follows by exactnes
 
 \section{8.1.H}
 It is easy to see that $\operatorname{I}(B)$ defines a sheaf on a base. The
-restriction maps are the ristriction to the ideal of the ring restriction maps.
-The hypothesis ensures this is well defined. It remains to conclude that
-$\Osh / \mathfrak{I}$, regarded as the cokernel in the category of presheaves,
-is in fact a sheaf. Consider $\to \Spec B_f / \operatorname{I}(B_f) \to \Spec B/\operatorname{I}(B)$. Regarding this as a sheaf
-on $\Spec B$, we see that regular scheme gluing and identity
-applies. We used the hypothesis in order to ensure open inclusions are well
-defined. \qed
+restriction maps are the restriction to the ideal of the ring restriction maps.
+ The hypothesis ensures this is well defined. Let $\Ish$ be the
+induced sheaf. It remains to conclude that $\Osh / \mathfrak{I}$, regarded as
+the cokernel in the category of presheaves, is in fact a sheaf. It suffices to
+show it is a sheaf on a base. By definition, $(\Osh / \mathfrak{I})(\Spec B)=B/I(B)$. Also,
+$(\Osh / \mathfrak{I})(\Spec B_f)=B_f/I(B_f)=(B/I(B))_f$ so that $\Osh / \mathfrak{I}$ agrees with the structure
+sheaf of $\Spec B/I(B)$. \qed
 
 \section{8.1.I}
 \begin{enumerate}[a.]
@@ -94,8 +94,8 @@ $X$ is affine. Let $B=\Osh_X(X)$. Then we have a
 morphism $\phi: X \to \Spec B$. It is clear that $\phi$ is a
 homeomorphism, so it remains to show that it is an isomorphism of sheaves. Let
 $\Spec C \subseteq X$. Then we have a morphism $\phi': B \to C$. Now,
-let $b \in B$ be such that $\phi^{-1}(\D(b)) \subseteq \Spec C$. But it is
-clear that $\phi^{-1}(\D(b)) = \D(\phi'(b))$. Now, let $b$ range over
+let $b \in B$ be such that $\phi^{-1}(\D(b)) \subseteq \Spec C$. But it is clear
+that $\phi^{-1}(\D(b)) = \D(\phi'(b))$. Now, let $b$ range over
 $B$ to get a cover of $\Spec B$ by affines.
 By affine locallity of affineness, we are done.
 
@@ -369,17 +369,15 @@ statement reduces to the triviality $A/I \otimes_A A/I \cong A/I$. \qed
 
 \section{8.3.E}
 \begin{itemize}
-    \item[(i) $\iff$ (ii)] We note that $W$ is
-          reduced (since reducedness is stalk local), hence by 8.3.4, we may check the
-          image affine locally. We will consider $\Spec B \to \Spec A$, where
-          $\Spec B=W$. Then the image is given by an ideal
-          $I$ such that if $x \in I$ then
-          $x$ is zero in every residue field of
-          $A$. But this means that $x$ is in every
-          prime ideal, hence $I=\sqrt{(0)}$.
-    \item[(iii) $\iff$ (i)] We note that both definitions can be checked
-          on an affine open cover. Then this reduces to the statement that
-          $\V(0)=\V(\sqrt{(0)})$.
+    \item[(i) $\iff$ (ii)] We note that $W$ is reduced (since reducedness is stalk
+        local), hence by 8.3.4, we may check the image affine locally. We will consider
+        $\Spec B \to \Spec A$, where $\Spec B=W$. Then the image is given
+        by an ideal $I$ such that if $x \in I$ then
+        $x$ is zero in every residue field of
+        $A$. But this means that $x$ is in every
+        prime ideal, hence $I=\sqrt{(0)}$.
+    \item[(iii) $\iff$ (i)] We note that both definitions can be checked on an affine open cover. Then this
+        reduces to the statement that $\V(0)=\V(\sqrt{(0)})$.
 \end{itemize}
 \qed
 
@@ -501,9 +499,9 @@ $x_i$ to prove the desired result.
 
 \section{8.4.H}
 \begin{itemize}
-    \item[$\implies$] By 8.4.G, for every point $p$ we
-          have an open set $U$ on which the closed subscheme is given
-          by a single non zero divisor. \qed
+    \item[$\implies$] By 8.4.G, for every point $p$ we have an open set
+        $U$ on which the closed subscheme is given by a single non
+        zero divisor. \qed
     \item[$\impliedby$] Follows immediately from 8.4.D. \qed
 \end{itemize}
 

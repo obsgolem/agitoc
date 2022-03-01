@@ -1,0 +1,828 @@
+\documentclass{article}
+\input{commands.tex}
+
+\title{Chapter 13 Problems}
+\author{Josiah Bills}
+\date{January 2022}
+
+\begin{document}
+
+\maketitle
+
+\section{13.1.A}
+We will drop the superscript and write $s: M \to V$. We will say that
+$s_i=t_i \after s|_{U_i}$ where $t_i$ is the trivialization map
+for $U_i$. Let $x \in U_i \intersect U_j$. $T_{ij}$
+is defined by the following commutative diagram:  \[\begin{tikzcd}
+        {(U_i \cap U_j) \times\R^n} & {\pi^{-1}(U_i \cap U_j)} & {(U_i \cap U_j) \times\R^n} \\
+                                    & {U_i \cap U_j}
+        \arrow["{t_i}"', from=1-2, to=1-1]
+        \arrow["{t_j}", from=1-2, to=1-3]
+        \arrow[from=1-3, to=2-2]
+        \arrow[from=1-1, to=2-2]
+        \arrow[from=1-2, to=2-2]
+        \arrow["{T_{ij}}", curve={height=-18pt}, from=1-1, to=1-3]
+    \end{tikzcd}\] Now,
+$T_{ij}$ acts on functions $U_i \intersect U_j \to (U_i \intersect U_j) \times \R^n$ pointwise, i.e.
+$(T_{ij} s_i)(x)=(T_{ij}
+    )(s_i(x))$. In particular $(T_{ij} s_i)(x)=s_j(x)$ by the
+commutativity of the above diagram. \qed
+
+\section{Notes on 13.1}
+In order to define a morphism of locally free sheaves, it suffices to give
+morphisms on an open cover, together with gluing data that is compatible with
+the morphism (see e.g. 2.5.D). Suppose $\phi: \Fsh \to \Gsh$ is a morphism on
+$U$ and $\p\psi: \Fsh' \to \Gsh'$ is a morphism on
+$V$. Let $f: \Fsh|_{U \intersect V} \to \Fsh'|_{U \intersect V}$ and $g: \Gsh|_{U \intersect V} \to \Gsh'|_{U \intersect V}$
+be the gluing data. Then compatiblity takes the form of the following
+commutative diagram: \[\begin{tikzcd}
+        {\mathscr{F}} & {\mathscr{F}'} \\{\mathscr{G}} & {\mathscr{G}'}
+        \arrow[from=1-1, to=2-1]
+        \arrow[from=1-2, to=2-2]
+        \arrow[from=1-1, to=1-2]
+        \arrow[from=2-1, to=2-2]
+    \end{tikzcd}\] where we have ommited the
+subscripts. For the case of a locally free sheaf, we can take this cover to be
+trivializing, and the gluing data can be taken to be the transition functions.
+Thus, all we need is to check the compatiblity condition in order to define a
+morphism. \qed
+
+\section{13.1.B}
+Note that this will only hold with $m, n$ finite.
+
+Lemma: Suppose $M, N$ are $A$-modules. Let
+$X=\Spec A$. Then morphisms $M \to N$ are in one to one
+correspondence with morphisms $\widetilde{M} \to \widetilde{N}$. Indeed, it is clear that
+if $\phi: M \to N$ is a morphism of modules then we get a morphism of
+$\Osh_X$-modules by localization, call it $\widetilde{\phi}$.
+It is clear that $\widetilde{\phi}(X)=\phi$. Now, suppose $f: \widetilde{M} \to \widetilde{N}$.
+Consider $\widetilde{f(X)}$. We may use identity to show that this agrees
+with $f$ on a distinguished cover, and gluing to show that
+it then equals $f$.
+
+Let $U_i$ be a trivialization of $\Fsh$ and
+let $V_j$ be a trivialization of $\Gsh$. Then
+\begin{align*}
+    \Hom(\Fsh, \Gsh)(U_i \intersect V_i) & =\hom(\Fsh|_{U_i \intersect V_i}, \Gsh|_{U_i \intersect V_i})      \\
+                                         & = \hom(\Osh^m|_{U_i \intersect V_i}, \Osh^n|_{U_i \intersect V_i}) \\
+                                         & = \hom(\Osh^m(U_i \intersect V_i), \Osh^n(U_i \intersect V_i))
+\end{align*}
+Where the last isomorphism follows from the lemma above. Now, module theory
+tells us that $\hom(A^m, A^n) \cong \sum_{i=1}^m
+    \sum_{i=1}^n
+    \hom(A,A) \cong A^{mn}$. Now suppose $T: A^n \to A^n$ and
+$T': A^m \to A^m$ are isomorphisms of free modules. Then we have an
+isomorphism $\hom(A^n, A^m) \to \hom(A^n, A^m)$ given by $T' \after \_ \after T^{-1}$. The
+transition functions will be this morphism, followed by the isomorphism with
+$A^{mn}$. This is easily checked to satisfy the cocyle condition.
+
+Thus, on $U_i \intersect V_i$ we have defined an isomorphism to a free
+module, and we have defined transition functions satisfing the cocyle
+condition. Hence we have defined a locally free sheaf. \qed
+
+\section{13.1.C}
+Let $U_i$ be a trivialization for $\Esh$
+with transition maps $T_{ij}$. Then on $U_{ij}=U_i \intersect U_j$
+we see that we have $\Hom(\Esh, \Osh_X)(U_{ij})=\hom(\Esh|_{U_{ij}}, \Osh_X|_{U_{ij}})$. Evaluating on
+$U_{ij}$, we find that we are essentially just applying the
+contravariant hom functor. Thus, $T_{ij}$ can be transformed
+into trivializations for the sheaf hom by precomposition,
+$T'_{ji} = \_ \after T_{ij}$.
+
+We see that $(\Esh^\vee)^\vee)(U_i) \cong (\Osh_X^{n,\vee})^\vee)(U_i)$. But we know that for a free module
+$A^n$, $((A^n)^\vee)^\vee \cong A^n$ via a natural isomorphism
+(assuming $n$ is finite). Because the isomorphism is
+natural, we know the following diagram commutes: \[\begin{tikzcd}
+        {A^n} &  & {A^n} \\{A^{n\vee\vee}} &  & {A^{n\vee\vee}}
+        \arrow[from=1-1, to=2-1]
+        \arrow[from=1-3, to=2-3]
+        \arrow["{T_{ij}}", from=1-1, to=1-3]
+        \arrow["{ \_ \circ \_ \circ T_{ij}}"', from=2-1, to=2-3]
+    \end{tikzcd}\] But
+this is exactly the compatiblity condition discussed above. \qed
+
+\section{13.1.D}
+If $T_{ij}$ and $T'_{ij}$ are transition functions
+for $\Fsh$ and $\Gsh$ respectively then the
+transition functions for $\Fsh \otimes \Gsh$ are simply
+$T_{ij}\otimes T'_{ij}$. It is again trivial to check the cocyle condition.
+
+It will suffice to show the compatibility condition. If $f(x)=ax$
+is a transition function for $\Osh_X$ then
+$(a \otimes a^{-1})x$ is the transition function for the tensor
+$\Osh_X \otimes \Osh_X^\vee$. But this clearly equals the identity, which is the
+transition function for a free sheaf. \qed
+
+\section{13.1.E}
+The considerations in 2.6 show that exactness may be checked on stalks.
+Furthermore, the stalk of the tensor product is the tensor product of the
+stalks, and the stalk of a locally free sheaf is free. Since free modules are
+flat, they are exact, hence tensoring with a locally free sheaf is exact at the
+level of stalks. Thus we are done. \qed
+
+\section{13.1.F}
+This will follow from the isomorphism of modules $\hom(A^n, M) \cong A^{n\vee} \otimes M$ and
+the tensor hom adjunction.
+
+If $p \in X$ and $\Fsh$ is finite locally free
+of rank $n$ then $\Hom(\Fsh, \Gsh)_p \cong \hom(\Fsh_p, \Gsh_p)$. Indeed, let
+$\Fsh|_U=\Osh_U^n$ where $p \in U$. Then
+$\Hom(\Fsh, \Gsh)|_U \cong \Hom(\Osh_U^n, \Gsh|_U)\cong
+    \Hom(\Osh_U, \Gsh|_U)^n\cong \Gsh|_U^n$. Taking stalks of both sides then gives the desired
+result.
+
+Next, we show that $\Fsh \otimes \Esh^\vee \cong \Hom(\Esh, \Fsh)$. We begin by defining the morphism
+of presheaves $(\Fsh \otimes \Esh^\vee)^\text{pre} \to \Hom(\Esh, \Fsh)$. Let $U$ be
+arbitrary. Then we define $f_U: \Fsh(U) \otimes \Esh^\vee(U) \to
+    \hom(\Esh|_U, \Fsh|_U)$ by sending
+$f \otimes e$ to the morphism of sheaves $g$
+given by $g_U(x)=e|_U(x)f|_U$. It is easily checked that the following
+diagram commutes: \[\begin{tikzcd}
+        {\mathscr{F}(U)} &  & {\mathscr{G}(U)} \\{\mathscr{F}(V)} &  & {\mathscr{G}(V)}
+        \arrow["{e|_U(u)f|_U}", from=1-1, to=1-3]
+        \arrow[from=1-3, to=2-3]
+        \arrow[from=1-1, to=2-1]
+        \arrow["{e|_V(v)f|_V}"', from=2-1, to=2-3]
+    \end{tikzcd}\] Hence we have defined the desired
+morphism. By universal property of sheafification, we get a morphism
+$\Fsh \otimes \Esh^\vee \to \Hom(\Esh, \Fsh)$. Now, since $\Esh$ is finite locally
+free, we may localize at $p$ to check isomorphism. This
+gives us a morphism of modules $\Fsh_p \otimes \Esh^\vee_p \to \hom(\Osh_p^n, \Fsh_p)$ such that
+$f \otimes e \mapsto e(x)f$. By the general module theory above, this is an
+isomorphism, hence we have the desired global isomorphism.
+
+Next we need a tensor hom adjunction for sheaf hom. We show that
+\[\Hom(\Fsh \otimes \Esh, \Gsh) \cong \Hom(\Fsh, \Hom(Esh, \Gsh))\]. For each $U \subset X$ we will need to
+define an isomorphism $f_U: \hom(\Fsh|_U \otimes \Esh|_U, \Gsh|_U) \to \hom(\Fsh|_U, \Hom(Esh|_U, \Gsh|_U))$. By universal property of
+sheafification, we know that $\hom(\Fsh|_U \otimes \Esh|_U, \Gsh|_U) \cong \hom^\text{pre}(\Fsh|_U \otimes \Esh|_U, \Gsh|_U)$, hence we replace the
+domain of $f$ with this. Let $g \in \hom^\text{pre}(\Fsh|_U \otimes \Esh|_U, \Gsh|_U)$. Then
+we have $g_U: \Fsh(U) \otimes \Esh(U) \to
+    \Gsh(U)$. We now need to give a morphism
+$\Fsh|_U \to \Hom(Esh|_U, \Gsh|_U)$. We will call this natural transformation
+$\phi$. Let $W \subseteq V \subseteq U$. For all
+$x \in \Fsh(V)$ and $y \in \Esh(W)$ we define
+$\phi_V(x)_W(y)=g_W(x|_W \otimes y)$ (note that $\phi$ is a natural
+transformation whose output is another natural transformation, hence two
+subscripts and function evaluations). Naturality in both
+$V$ and $W$ follows from naturality of
+$g$. The inverse of this map is much easier to describe.
+Suppose $\phi \in \hom(\Fsh|_U, \Hom(Esh|_U, \Gsh|_U))$. Then we define $g_V: \Fsh(V) \otimes \Esh(V) \to
+    \Gsh(V)$ by
+$g_V(x \otimes y)=\phi_V(x)_V(y)$. This is clearly a left inverse to the above map, so
+that we have $f_U^{-1}(f_U(g))=g$. We check that it is a right inverse as
+well. We have $f_U(f_U^{-1}(\phi))_V(x)_W(y)=\phi_W(x|W)_W(y)=\phi_V(x)_W(y)$, as desired. $\Osh_X$
+linearity of these constructions is trivial to verify.
+
+With all these pieces, the remainder of the proof is straightforward:
+\begin{align*}
+    \Hom(\Fsh \otimes \Esh^\vee, \Gsh) & \cong \Hom(\Fsh, \Hom(\Esh^\vee \Gsh))         \\
+                                       & \cong \Hom(\Fsh, \Esh^{\vee\vee} \otimes \Gsh) \\
+                                       & \cong \Hom(\Fsh, \Esh \otimes \Gsh)
+\end{align*}
+\qed
+
+\section{13.1.G}
+This is an easy consequence of 13.1.D. The identity is $\Osh_X$
+and the inverse is $\_^\vee$. \qed
+
+\section{13.1.H}
+We begin by noting that if $B$ is an
+$A$-algebra, then we have an obvious isomorphism
+$A^n \otimes_A B \cong B^n$.
+
+We obviously have an $\pi^{-1}\Osh_Y$-module structure on
+$\pi^{-1}\Gsh$. In fact, this structure is locally free. But we also
+have $\pi^{\sharp}: \pi^{-1}\Osh_Y \to \Osh_X$, realizing $\Osh_X$ as an
+$\pi^{-1}\Osh_Y$. Hence, after tensoring with $\pi^{-1}\Osh_Y$,
+we see that $\pi^*\Gsh = \Osh_X \otimes \pi^{-1}\Gsh$ is a locally free
+$\Osh_X$-module.
+
+Next we state some algebraic facts. Let $A \to B$ be an
+$A$-algebra. Let $M, N$ be
+$B$-modules. Let $L$ be an
+$A$-module. Then $L \otimes_A (M \otimes_B N)$ is a
+$B$-module in an obvious way. Furthermore, it is isomorphic
+as a $B$-module to $(L \otimes_A M) \otimes_B N$. Also,
+$L \otimes_A M \cong M \otimes_A L$ as $B$-modules.
+
+With these, we can prove that extension of scalars distributes over tensor
+products. Indeed, let $M, N$ be
+$A$-modules and let $A\to B$ be an
+$A$-algebra. Then
+\begin{align*}
+    (M \otimes_A N) \otimes_A B & \cong (M \otimes_A N) \otimes_A (B \otimes_B B) \\
+                                & \cong M \otimes_A (B \otimes_B B) \otimes_A N   \\
+                                & \cong (M \otimes_A B) \otimes_B (B \otimes_A N)
+\end{align*}
+as desired.
+
+Finally, it will suffice to show that $\pi^*\Osh_Y=\Osh_X$ and
+$\pi^*(\Fsh \otimes_{\Osh_Y} \Gsh)=\pi^*\Fsh \otimes_{\Osh_X} \pi^*\Gsh$. Indeed, the former is trivial. For the latter, we have
+by definition
+
+\begin{align*}
+    \pi^*(\Fsh \otimes_{\Osh_Y} \Gsh) & =\Osh_X \otimes_{\pi^{-1}\Osh_Y} \pi^{-1}(\Fsh \otimes_{\Osh_Y} \Gsh)                      \\
+                                      & \cong \Osh_X \otimes_{\pi^{-1}\Osh_Y} (\pi^{-1}\Fsh \otimes_{\pi^{-1}\Osh_Y} \pi^{-1}\Gsh) \\
+                                      & \cong \pi^*\Fsh \otimes_{\Osh_X} \pi^*\Gsh
+\end{align*}
+Where the first isomorphism follows from the fact that tensor products preserve
+colimits, and the the last isomorphism follows from the above algebraic fact.
+\qed
+
+\section{13.1.I}
+Given a closed subscheme $\iota: S \to X$, we may pull back a sheaf
+$\Fsh$ on $X$ to a sheaf on
+$S$. Given a global section $s$ of
+$\Fsh$, we thus get a global section $s'$
+of $\iota^*\Fsh$. If $s'=0$, then we say that
+$s$ vanishes on the closed subscheme
+$S$. We define $\V(s)$ by universal
+property. Given any closed subscheme $S$ on which
+$s$ vanishes, this subscheme should factor uniquely through
+$\V(s)$. In other words, the following diagram should commute:
+\[\begin{tikzcd}
+        {V(s)} & X \\
+        S
+        \arrow[hook, from=1-1, to=1-2]
+        \arrow[hook, from=2-1, to=1-2]
+        \arrow["{\exists!}", dotted, hook, from=2-1, to=1-1]
+    \end{tikzcd}\]
+
+We now construct this object explicitely. Let $U_i$ be a
+trivializing cover of $\Fsh$ with transition functions
+$T_{ij}$. Let $s_i=s|_{U_i}$. Then
+$s_i=[s_{i1}, \dots, s_{in}]$ for some $s_{ik} \in \Osh_X(U_i)$. Define a sheaf of
+ideals by $\Ish(U_i)=I_i=(s_{ik})$. Now we need to check that this definition
+agrees on the overlaps. From now on we implicitely restrict everything to
+$U_i \intersect U_j$. We need to check $I_i=I_j$. Let
+$p=a^\text{T} s_i \in I_i$ where $a$ is a vector of
+coefficients. We know that $a^\text{T} s_i=a^\text{T}
+    T_{ji}T_{ij} s_i=a^\text{T}
+    T_{ji} s_j$, hence
+$p \in I_j$. This is clearly symmetric, hence
+$I_i=I_j$. We define $\V(s)$ to be the closed
+subscheme corresponding to $\Ish$.
+
+We now need to check the universal property. We can do this on a trivializing
+affine cover. On a given element of the cover we have a morphism
+$\iota: \Spec A/I \to \Spec A$ and an isomorphism $\iota^*\Fsh|_{\Spec A} \cong \Osh_{\Spec A/I}^n$. From this
+it is easy to see that $s$ vanishes on
+$\V(s)$. It remains to show universality. Suppose
+$\iota': \Spec A/J \to \Spec A$ is a closed embedding such that $s$
+vanishes on $\iota'^*\Fsh|_{\Spec A}$. By definition, this means that the
+components of $s$ are elements of $J$.
+But then $I \subseteq J$ so that $A \to A/J$ factors
+uniquely as $A \to A/I \to A/J$, as desired. \qed
+
+\section*{13.1.M}
+
+\section*{13.2.A}
+\begin{enumerate}[a.]
+    \item We have $k(t)_t=k(t) \neq 0 = \Gamma(\D(t), \Fsh)$.
+    \item We know that every nonempty open set contains the generic point, hence
+          $\Fsh$ is actually $\widetilde{k(t)}$. Indeed,
+          $k(t)_f=k(t)=\Gamma(\D(f), \Fsh)$.
+\end{enumerate}
+\qed
+
+\section*{13.2.B}
+$k(t)$ is not a free $k[t]$-module. Indeed,
+let $f/f', g/g' \in k(t)$ where $f,f',g,g' \in k[t]$. Then
+$f'g f/f' - g'f g/g' = 0$ so that $f/f', g/g'$ are linearly dependent.
+\qed
+
+\section*{13.2.C}
+Let $\Fsh$ be finite locally free of rank
+$n$. Since $X$ is affine,
+$\Fsh=\widetilde{M}$ for some $k[x]$-module
+$M$. By 5.3.3 we know that $M$ is
+finitely generated. Now, by the structure theorem for finitely generated
+modules over a PID, we know that $M = \bigoplus_i k[x]/(f_i)$. Localizing at
+$g$, we find that $k[x]_g/(f_i)$ must equal
+$k[x]_g$, hence $f_i=0$. Since
+$R^n \neq R^m$ for $n \neq m$, we find that
+$M$ is free of rank $n$.\qed
+
+\section*{13.2.D}
+This follows from gluing of sheaves. We know that $\Fsh|_{\Spec A}$ is
+the result of gluing $\widetilde{M_i}$ along the $\phi_{ij}$.
+But if we can find a module $M$ with the described
+property, then $\widetilde{M}$ is the result of gluing
+$\widetilde{M_i}$ along $\phi_{ij}$. Hence by uniqueness of
+gluing, we get the desired result.\qed
+
+\section*{13.2.E}
+Without loss of generality it suffices to show this for $i=1$
+and $j=2$. By the preceeding discussion, we have a diagram
+\[\begin{tikzcd}
+        0 & {M_{f_1}} & {\prod (M_1)_{f_i}} & {\prod_{i<j} (M_1)_{f_if_j}} \\
+        0 & {M_1}     & {\prod (M_1)_{f_i}} & {\prod_{i<j} (M_1)_{f_if_j}}
+        \arrow[from=1-1, to=1-2]
+        \arrow[from=1-2, to=1-3]
+        \arrow[from=1-3, to=1-4]
+        \arrow[from=2-2, to=2-3]
+        \arrow[from=2-3, to=2-4]
+        \arrow[from=2-1, to=2-2]
+        \arrow[from=1-2, to=2-2]
+        \arrow[from=1-3, to=2-3]
+        \arrow[from=1-4, to=2-4]
+    \end{tikzcd}\] Where the vertical maps are isomorphisms. It is easy to
+check that $M_{f_1} \to M_1$ is given by projection onto the first
+coordinate.Tensoring with $f_2$ gives us an isomorphism
+$\psi: M_{f_1f_2} \to (M_1)_{f_2}$. By an isomorphic argument, we also get an isomorphism
+$\psi': M_{f_1f_2} \to (M_2)_{f_1}$. Let $m=(m_1, \dots , m_n) \in M_{f_1}$. Then
+$\psi(m|_{f_2})=m_1|_{f_2}=\phi_{21}(m_2|_{f_1})=\phi(\psi'(m|_{f_1}))$ as desired.\qed
+
+\section*{13.3.D}
+We note that the given property holds by definition for the sheaf
+$\widetilde{M}$ determined by the module $M$. This
+shows the forward implication. In the reverse direction, given an affine
+$\Spec A$, we may form the sheaf $\widetilde{\Fsh(\Spec A)}$. By
+hypothesis, this sheaf agrees with $\Fsh$ on the distinguished
+affine base on $\Spec A$, hence $\Fsh|_{\Spec A} \cong \widetilde{\Fsh(\Spec A)}$. \qed
+
+\section*{13.3.E}
+The proof here is identical to the proof of the QCQS lemma.
+
+\section*{13.3.F}
+Let $U=\pi^{-1}(\Spec A)$. Then \[\pi_*\Fsh(\Spec A)_s = \Fsh(U)_s \to
+    \Fsh(U_s)=\pi_*\Fsh(\Spec A_s)\] by 13.3.E, hence by
+13.3.D it is quasicoherent. \qed
+
+\section*{13.3.G}
+Note that a sheaf of ideals which determines a closed subset is precisely the
+data of a quasicoherent sheaf of ideals. In chapter 8 we noted that any ideal
+of a ring determines a closed subset. \qed
+
+\section*{13.3.H}
+We start with some graded ring theory. Let $A$ be a ring.
+Then $\bigoplus_{n \geq 0} A^{\otimes n}$ is a graded ring. Note that
+$A^{\otimes 0}=A$ by definition. For any $s \in A$ and any
+$i\geq 0$ we have a degree $i$ copy of
+$s$ which we write $s_i$. Note that
+$(s_i)^n=(s^n)_{ni}$. In a similar manner, $\bigoplus_{n \geq 0} M \otimes A^{\otimes n}$ is a
+graded module which, for each $m \in M$ and
+$i \geq 0$, contains an $m_i$ of degree
+$i$. Note that this is isomorphic to
+$\bigoplus M$ as an $A$-module, and it may be
+given the obvious induced grading. More generally, $\bigoplus_{n \geq 0} M^{\otimes n}$ is a
+graded ring as well.
+
+Next we note some basic module theory. The map $M \to M_i$ of
+graded modules, corresponding to taking degree $i$, is an
+exact functor. Furthermore, it preserves arbitrary direct sums. These facts
+follows easily from the fact that morphisms of graded modules preserve degrees.
+Next, if $M$ and $N$ are graded modules
+over $A$ and $s$ is a degree 1 section
+then $(M \oplus N)_s \cong M_s \oplus N_s$ as graded modules. There is clearly an
+isomorphism, it merely remains to show it preserves grading. Let
+$(m+n)/s^i$ be homogenous of degree $j$. Then
+all components of $m$ and $n$ of degree
+less than $j+i$ must cancel so that $m/s^i+n/s^i$
+is homogenous of degree $j$, as desired.
+
+Now, we move to our theorem. We begin with the case of a trivial line bundle on
+an affine scheme, which translates to the following: Let
+$A$ be a ring and $M$ an
+$A$-module. Let $s \in A$. Then the following
+holds: \[
+    (\bigoplus_{n \geq 0} M \otimes
+    A^{\otimes n})_{s_1,0} \cong
+    M_s
+\] as $A$-modules. As noted
+above, the left is $(\bigoplus M)_{s_1,0}$. This is generated by elements of
+the form $m_i/(s^i)_i$ where $m \in M$. Then we may
+send such an element to $m/s^i$. It is easily verified that
+this is an isomorphism.
+
+We define $\Gamma_*(X, \Fsh, \Lsf) = \bigoplus_{n\geq 0}\Gamma(X, \Fsh \otimes \Lsf^{\otimes n})$. By definition of a sheaf, we have an exact
+sequence of the form \[\begin{tikzcd}
+        0 & {\Gamma_*(X, \mathscr{F}, \mathscr{L})} & {\bigoplus \Gamma_*(U_i, \mathscr{F}, \mathscr{L})} & {\bigoplus \Gamma_*(U_{ijk}, \mathscr{F}, \mathscr{L})}
+        \arrow[from=1-1, to=1-2]
+        \arrow[from=1-2, to=1-3]
+        \arrow[from=1-3, to=1-4]
+    \end{tikzcd}\] Where the $U_i$
+form a finite affine cover and where $U_{ijk}$ forms a finite
+affine cover of $U_i \intersect U_j$ for every $i,j$.
+Since taking degree 0 and localizing commutes with finite direct sums, we know
+that   \[\begin{tikzcd}[column sep=small]
+        0 & {\Gamma_*(X, \mathscr{F}, \mathscr{L})_{s,0}} & {\bigoplus \Gamma_*(U_i, \mathscr{F}, \mathscr{L})_{s_i,0}} & {\bigoplus \Gamma_*(U_{ijk}, \mathscr{F}, \mathscr{L})_{s_{ijk},0}}
+        \arrow[from=1-1, to=1-2]
+        \arrow[from=1-2, to=1-3]
+        \arrow[from=1-3, to=1-4]
+    \end{tikzcd}\] Where the $s_i$ are the
+restrictions of $s$ to the $U_i$. Now, by
+the result affine locally, we have the following diagram:
+\[\begin{tikzcd}[column sep=small]
+        0 & {\Gamma_*(X, \mathscr{F}, \mathscr{L})_{s,0}} & {\bigoplus \Gamma_*(U_i, \mathscr{F}, \mathscr{L})_{s_i,0}} & {\bigoplus \Gamma_*(U_{ijk}, \mathscr{F}, \mathscr{L})_{s_{ijk},0}} \\
+        0 & {\Gamma(X_s, \mathscr{F})}                    & {\bigoplus\Gamma(U_{i,s_i}, \mathscr{F})}                   & {\bigoplus\Gamma(U_{ijk,s_{ijk}}, \mathscr{F})}
+        \arrow[from=2-1, to=2-2]
+        \arrow[from=2-2, to=2-3]
+        \arrow[from=2-3, to=2-4]
+        \arrow[from=1-1, to=1-2]
+        \arrow[from=1-2, to=1-3]
+        \arrow[from=1-3, to=1-4]
+        \arrow[from=1-3, to=2-3]
+        \arrow[from=1-4, to=2-4]
+        \arrow[dashed, from=1-2, to=2-2]
+    \end{tikzcd}\] It is easily checked that the square commutes, hence
+the dotted morphism exists. Since the vertical maps are isomorphisms, the
+dotted map must be an isomorphism as well. \qed
+
+\section*{13.3.I}
+
+\section*{13.4.A}
+The reverse implication follows by stalk-locallness of exactness. For the
+forward implication, note that exactness is preserved by restriction. Hence
+$\Fsh|_{U} \to \Gsh|_{U} \to \Hsh|_{U}$ gives us an exact sequence $\widetilde{M} \to \widetilde{N} \to \widetilde{P}$.
+Since morphisms of sheaves arising from modules arise from morphisms of
+modules, we know that $M \to N \to P$ must be exact. \qed
+
+\section*{13.4.B}
+The forward implication follows trivially from the fact that modules have a
+free presentation. For the reverse implication note $\coker \widetilde{f}=\widetilde{\coker f}$.
+Since $U_i$ admits a cover by affine opens, we know that
+$\Fsh$ is locally the cokernel of a map of modules. Since
+quasicoherence can be checked on an arbitrary cover, we know
+$\Fsh$ is quasicoherent.
+
+Note that we used no special properties about $\Osh_{U_i}^I$ other
+than quasicoherence in this proof. Hence, if $X$ is a
+scheme then a $\Osh_X$-module is quasicoherent iff it is locally
+the cokernel of a morphism of quasicoherent modules. \qed
+
+\section*{13.5.A}
+\begin{enumerate}[a.]
+    \item We recall basic module theory stating that any short exact sequence where the
+          last module is free (more generally, projective)splits. In particular
+          $\Fsh|_{\Spec A}\cong\widetilde{A^{a+b}}$, as desired.
+    \item It suffices to show that for any diagram of the following shape
+          \[\begin{tikzcd}
+                  0 & {A^n} & {A^{n+m}} & {A^m} & 0 \\
+                  0 & {A^n} & {A^{n+m}} & {A^m} & 0
+                  \arrow[from=1-1, to=1-2]
+                  \arrow[from=1-2, to=1-3]
+                  \arrow[from=1-3, to=1-4]
+                  \arrow[from=1-4, to=1-5]
+                  \arrow[from=2-1, to=2-2]
+                  \arrow[from=2-2, to=2-3]
+                  \arrow[from=2-3, to=2-4]
+                  \arrow[from=2-4, to=2-5]
+                  \arrow[from=1-2, to=2-2]
+                  \arrow[from=1-4, to=2-4]
+                  \arrow[dashed, from=1-3, to=2-3]
+              \end{tikzcd}\] where the vertical maps are isomorphisms, then the
+          dotted isomorphism is is block upper triangular when represented as a matrix.
+\end{enumerate}
+\qed
+
+\section*{13.5.B}
+This reduces to a statement for modules. Suppose  \[\begin{tikzcd}
+        0 & M & {A^m} & {A^n} & 0
+        \arrow[from=1-4, to=1-5]
+        \arrow["\psi", from=1-3, to=1-4]
+        \arrow["\phi", from=1-2, to=1-3]
+        \arrow[from=1-1, to=1-2]
+    \end{tikzcd}\] is an
+exact sequence of $A$-modules. Then $M$
+is locally free of rank $m-n$.
+
+We first prove a lemma. Let $M$ be a finitely generated
+projective module over a local ring. Then $M$ is free.
+Moreover, any minimal generating set is a basis. Indeed, since
+$M$ is finitely generated, we have a surjection
+$\phi: A^n \to M$, corresponding to a choice of generators for
+$M$. Since $M$ is projective, we may
+write $A^n \cong M \oplus \ker \phi$. Tensoring $\phi$ with
+$A/\m$, we note that $k^n \cong M/\m M \oplus \ker \phi/\m\ker \phi$. It is clear by
+examination that $\ker \phi/\m\ker \phi = 0$, hence by Nakayama, we must have
+$\ker \phi = 0$. In particular, $\phi$ is an
+isomorphism and the choice of generators is a basis.
+
+Recall that localization is exact, hence for any prime $\p$
+we have \[\begin{tikzcd}
+        0 & {M_\mathfrak{p}} & {A^m_\mathfrak{p}} & {A^n_\mathfrak{p}} & 0
+        \arrow[from=1-4, to=1-5]
+        \arrow["\psi_\p", from=1-3, to=1-4]
+        \arrow["\phi_\p", from=1-2, to=1-3]
+        \arrow[from=1-1, to=1-2]
+    \end{tikzcd}\] $A_\p^n$ is projective, hence by
+the lemma above, any set of $n$ generators chosen from the
+columns of $\psi$ must be a basis. A basis is equivalent to an
+automorphism, hence we have an automorphism $\zeta_\p: A_\p^n \to A_\p^n$. Now, each
+column of $\zeta_\p$ arises from a section over an open set
+$\D(f_i)$. Since there are finitely many columns, we may multiply
+these $f_i$ together to find an open set
+$\D(f)$ on which each of the columns is defined, giving us a
+morphism $\zeta_f$. Isomorphisms are precisely the morphisms with
+invertible determinants, hence there is some open set $\D(g) \subset \D(f)$
+on which $\zeta_{g}$ is an isomorphism. Hence we find that on this
+open set the columns of $\zeta$ form a basis. We may now
+restrict to this open set and reorder the the columns of
+$\phi$ so that the columns of $\zeta$ come
+first.
+
+We now wish to construct the dotted morphism in the following diagram:
+\[\begin{tikzcd}
+        0 & M         & {A^m} & {A^n} & 0 \\
+        0 & {A^{m-n}} & {A^m} & {A^n} & 0
+        \arrow[from=1-4, to=1-5]
+        \arrow["\psi", from=1-3, to=1-4]
+        \arrow["\phi", from=1-2, to=1-3]
+        \arrow[from=1-1, to=1-2]
+        \arrow["\iota", from=2-2, to=2-3]
+        \arrow["\pi", from=2-3, to=2-4]
+        \arrow[from=2-4, to=2-5]
+        \arrow["{\zeta^{-1}}", from=1-4, to=2-4]
+        \arrow[from=1-3, to=2-3]
+        \arrow[from=2-1, to=2-2]
+        \arrow[dashed, from=1-2, to=2-2]
+    \end{tikzcd}\] In this diagram, $\iota$ is the
+inclusion of $A^{m-n}$ as the last entries
+$m-n$ entries of vectors in $A^m$. The
+morphism $\pi$ is the obvious quotient morphism, with the
+first $n$ entries being the identity matrix, and the last
+$m-n$ being zero. The vertical maps are constructed by taking
+the change of coordinates $\zeta^{-1}$ on $A^n$
+which takes the first $n$ columns of
+$\psi$ to the standard basis. The morphism
+$A^m \to A^m$ is the identity matrix. It is clear by definition that
+the square commutes. Standard theory of exact sequences then allow us to define
+the morphism $M \to A^{m-n}$, and the five lemma lets us show that it
+is an isomorphism.
+
+For part (b), we are asked to show that $k[t]/(t)$ is not a free
+$k[t]$-module. For this it suffices to show that 1 is linearly
+dependent. Indeed, $t*1=0$, as desired. \qed
+
+\section*{13.5.C}
+This comes down to the fact that sheafification commutes with restriction to
+opens, hence on an affine cover, the sheafification is trivial. \qed
+
+\section*{13.5.D}
+We begin by defining $T^n \Fsh = \Fsh^{\otimes n}$. This satisfies the obvious
+extension of the tensor product's universal property. It is also obviously
+quasicoherent.
+
+We also define $\Sym^n \Fsh$ by universal property. A map of
+quasicoherent sheaves $T^n \Fsh \to \Gsh$ is said to be symmetric if the
+map of modules is symmetric on an open cover. Given any symmetric map
+$\phi: T^n \Fsh \to \Gsh$, there is a symmetric map $T^n \Fsh \to \Sym^n \Fsh$ such
+that $\phi$ factors through it. $\wedge^n \Fsh$ is
+defined similarly for antisymmetric maps. To show that both these exist and are
+quasicoherent, it suffices to note that localization commutes with both tensor
+products and quotients.
+
+TODO
+
+\section{13.6.A}
+Consider the following diagram. \[\begin{tikzcd}
+          & {}   &          & 0     \\
+        0 & K    & {A^p}    & M & 0 \\
+        0 & {K'} & {A^{p'}} & M & 0 \\
+          & C    & {C'}     & 0
+        \arrow[Rightarrow, no head, from=2-4, to=3-4]
+        \arrow[from=2-3, to=3-3]
+        \arrow[from=2-2, to=3-2]
+        \arrow[from=2-1, to=2-2]
+        \arrow[from=3-1, to=3-2]
+        \arrow[from=2-2, to=2-3]
+        \arrow[from=3-2, to=3-3]
+        \arrow[from=3-3, to=3-4]
+        \arrow[from=2-3, to=2-4]
+        \arrow[from=2-4, to=2-5]
+        \arrow[from=3-4, to=3-5]
+        \arrow[from=1-4, to=2-4]
+        \arrow[from=3-4, to=4-4]
+        \arrow[from=3-2, to=4-2]
+        \arrow[from=3-3, to=4-3]
+        \arrow[from=4-2, to=4-3]
+        \arrow[from=4-3, to=4-4]
+    \end{tikzcd}\] The map
+$A^p \to A^{p'}$ exists due to the lifting property of projective
+modules. This map then induces the map $K \to K'$ in the obvious
+way. Not shown in the diagram is the snake lemma map $0 \to C$.
+Since we have an exact sequence $0 \to C \to C' \to 0$, we know
+$C \cong C'$. $C'$ is obviously finitely
+generated since it is the cokernel of a map whose codomain is finite free.
+Since both $K$ and $C$ are finitely
+generated, $K'$ must be also. \qed
+
+\section{13.6.B}
+The reverse implication is trivial, as $A \to A \to A$ is a finite
+presentation of $A$, hence it is coherent. Suppose
+$A$ is a coherent $A$-module and
+$M$ is finitely presented. Let $\phi: A^q \to M$ be
+arbitrary. Then we have the following diagram: \[\begin{tikzcd}
+          &         & {K'}      & K         \\
+        0 & {A^{p}} & {A^{p+q}} & {A^q} & 0 \\
+        0 & {K''}   & {A^n}     & M     & 0 \\
+          & 0
+        \arrow[from=3-1, to=3-2]
+        \arrow[from=3-2, to=3-3]
+        \arrow[from=3-3, to=3-4]
+        \arrow[from=3-4, to=3-5]
+        \arrow["\phi", from=2-4, to=3-4]
+        \arrow[from=2-4, to=2-5]
+        \arrow[dashed, from=2-3, to=3-3]
+        \arrow[from=2-3, to=2-4]
+        \arrow[from=2-2, to=2-3]
+        \arrow[from=2-2, to=3-2]
+        \arrow[from=2-1, to=2-2]
+        \arrow[from=1-3, to=1-4]
+        \arrow[from=1-3, to=2-3]
+        \arrow[from=3-2, to=4-2]
+        \arrow[from=1-4, to=2-4]
+    \end{tikzcd}\] where
+$A^n \to M$ arises from coherence of $M$.
+$A^p \to K''$ is a surjection arising from the fact that
+$K''$ is finitely generated. The dotted morphism is the one
+induced by the two outer morphisms. Since $A^n$ is coherent,
+its kernel $K'$ is finitely generated. Not shown in the
+diagram is the snake lemma morphism which gives us an exact sequence
+$K' \to K \to 0$. Hence $K$ is the quotient of a
+finitely generated module, hence is finitely generated. \qed
+
+\section{13.6.C}
+Finitely generated and presented are trivial since localization is exact. Let
+$M$ be coherent, and let $f \in A$. We know
+$A^n$ is finitely presented, hence by 1.6.G,
+$\phi_f: A_f^n \to M_f$ is the localization of a morphism
+$\phi: A^n \to M$. By coherence of $M$, the kernel of
+this is finitely generated, hence the kernel of $\phi_f$ is too.
+\qed
+
+\section{13.6.D}
+For finitely generated, note that the argument of 7.3.O applies easily here. We
+prove a more general result. Suppose $M_{f_i}=0$ for all
+$f_i$. Then $M = 0$. Indeed, this follows by
+the fact that $\widetilde{M}$ is a sheaf. Now, consider
+$N \to M \to N/M$. If $(N/M)_{f_i}=0$ then
+$N \to M$ is surjective. Similarly for injective. Finite
+generation follows directly from this For finite presentation, let
+$0 \to K \to A^p \to M \to 0$ be exact. Then $K_{f_i}$ is finitely
+generated for all $f_i$, hence $K$ is as
+well. It remains to show coherence. Let $0 \to K \to A^p \to M$ be an exact
+sequence. By the same argument for f.p., we get our result. \qed
+
+\section{13.7.A}
+\begin{enumerate}[a.]
+    \item Let $U_i$ be an affine open cover. Then \[\Hom(\Fsh, \Gsh)(U_i)=\hom(\Fsh|_{U_i}, \Gsh|_{U_i}) \cong
+              \hom(\Fsh(U_i), \Gsh(U_i)\]
+          where the last isomorphism follows by quasicoherence. By 1.6.G, we meet the
+          criteria of 13.3.D.
+    \item Recall that we may check this on any affine cover. Hence, we reduce to showing
+          that $\hom(M, N)$ is coherent when $M, N$ and
+          $A$ are all coherent. In fact, more is true. We do not
+          require $A$ to be coherent, and we merely require
+          $M$ to be finitely presented.
+
+          Let $A^a \to A^b \to M \to 0$ be a finite presentation of $M$.
+          By left exactness of $\hom$, we get an exact sequence
+          \[\begin{tikzcd}
+                  0 & {\hom(M, N)} & {\hom(A^b, N)} & {\hom(A^a, N)}
+                  \arrow[from=1-1, to=1-2]
+                  \arrow[from=1-2, to=1-3]
+                  \arrow[from=1-3, to=1-4]
+              \end{tikzcd}\] Since finite direct sums commute with
+          $\hom$, we get \[\begin{tikzcd}
+                  0 & {\hom(M, N)} & {N^b} & {N^a}
+                  \arrow[from=1-1, to=1-2]
+                  \arrow[from=1-2, to=1-3]
+                  \arrow[from=1-3, to=1-4]
+              \end{tikzcd}\] Since the kernel of a map
+          of coherent modules is coherent, we have our desired result.
+    \item First we note that we have functoriality and exactness by 2.6.H. The domains
+          and codomains of the relevant functors follow directly from (a) and (b).
+
+          Note that the result of 2.6.H is easier if $\Hom$ is
+          quasicoherent since the question of exactness may be checked on an affine open
+          cover, where we have morphisms of modules rather than of sheaves.
+\end{enumerate}
+
+\qed
+
+\section*{13.7.B}
+We proved the general result in 13.1.F. For the quasicoherent case, this
+follows trivially from the result for modules. \qed
+
+\section*{13.7.C}
+Let $F$ be an additive functor on an abelian category. Then
+$F$ preserves split exact sequences. Indeed, it preserves
+the inclusion of the first factor and the projection onto the second factor.
+
+Recall that by 13.4.A we may reduce to showing the following result: If
+\[\begin{tikzcd}
+        0 & M & N & {A^n} & 0
+        \arrow[from=1-1, to=1-2]
+        \arrow[from=1-2, to=1-3]
+        \arrow[from=1-3, to=1-4]
+        \arrow[from=1-4, to=1-5]
+    \end{tikzcd}\] is exact, then the sequence with
+$\hom$ applied is exact. $hom$ is by
+definition an additive functor. All we need show now is that the sequence
+splits. This follows immediately from the fact that $A^n$ is
+projective. \qed
+
+\section*{13.7.D}
+Remember that a set is closed iff it is closed in an open cover. Hence this
+question may be rediced to the affine case. Suppose $\p \in \operatorname{Supp} \Fsh$
+Note that for any $s, t$ and any $a, b$ not
+annihilating them, $\operatorname{Supp}(as+bt) \subseteq \operatorname{Supp}(s) \union
+    \operatorname{Supp}(t)$. Suppose $X$ is
+affine. Then given any finite set of generators $s_i$,
+$\operatorname{Supp}(\Fsh) \subseteq \Union_i \operatorname{Supp}(s_i)$. The reverse inclusion is by definition. We have
+written $\operatorname{Supp}(\Fsh)$ as the finite union of closed sets, hence it is
+closed.
+
+We know $\C[t]/(t-a)$ is a $\C[t]$ module which is
+supported at $a$. Indeed, suppose $b \neq a$.
+Then $(\C[t]/(t-a))_{(t-b)} \cong
+    (\C[t]/(t-a))_{(a-b)} \cong 0$. Then $M=\oplus_{a \in \C} \C[t]/(t-a)$ is clearly
+infinitely generated. $(0) \in \operatorname{Supp}(M)$ since localization distributes
+over direct sums, and localizing at $(0)$ inverts
+$t$. Thus if $\operatorname{Supp}(M)$ is closed, it is the
+entire space. But the localization of $M$ at
+$(t-a)$ is clearly just $\C[t]/(t-a)$. Hence the
+generic point is the only point in $\operatorname{Supp}(M)$. \qed
+
+\section*{13.7.E}
+Note that by 13.4.A, property (i) is equivalent to property (ii). Suppose
+$\Spec A\\ = U \ni \p$ is affine. Let $\Fsh|_U=\widetilde{M}$. Then
+$\Fsh|_{\p}=M_{\p}/\p M_{\p}$. By Nakayama, if $a_i|_{\p}$ generate
+$M_{\p}/\p M_{\p}$ then $a_{i, \p}$ generates
+$M_{\p}$. Consider $\pi: A^n \to M$ defined by the
+$a_i$. Now, as argued in 7.4.F there exists some
+$s \in A$ such that $s \coker \pi=0$. Thus
+$\pi_s$ is surjective, showing property (i). \qed
+
+\section*{13.7.F}
+We essentially proved this in 7.4.F.
+
+\section*{13.7.G}
+TODO once we do ch 12
+
+\section*{13.7.H}
+We have 3 cases. First, at the point $(t)$, the rank is 1
+since $(k[t]/(t))_{(t)}
+    \cong k$. At the other closed points we have rank 0 for
+reasons discussed in 13.7.D. At the generic point we have
+$(k[t]/(t))_{(0)}
+    \cong 0$ since we are inverting $t=0$. Thus
+$\operatorname{rank} \Fsh = 0$.
+
+\section*{13.7.I}
+Follows trivially from the hint.
+
+\section*{13.7.J}
+By 13.7.E if $\Fsh$ has rank $n$ at
+$\p$ then it has rank $\leq n$ on an open set
+around $\p$. Thus the set of points of rank
+$\leq n$ is open. It is clear that the inverse image of
+$(-\infty, n+1)$ is the same as the inverse image of
+$(-\infty, n]$. But by the above argument, this is open, as desired.
+\qed
+
+\section*{13.7.K}
+\begin{enumerate}[a.]
+    \item For any point $p$, we know that there exists an epimorphism
+          $\Osh_U^n \to \Fsh|_U$ for some affine $U$ (by 13.7.E). So we
+          reduce to the affine case. Let $\phi: A^n \to M$ be a surjection giving a
+          generating set $m_i$. Then by definition if
+          $x \in \ker \phi$ we have $\sum_i x_im_i=0$. WLOG assume
+          $x_1$ is nonzero. Then $x_1$ is non-nilpotent
+          (by reducedness), hence $\phi_{x_1}$ is non-zero. In particular
+          $A_{x_1}$ has a point $\p$. Localizing at
+          $\p$, then passing to the quotient, we find that
+          $M/\p M$ is generated by the $m_i$, but also
+          that $\sum_i x_im_i=0$ is a linear dependence relation among the
+          $m_i$. By basic linear algebra, this means that the rank is
+          smaller than $n$ at $\p$. But this
+          contradicts our assumption of constant rank. Hence, $\ker \phi = 0$.
+
+          Suppose $X$ is an integral scheme. Then every open is dense.
+          Let $n=\min_{p \in X} \operatorname{rank}(\Fsh)(p)$. Since $\Fsh$ is finitely generated,
+          this is finite. By upper semicontinuity, $U=\operatorname{rank}(\Fsh)^{-1}((-\infty, n+1))$ is open, and by
+          construction, $\Fsh|_U$ has constant rank. Hence
+          $\Fsh|_U$ is locally free. \qed
+
+    \item Define $A=k[x]/(x^2)$ and $M=A/(x)$ with the obvious
+          $A$-algebra structure. $M$ is a field and
+          $A$ has one point, $(x)$, so
+          $M$ clearly has constant rank. $\Spec A$ also
+          only has one non-empty open set, so it suffices to show that
+          $M$ is not free. Indeed, $1$ is
+          annihilated by $x$, so $1$ is linearly
+          dependent, so we are done. \qed
+\end{enumerate}
+
+\section*{13.7.L}
+This is clearly affine local, hence we reduce to the case of a finite morphism
+$A \to B$ and a prime $\p \subseteq A$. Then we know that
+$(B \otimes_A A_\p) \otimes_{A_\p} \kappa(\p) \cong B
+    \otimes_A \kappa(\p)$ is the fiber of $B$ at
+$\p$. But $\Spec B \otimes_A \kappa(\p)$ is precisely the scheme
+theoretic preimage of $\p$. Hence the dimensions of the two
+as $\kappa(\p)$ vector spaces agree. \qed
+
+\end{document}

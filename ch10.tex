@@ -281,9 +281,9 @@ non-finite.
 Suppose $S \to Y$ is the image of $\pi$.
 Suppose $Z' \to Z$ is arbitrary. Then we may form the following
 diagram: \[\begin{tikzcd}
-         &   &      & {S'}     \\{X'} &&& {Y'} \\
-         &   & {Z'} & {}   & S \\
-         & X &      &      & Y \\
+         &   &      & {S'}     \\{X'} &   &  & {Y'} \\
+         &   & {Z'} & {}                                    & S           \\
+         & X &      &                                       & Y           \\
          &   &      & Z
         \arrow["\pi"{pos=0.7}, from=4-2, to=4-5]
         \arrow["\tau"', from=4-2, to=5-4]
@@ -307,7 +307,7 @@ universally closed, since $X' \to Z'$ is proper and
 $Y' \to Z'$ is separated and finite type, causing the pullback
 diagram to be identical to the original diagram. Thus, since
 $S \to Y$ is proper and $\rho$ is separated and
-finite type, $S \to Z$ is separated,finite type, and universally
+finite type, $S \to Z$ is separated, finite type, and universally
 closed, hence proper. \qed
 
 \end{document}

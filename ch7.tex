@@ -302,7 +302,7 @@ isomorphism. By finiteness we have a finite generating set (as a graded
 algebra) in positive degree. Now apply 4.5.D(a).
 
 \section{7.3.K}
-We first note that the arguments in 5.2.B(a) apply to finite morphisms. Let
+We first note that the arguments in 7.2.B(a) apply to finite morphisms. Let
 $\phi: B \to A$ be a finite morphism, and let $\p \subseteq B$
 be prime. Then we have a finite morphism $\phi_{\p}: B/\p \to A/\p^{\text{e}}_\phi$ and a
 corresponding morphism of schemes $\pi_{\p}$. Then
@@ -505,12 +505,15 @@ annihilate a generating set.
 Since we are integral, $(0)$ is prime, so we may localize at
 it. This gives us a $B_{(0)}$-vector space
 $M_{(0)}$, with an isomorphism $\phi: B_{(0)}^{\oplus n} \to M_{(0)}$. By 1.6.G,
-in our case localization and Hom commute. This gives us $\phi=\phi'/f$
-where $\phi': B^{\oplus n} \to M$. By the above lemma, both $\ker \phi'$
-and $\coker \phi'$ are annihilated by some $f'$ and
-$f''$. Thus, $M_{ff'f''}$ is free over
-$A_{ff'f''}$. Geometrically: if a finitely generated module is free
-at a point, then it is free on an open set around that point.
+in our case localization and Hom commute. Under this isomorphism,
+$\phi$ corresponds to $\sum_{i=1}^k\phi_i/f_i$ where
+$\phi_i: B^{\oplus n} \to M$. This sum is well defined on $B_f$
+where $f = \prod f_i$. Call this map $\phi'$. By the
+above lemma, both $\ker \phi'$ and $\coker \phi'$ are
+annihilated by some $f'$ and $f''$. Thus,
+$M_{ff'f''}$ is free over $A_{ff'f''}$. Geometrically: if
+a finitely generated module is free at a point, then it is free on an open set
+around that point.
 
 We note that the $\phi'$ arising from this argument can't
 globally surjective unless $M$ is free: indeed, by

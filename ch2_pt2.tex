@@ -10,17 +10,22 @@
 \maketitle
 
 \section*{2.4.A}
-Let $\phi_U$ be the given map and let $\phi_U(f)=\phi_U(g)$. Then for all $p \in X$
-there exists an open set $V_p \ni p$ such that $f|_{V_p}=g|_{V_p}$. The $V_p$ clearly
-cover $X$, so identity applies, so $f=g$. \qed
+Let $\phi_U$ be the given map and let $\phi_U(f)=\phi_U(g)$.
+Then for all $p \in X$ there exists an open set
+$V_p \ni p$ such that $f|_{V_p}=g|_{V_p}$. The
+$V_p$ clearly cover $X$, so identity
+applies, so $f=g$. \qed
 
 \section*{2.4.B}
-Let $A=\overline{supp(s)}$. Thus for all $x \in A$ there exists an open set $U$ where $s|_U \not = 0$.
-Taking the union of all such open sets over all the points in $A$ gives us $A$ itself, so $A$ is open. \qed
+Let $A=\overline{supp(s)}$. Thus for all $x \in A$ there exists an
+open set $U$ where $s|_U \not = 0$. Taking the union
+of all such open sets over all the points in $A$ gives us
+$A$ itself, so $A$ is open. \qed
 
 \section*{2.4.C}
-The $U_p$ cover $U$. The $\widetilde{s_p}$ agree on overlaps since they have the same germs on those overlaps
-(apply 2.4.A). Thus they glue. \qed
+The $U_p$ cover $U$. The
+$\widetilde{s_p}$ agree on overlaps since they have the same germs on
+those overlaps (apply 2.4.A). Thus they glue. \qed
 
 \section*{2.4.D}
 The hypotheses mean the following diagram commutes.
@@ -34,76 +39,84 @@ The hypotheses mean the following diagram commutes.
                                                                               & \mathscr{G}(U) \ar[ur, hook, "\iota_2"]
     \end{tikzcd}
 \]
-Note that the image of the two injective maps is identical by commutativity. Thus you can
-take $(\iota_1 \after \phi_{1U})(x)$ and pull it back along
-$\iota_2$ to give $\phi_{2U}(x)$. Thus $\phi_{1U}=\phi_{2U}$ for all $U$. \qed
+Note that the image of the two injective maps is identical by commutativity.
+Thus you can take $(\iota_1 \after \phi_{1U})(x)$ and pull it back along
+$\iota_2$ to give $\phi_{2U}(x)$. Thus
+$\phi_{1U}=\phi_{2U}$ for all $U$. \qed
 
 \section*{2.4.E}
 \begin{itemize}
-    \item[$\rightarrow$] Taking the stalk at $p$ is a functor and so preserves isomorphisms. \qed
-    \item[$\leftarrow$] The isomorphisms of stalks assemble to an isomorphism of the sets of
-          compatible germs. Consider the following diagram:
-          \[
-              \begin{tikzcd}
-                  \mathscr{F}(U) \ar[r, "\phi"] \ar[d, hook, "\iota_F"]
-                   & \mathscr{G}(U) \ar[d, hook, "\iota_G"] \\
-                  \prod_{p \in U} \mathscr{F}_p \ar[r, "\phi_p"]
-                   & \prod_{p \in U} \mathscr{G}_p
-              \end{tikzcd}
-          \]
-          The above statement says that $\phi_p$ is an isomorphism of the images of the two
-          $\iota$ maps. Thus, let $f, g \in \mathscr{F}(U)$ such that $\phi(f)=\phi(g)$.
-          Then $\iota_F(f)=\phi^{-1}_p(\iota_G(\phi(f)))=\iota_F(g)$. Also,
-          if $g \in \mathscr{G}(U)$ then $g=\phi(\iota_F^{-1}(\phi_p^{-1}(\iota_G(g))))$. \qed
+    \item[$\rightarrow$] Taking the stalk at $p$ is a functor and so preserves
+        isomorphisms. \qed
+    \item[$\leftarrow$] The isomorphisms of stalks assemble to an isomorphism of the sets of compatible
+        germs. Consider the following diagram: \[
+            \begin{tikzcd}
+                \mathscr{F}(U) \ar[r, "\phi"] \ar[d, hook, "\iota_F"]
+                 & \mathscr{G}(U) \ar[d, hook, "\iota_G"] \\
+                \prod_{p \in U} \mathscr{F}_p \ar[r, "\phi_p"]
+                 & \prod_{p \in U} \mathscr{G}_p
+            \end{tikzcd}
+        \] The above
+        statement says that $\phi_p$ is an isomorphism of the images of
+        the two $\iota$ maps. Thus, let $f, g \in \mathscr{F}(U)$ such that
+        $\phi(f)=\phi(g)$. Then $\iota_F(f)=\phi^{-1}_p(\iota_G(\phi(f)))=\iota_F(g)$. Also, if
+        $g \in \mathscr{G}(U)$ then $g=\phi(\iota_F^{-1}(\phi_p^{-1}(\iota_G(g))))$. \qed
 \end{itemize}
 
 \section*{2.4.H}
 Apply the universal property to the morphism $\text{sh} \after \phi$.
 
 \section*{2.4.I}
-2.4.A is equivalent to identity, 2.4.C is equivalent to gluability. $\mathscr{F}^{\text{sh}}$
-satisfies both by construction.
+2.4.A is equivalent to identity, 2.4.C is equivalent to gluability.
+$\mathscr{F}^{\text{sh}}$ satisfies both by construction.
 
 \section*{2.4.J}
 Send $s \in \mathscr{F}(U)$ to $(s_p)_{p \in U}$.
 
 \section*{2.4.K}
-Define $f((s_p)_{p \in U})=g(s)$. This is well defined since the conditions of 2.4.D hold for
-$g$.
+Define $f((s_p)_{p \in U})=g(s)$. This is well defined since the conditions of
+2.4.D hold for $g$.
 
 \section*{2.4.L}
 We want to show $\text{Hom}(\mathscr{F}^\text{sh}, \mathscr{G}) \widetilde{=}\
-    \text{Hom}(\mathscr{F}, F(\mathscr{G}))$
-where $F$ is the forgetful functor. We do this by sending a morphism on the right to its
-image under sheafification, and a morphism $\phi$ on the left to the morphism $\phi \after \
+    \text{Hom}(\mathscr{F}, F(\mathscr{G}))$ where $F$ is the
+forgetful functor. We do this by sending a morphism on the right to its image
+under sheafification, and a morphism $\phi$ on the left to the
+morphism $\phi \after \
     \text{sh}$.
 
 \section*{2.4.M}
-The germ of $(s_p)_{p \in U})$ at a point $q$ is $s_q$.
+The germ of $(s_p)_{p \in U})$ at a point $q$ is
+$s_q$.
 
 \section*{2.4.N}
-c $\implies$ b is clear. b $\implies$ a follows from the fact that taking the stalks at $p$
-reflects monomorphisms which follows from the fact that morphisms are determined on stalks.
-a $\implies$ c follows by applying the "evaluate at $U$" functor to the composition indicated
-in the hints
+c $\implies$ b is clear. b $\implies$ a follows from
+the fact that taking the stalks at $p$ reflects
+monomorphisms which follows from the fact that morphisms are determined on
+stalks. a $\implies$ c follows by applying the "evaluate at
+$U$" functor to the composition indicated in the hints
 
 \section*{2.4.O}
 \begin{itemize}
-    \item[b $\implies$ a] follows from the fact that taking the stalks at $p$
-          reflects epimorphisms which follows from the fact that morphisms are determined on stalks.
-    \item[a $\implies$ b] Consider the skyscraper sheaf $i_{p,*}2$ as well as the two morphisms
-          $\psi, \psi'$ defined on $U \ni p$ open by $\psi_U(g)=0$ if $g_p \in im(\phi_p)$ or 1 otherwise
-          and $\psi'_U(g)=0$ for all g. Then $\psi \after \phi = \psi' \after \phi$. Taking stalks at $p$
-          we get $\psi_p=\psi'_p$ so that $im(\phi_p)=\mathscr{G}_p$.
+    \item[b $\implies$ a] follows from the fact that taking the stalks at $p$ reflects
+        epimorphisms which follows from the fact that morphisms are determined on
+        stalks.
+    \item[a $\implies$ b] Consider the skyscraper sheaf $i_{p,*}2$ as well as the two
+        morphisms $\psi, \psi'$ defined on $U \ni p$ open by
+        $\psi_U(g)=0$ if $g_p \in im(\phi_p)$ or 1 otherwise and
+        $\psi'_U(g)=0$ for all g. Then $\psi \after \phi = \psi' \after \phi$. Taking stalks at
+        $p$ we get $\psi_p=\psi'_p$ so that
+        $im(\phi_p)=\mathscr{G}_p$.
 \end{itemize}
 
 \section*{2.5.A}
-We can recover stalks: since the base covers any open set, any two sections that are eventually
-equal are eventually equal on a basic open set. Then just use the fact that sections are determined
-by compatible germs.
+We can recover stalks: since the base covers any open set, any two sections
+that are eventually equal are eventually equal on a basic open set. Then just
+use the fact that sections are determined by compatible germs.
 
 \section*{2.5.B}
-Both $F$ and $\mathscr{F}$ have the same etale space.
+Both $F$ and $\mathscr{F}$ have the same etale
+space.
 
 \section*{2.6.A}
 Filtered colimits commute with finite limits.
@@ -112,8 +125,8 @@ Filtered colimits commute with finite limits.
 Taking stalks and cokernels are both colimits, and thus commute.
 
 \section*{2.6.C}
-The image is the kernel of the cokernel. Sheafifying we get the same result in the category of
-sheaves. $(\ker \coker f)_p=\ker (\coker f)_p = \ker \coker f_p$
+The image is the kernel of the cokernel. Sheafifying we get the same result in
+the category of sheaves. $(\ker \coker f)_p=\ker (\coker f)_p = \ker \coker f_p$
 
 \section*{2.6.D}
 This is just a repeat of 2.4.N and 2.4.O.
@@ -125,26 +138,75 @@ This is 2.4.N again.
 Use 2.7.B and the fact that right adjoints preserve limits.
 
 \section*{2.6.H}
-Use 2.4.N and functoriality on open sets.
+We first need to show functoriality. Let $\phi: \Gsh \to \Hsh$ be a morphism
+of sheaves. Then we may define $\phi': \Hom(\Fsh, \Gsh) \to \Hom(\Fsh, \Hsh)$ by
+$\phi'_U = \hom(\Fsh|_U, \phi|_U)$. This is clearly additive. Now suppose
+$\phi$ is mono. By 2.4.N, it suffices to show that
+$\hom(\Fsh|_U, \phi|_U)$ is injective for all $U$. Let
+$f: \Fsh|_U \to \Gsh|_U$ be such that $\phi|_U \after f = 0$. Then
+$f_V=0$ for all $V \subseteq U$ by 1.6.F. Hence
+$f=0$. The contravariant case is similar. \qed
 
 \section*{2.6.J}
-Define using the tensor product open set by open set. Use the restriction maps $\Fsh(U) \to \
-    \Fsh(V)$ and $\Gsh(U) \to \Gsh(V)$ to form get a define a restriction map on the tensor product.
+\begin{enumerate}[a.]
+    \item
+          We will use the following universal property: Let $\Fsh \times \Gsh$ be the
+          product of $\Osh_X$-modules. We say a morphism of
+          $\Osh_X$-modules $\Fsh \times \Gsh \to \Hsh$ is bilinear if, on every
+          open, the induced morphisms of modules are bilinear. The tensor product
+          $\Fsh \otimes \Gsh$ is defined such that if $h: \Fsh \times \Gsh \to \Hsh$ is
+          bilinear then there exists a unique morphism $h': \Fsh \otimes \Gsh \to \Hsh$ such that
+          $h$ factors through $h'$. See the
+          following diagram: \[\begin{tikzcd}
+                  {\Fsh \times \Gsh} & {\Fsh \otimes \Gsh} \\
+                                     & {\Hsh}
+                  \arrow["{\exists! h'}", dashed, from=1-2, to=2-2]
+                  \arrow["h"', from=1-1, to=2-2]
+                  \arrow[from=1-1, to=1-2]
+              \end{tikzcd}\] The definition for presheaves of
+          modules is identical. It is clear that the presheaf tensor product is given by
+          the usual tensor product on each open set. In other words
+          $(\Fsh \otimes \Gsh)_\text{pre}(U)=\Fsh(U) \otimes
+              \Gsh(U)$. Let $\Fsh \otimes \Gsh$ be the sheafification of
+          $(\Fsh \otimes \Gsh)_\text{pre}$. We need to show that it satisfies the universal
+          property of the tensor product. The following diagram demonstrates this:
+          \[\begin{tikzcd}
+                  {\Fsh \times \Gsh} & {(\Fsh \otimes \Gsh)_\text{pre}} & {\Fsh \otimes \Gsh} \\
+                                     & {\Hsh}
+                  \arrow["{\exists! h'}", dashed, from=1-2, to=2-2]
+                  \arrow["h"', from=1-1, to=2-2]
+                  \arrow[from=1-1, to=1-2]
+                  \arrow["{\text{sh}}", from=1-2, to=1-3]
+                  \arrow["{\exists!}", dashed, from=1-3, to=2-2]
+              \end{tikzcd}\] Since $\Hsh$ is a sheaf, we know, by
+          universal property of sheafification, that $h'$ induces a
+          unique map of sheaves $\Fsh \otimes \Gsh \to \Hsh$. We also know that since morphisms
+          of sheaves are just morphisms of the underlying presheaves,
+          $\Fsh \times \Gsh \to \Fsh \otimes \Gsh$ is a morphism of sheaves. Thus $\Fsh \otimes \Gsh$
+          satisfies the desired universal property.
+    \item We may apply 2.4.M to see that, if $x \in U$ then
+          $(\Fsh \otimes \Gsh)_x = (\Fsh \otimes
+              \Gsh)_{\text{pre},x}=\Fsh_x \otimes \Gsh_x$.
+\end{enumerate}
 
 \section*{2.7.B}
-By left adjointness of $\text{sh}$ we can do this over presheaves. Now, consider a morphism $\phi$ on the left.
-For any open $V \subseteq Y$ we have an open set $U=\pi^{-1}(V)$ so that $\pi(U) \subset V$.
-Now we have a map from $\Fsh(V)$ to $\pi^{-1}\Fsh(U)$ by definition of colimit.
-We define $\phi_{*,V}$ to be the composition of this map followed by $\phi$, followed by the isomorphism
-$\Gsh(U)=\pi_*\Gsh(V)$.
+By left adjointness of $\text{sh}$ we can do this over presheaves.
+Now, consider a morphism $\phi$ on the left. For any open
+$V \subseteq Y$ we have an open set $U=\pi^{-1}(V)$ so that
+$\pi(U) \subset V$. Now we have a map from $\Fsh(V)$ to
+$\pi^{-1}\Fsh(U)$ by definition of colimit. We define
+$\phi_{*,V}$ to be the composition of this map followed by
+$\phi$, followed by the isomorphism $\Gsh(U)=\pi_*\Gsh(V)$.
 
-Now let $\psi: \Fsh \to \pi_*\Gsh$. Let $U \subseteq X$, $V \supseteq \
-    \pi(U)$ be open, and let $W=\pi^{-1}(V)$. For any $x \in \pi^{-1}\Fsh(U)$, we take $\Fsh(V)$
-to have a representative for $x$, $\widetilde{x}$. Then
-$\psi^*_U(x)=\operatorname{res}_{WU}(\psi_V(\widetilde{x}))$,
-where the restriction happens in  $\Gsh(W)=\pi_*\Gsh(V)$. This is well defined:
-indeed, if we take two different representatives $\widetilde{x}, \widehat{x}$ for $x$ then
-the images are equal on some open set whose inverse image contains $U$.
+Now let $\psi: \Fsh \to \pi_*\Gsh$. Let $U \subseteq X$,
+$V \supseteq \ \pi(U)$ be open, and let $W=\pi^{-1}(V)$. For any
+$x \in \pi^{-1}\Fsh(U)$, we take $\Fsh(V)$ to have a
+representative for $x$, $\widetilde{x}$. Then
+$\psi^*_U(x)=\operatorname{res}_{WU}(\psi_V(\widetilde{x}))$, where the restriction happens in
+$\Gsh(W)=\pi_*\Gsh(V)$. This is well defined: indeed, if we take two different
+representatives $\widetilde{x}, \widehat{x}$ for $x$ then the
+images are equal on some open set whose inverse image contains
+$U$.
 
 \section*{2.7.C}
 Stalk is a colimit and left adjoints preserve colimits.
@@ -153,28 +215,32 @@ Stalk is a colimit and left adjoints preserve colimits.
 Just examine the etale spaces of both.
 
 \section*{2.7.E}
-$\pi^{-1}$ is left adjoint and so preserves colimits, specifically cokernels.
+$\pi^{-1}$ is left adjoint and so preserves colimits, specifically
+cokernels.
 \begin{align*}
     \i_p^{-1}\ker\pi^{-1}(f) & = \ker\pi^{-1}(i_p^{-1}f) \\
                              & = \pi^{-1}\ker(i_p^{-1}f) \\
                              & = i_p^{-1}\pi^{-1}\ker(f)
 \end{align*}
-Where we use the fact that $\pi^{-1}_p$ is a colimit and thus commutes with kernels.
-Finally, we conclude from 2.4.N that $\pi^{-1}\ker(f)$ is the kernel of $f$ in the category of sheaves
+Where we use the fact that $\pi^{-1}_p$ is a colimit and thus
+commutes with kernels. Finally, we conclude from 2.4.N that
+$\pi^{-1}\ker(f)$ is the kernel of $f$ in the
+category of sheaves
 
 \section*{2.7.F}
 \begin{itemize}
     \item[a.] Check the etale space.
-    \item[b.] Take stalks. Then we get a morphism $\phi:\Fsh_p \to (i_*i^{-1}\Fsh)_p$
-          and a morphism $\psi: (i_*i^{-1}\Fsh)_p \to \Fsh_p$ arising from the direct image functor
-          and the fact that stalks of inverse images are stalks of the original functor.
-          We show that these are inverses. We reduce to the case where $p \in Z$ since
-          otherwise both sides are one element sets.
-          We show that $\psi$ is an isomorphism. For this it suffises to show
-          that every sequence of open sets in $Z$ containing $p$ arises from a sequence
-          of opens in $X$. This follows by definition of the subspace topology.
-          Thus $\psi$ is an isomorphism. That the two morphisms compose to the identity
-          is a straightforward and tedius exercise in chasing definitions.
+    \item[b.] Take stalks. Then we get a morphism $\phi:\Fsh_p \to (i_*i^{-1}\Fsh)_p$ and a morphism
+        $\psi: (i_*i^{-1}\Fsh)_p \to \Fsh_p$ arising from the direct image functor and the fact that
+        stalks of inverse images are stalks of the original functor. We show that these
+        are inverses. We reduce to the case where $p \in Z$ since
+        otherwise both sides are one element sets. We show that $\psi$
+        is an isomorphism. For this it suffises to show that every sequence of open
+        sets in $Z$ containing $p$ arises from a
+        sequence of opens in $X$. This follows by definition of the
+        subspace topology. Thus $\psi$ is an isomorphism. That the two
+        morphisms compose to the identity is a straightforward and tedius exercise in
+        chasing definitions.
 \end{itemize}
 
 \end{document}
