@@ -1,5 +1,4 @@
 \documentclass{article}
-\input{commands.tex}
 
 \title{Chapter 1 Problems}
 \author{Josiah Bills}
@@ -9,104 +8,6 @@
 
 \maketitle
 
-\section{Transitivity of Localization}
-\begin{theorem}
-    Let $a/b \sim c/d \sim e/f \in S^{-1}A$. Then $a/b \sim e/f$.
-\end{theorem}
-\begin{proof}
-    Let $a/b \sim c/d \sim e/f$. Then there exist $s_1, s_2$ such that
-    $s_1(ad-bc)=0$ and $s_2(cf-ed)=0$. Thus $s_2(bcf-edb)=s_2(s_1daf-s_1bed)=s_2ds_1(af-eb)$.
-    Since $s_2ds_1 \in S$ the result follows.
-\end{proof}
-
-\section{1.3.C}
-\begin{theorem}
-    $A \to S^{-1}A$ is injective iff $S$ contains no
-    zerodivisors.
-\end{theorem}
-\begin{theorem}
-    \begin{itemize}
-        \item[$\implies$] For the sake of contrapositive, suppose $ab=0$,
-            $0 \neq a \in S$ and $b \neq 0$. Then $a(b-0)=0$
-            so that $b/1=0/1$ so that $A \to S^{-1}A$ is not injective.
-        \item[$\impliedby$] Suppose $x/1=y/1$. Then $s(x-y)=0$. Since
-            $s$ is not a zero divisor, $x=y$.
-    \end{itemize}
-\end{theorem}
-
-\section{1.3.D}
-\begin{theorem}
-    $A \to S^{-1}A$ is initial amongst $A$-algebras where
-    every element of $S$ is invertible.
-\end{theorem}
-\begin{proof}
-    Let $\phi: A \to B$ be such that $\phi(S)$ contains only
-    invertible elements. Define $f : S^{-1}A \to B$ by $f(a/b)=\phi(a)\phi(b)^{-1}$.
-    The map is well defined, and $f(a/1)=\phi(a)$ as desired.
-\end{proof}
-
-\section{1.3.R}
-\begin{theorem}
-    Suppose we have morphisms $X_1 \to Y, X_2 \to Y, Y \to Z$ in some category. Then the
-    fiber product induces a morphism $X_1 \times_Y X_2 \to X_1 \times_Z X_2$.
-\end{theorem}
-\begin{proof}
-    \[
-        \begin{tikzcd}
-            {X_1\times_YX_2}                \\
-             & {X_1\times_ZX_2} & {X_2}     \\
-             & {X_1}            & Y         \\
-             &                  &       & Z
-            \arrow[from=3-2, to=3-3]
-            \arrow[from=2-3, to=3-3]
-            \arrow[from=3-3, to=4-4]
-            \arrow[from=2-2, to=3-2]
-            \arrow[from=2-2, to=2-3]
-            \arrow[from=1-1, to=3-2]
-            \arrow[from=1-1, to=2-3]
-            \arrow[dashed, from=1-1, to=2-2]
-        \end{tikzcd}
-    \]
-
-    We prove a further fact: Assume $Y \to Z$ is mono. Then
-    $X_1\times_YX_2 \to X_1\times_ZX_2$ is iso. Indeed consider, $W \to X_1 \to Y \to Z = W \to X_2 \to Y \to Z$ so that,
-    by monomorphism, $W \to X_1 \to Y = W \to X_2 \to Y$. But this means that there must be a
-    unique map $W \to X_1 \times_Y X_2$, which is exactly the condition for
-    $X_1 \times_Y X_2$ to be the product.
-\end{proof}
-
-\section{1.3.S}
-\begin{theorem}
-    Suppose we have $X_1,X_2 \to Y$ and $Y \to Z$. Show that
-    the map constructed in 1.3.R is fibered over the diagonal
-    $\Delta_{Y/Z}$. In other words, the following diagram is cartesian:
-
-    \[\begin{tikzcd}
-            {X_1 \times_YX_2} & {X_1 \times_ZX_2} \\
-            Y                 & {Y\times_ZY}
-            \arrow[from=1-1, to=2-1]
-            \arrow[from=1-1, to=1-2]
-            \arrow[from=1-2, to=2-2]
-            \arrow[from=2-1, to=2-2]
-        \end{tikzcd}\]
-\end{theorem}
-\[
-    \begin{tikzcd}
-        Y \ar[rdd, bend right] \ar[rrd, bend left] \ar[rd, "\exists!", dotted] &                            &          \\
-                                                                               & Y \times_Z Y \ar[d] \ar[r] & Y \ar[d] \\
-                                                                               & Y \ar[r]                   & Z
-    \end{tikzcd}
-    \begin{tikzcd}
-        W \arrow[rrrddd, bend right=60] \arrow[rrdd, bend left=49] \arrow[rd, "\exists!", dotted] &                                                                                                &                                      &                        &                       \\
-                                                                                                  & X_1 \times_Y X_2 \arrow[rdd, bend right] \arrow[rrd, bend left] \arrow[rd, "\exists!", dotted] &                                      &                        &                       \\
-                                                                                                  &                                                                                                & X_1 \times_Z X_2 \arrow[r] \arrow[d] & X_2 \arrow[d]          &                       \\
-                                                                                                  &                                                                                                & X_1 \arrow[r]                        & Y \arrow[rd] \arrow[r] & Y\times_Z Y \arrow[d] \\
-                                                                                                  &                                                                                                &                                      &                        & Z
-    \end{tikzcd}
-\]
-
-The morphism from $W$ exists by virtue of the projections of
-$X_1 \times_Z X_2$ to the components, as well as the commutativity of all
-the relvant diagrams. \qed
+$\unknowncommandhere$
 
 \end{document}
