@@ -1,5 +1,5 @@
 \documentclass{article}
-\input{../commands.tex}
+\input{commands.tex}
 
 \title{Chapter 9.1 Problems}
 \author{Josiah Bills}
@@ -12,11 +12,11 @@
 \section{9.1.A}
 Consider the following diagram: \[
     \begin{tikzcd}
-        & Y \ar[d] \ar[ddr]
+                          & Y \ar[d] \ar[ddr]
         \\
         X \ar[r] \ar[rrd] & X \coprod Y
         \ar[dr, dotted]                           \\
-        &                   & Z
+                          &                   & Z
     \end{tikzcd}
 \] We may define the dotted
 morphism on $Y$ as the morphism on the top and similarly for
@@ -27,8 +27,8 @@ morphism making the diagram commute. \qed
 $\Spec$ is a contravariant equivalence of categories. \qed
 
 \section{9.1.C}
-Let $Z$ be arbitrary, and let $f: Z \to X$.
-Consider the following diagram: \[
+Let $Z$ be arbitrary, and let $f: Z \to X$. Consider
+the following diagram: \[
     \begin{tikzcd}
         h_X(X) \ar[d, "\eta_X", swap] \ar[r, "\_ \after f"] & h_X(Z)
         \ar[d, "\eta_Z"]                                             \\
@@ -45,13 +45,13 @@ transformation is uniquely determined by the destination of the identity. \qed
 
 \section{9.1.D}
 Suppose we have two morphisms of schemes $\sigma_X: X \to Z, \sigma_Y: Y \to Z$. Let
-$W$ be arbitrary. Then $h_X \times_{h_Z} h_Y(W)$ is given by
-a pair of morphsims $(f_X, f_Y)$ such that $f_X \after \sigma_X=f_Y \after \sigma_Y$.
-Let $U_i$ be an open cover of $W$.
-Consider a collection of morphisms $(f_{Xi}, f_{Yi})$ such that
-$f_{Xi} \after \sigma_X=f_{Yi} \after \sigma_Y$ for all $i$ and such that the
-components individually satisfy gluing. Then they glue to a pair of morphisms
-that satisfy the pullback condition. Identity is likewise trivial. \qed
+$W$ be arbitrary. Then $h_X \times_{h_Z} h_Y(W)$ is given by a
+pair of morphsims $(f_X, f_Y)$ such that $f_X \after \sigma_X=f_Y \after \sigma_Y$. Let
+$U_i$ be an open cover of $W$. Consider a
+collection of morphisms $(f_{Xi}, f_{Yi})$ such that $f_{Xi} \after \sigma_X=f_{Yi} \after \sigma_Y$
+for all $i$ and such that the components individually
+satisfy gluing. Then they glue to a pair of morphisms that satisfy the pullback
+condition. Identity is likewise trivial. \qed
 
 \section{9.1.E}
 The if direction follows from the existence of pullbacks of open embeddings
@@ -70,25 +70,25 @@ along the identity. \qed
 
 \section{9.1.G}
 For the moment we assume that fiber products exist. Then we have
-$U\times_WV = U\times_ZY \intersect X\times_ZV$. If $\phi: T \to X\times_ZY$ then
-$\phi^{-1}(U\times_WV)=\phi^{-1}(U\times_ZY
+$U\times_WV = U\times_ZY \intersect X\times_ZV$. If $\phi: T \to X\times_ZY$ then $\phi^{-1}(U\times_WV)=\phi^{-1}(U\times_ZY
     ) \intersect
-    \phi^{-1}(X\times_ZV)$. Clearly also $\phi^{-1}(U\times_ZY)=(\pi_X \after
+    \phi^{-1}(X\times_ZV)$.
+Clearly also $\phi^{-1}(U\times_ZY)=(\pi_X \after
     \phi)^{-1}(U)$.
 
 Consider the following diagram: \[\begin{tikzcd}
         {h'}
         \\
-        & {h_T}
+                                                     & {h_T}
         \\{h_U\times_{h_W}h_V} &
-        & {h_V}
+                                                     & {h_V}
         \\
-        & {h_X \times_{h_Z} h_Y } &   &
+                                                     & {h_X \times_{h_Z} h_Y } &   &
         {h_Y}
         \\{h_U}                &                         &
         {h_W}
         \\
-        & {h_X}                   &   &
+                                                     & {h_X}                   &   &
         {h_Z}
         \arrow[from=6-2, to=6-4]
         \arrow[from=4-4, to=6-4]
@@ -135,11 +135,11 @@ $R$ be an arbitrary scheme and consider:
 \[\begin{tikzcd}
         {h''(R)}
         \\
-        & {h_S(R)}                &
+                 & {h_S(R)}                &
         {h_T(R)} &
         {}
         \\
-        & {h_U\times_{h_W}h_V(R)} &
+                 & {h_U\times_{h_W}h_V(R)} &
         {h_X\times_{h_Z}h_Y(R)}
         \arrow[from=2-3, to=3-3]
         \arrow[from=2-2, to=3-2]
@@ -176,11 +176,11 @@ $f: h_X \to h$. We wish to show that this is bijective.
 
 Let $Y$ be an arbitrary scheme with a pullback cover
 $V_i$. Let $x \in h(Y)$. Then we abuse notation to
-write $x: h_Y \to h$. Now, $\id \in h_Y(Y)$ is determined by
-the inclusions $V_i \to Y$. These pullback to the identity on
-$h_{V_i}(V_i)$, and determine a morphism $V_i \to U_i$.
-These morphisms glue to give a morphism $Y \to X$ which
-corresponds to $x$.
+write $x: h_Y \to h$. Now, $\id \in h_Y(Y)$ is determined by the
+inclusions $V_i \to Y$. These pullback to the identity on
+$h_{V_i}(V_i)$, and determine a morphism $V_i \to U_i$. These
+morphisms glue to give a morphism $Y \to X$ which corresponds to
+$x$.
 
 Let $f_Y(x_1)=f_Y(x_2)$. A simple diagram chase shows that the restrictions
 of $x_1, x_2$ to the open cover are equal, hence they are equal.

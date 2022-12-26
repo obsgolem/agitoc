@@ -1,5 +1,5 @@
 \documentclass{article}
-\input{../commands.tex}
+\input{commands.tex}
 
 \title{Chapter 9.5 Problems}
 \author{Josiah Bills}
@@ -89,9 +89,9 @@ is surjective. It suffices to show \[\begin{tikzcd}
         \arrow["g"', from=1-1, to=2-1]
         \arrow[from=1-2, to=2-2]
         \arrow[from=2-1, to=2-2]
-    \end{tikzcd}\] is non-zero. Consider
-$A \otimes_C B$ Indeed, the pure tensor $a \otimes b = 0$ iff
-$a=0$ or $b=0$ or $a=cx$
+    \end{tikzcd}\] is non-zero.
+Consider $A \otimes_C B$ Indeed, the pure tensor $a \otimes b = 0$
+iff $a=0$ or $b=0$ or $a=cx$
 where $c \in C$ and $ca=0$. Consider
 $1 \otimes 1 \in k[x_1, \dots,x_n]_p \otimes \kappa(r)$. Suppose $a \in x_1, \dots, x_m]_q$ be such that
 $f(a)=0$. Then $a \in r$ so that
@@ -168,8 +168,8 @@ $f \in \q$.
 \section{9.5.H}
 Let $X$ be a topological space and let
 $p \in X$. Consider the set of connected subsets containing
-$p$. Let $\{S_i\}_{i \in I}$ be a chain in this poset
-and consider $S=\Union_i S_i$. Let $S=U \union V$. Then they
+$p$. Let $\{S_i\}_{i \in I}$ be a chain in this poset and
+consider $S=\Union_i S_i$. Let $S=U \union V$. Then they
 intersect on some element of the chain, hence they intersect. Hence
 $S$ is connected. Hence by Zorn's lemma,
 $p$ is contained in a maximal connected set.
@@ -226,13 +226,12 @@ squares.
 \section{9.5.L}
 \begin{itemize}
     \item[$\implies$] Let $U_1=X$. \qed
-    \item[$\impliedby$] Irreducible is equivalent to the statement that every
-          pair of non-empty open subsets meets. We are given a cover of non-empty opens,
-          which all meet. Let $V, W$ be arbitrary non-empty opens. We
-          show they intersect. Indeed, choose $i, j$ such that
-          $U_i \intersect V$ and $U_j \intersect W$ are non-empty. Then
-          $U_i \intersect U_j \intersect V \intersect W$ is nonempty since $U_i \intersect U_j$ is nonempty.
-          \qed
+    \item[$\impliedby$] Irreducible is equivalent to the statement that every pair of non-empty open
+        subsets meets. We are given a cover of non-empty opens, which all meet. Let
+        $V, W$ be arbitrary non-empty opens. We show they intersect.
+        Indeed, choose $i, j$ such that $U_i \intersect V$ and
+        $U_j \intersect W$ are non-empty. Then $U_i \intersect U_j \intersect V \intersect W$ is nonempty
+        since $U_i \intersect U_j$ is nonempty. \qed
 \end{itemize}
 
 \section{9.5.24}
@@ -270,7 +269,7 @@ follows from the hypothesis.
 
 \[\begin{tikzcd}
         {\operatorname{Spec} K} \\{X\times_Y Z} & Z \\
-        X & Y
+        X                                                             & Y
         \arrow[from=2-1, to=3-1]
         \arrow[from=2-1, to=2-2]
         \arrow[from=3-1, to=3-2]

@@ -1,5 +1,5 @@
 @default_files = ("**/**.tex");
-$pdflatex = "pdflatex -interaction=nonstopmode --shell-escape %O %S";
+$pdflatex = "pdflatex -synctex=1 -interaction=nonstopmode --shell-escape %O %S";
 $pdf_mode = 1;
 ensure_path( 'TEXINPUTS', '.');
 $out_dir = './build';

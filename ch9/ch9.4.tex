@@ -1,5 +1,5 @@
 \documentclass{article}
-\input{../commands.tex}
+\input{commands.tex}
 
 \title{Chapter 9.4 Problems}
 \author{Josiah Bills}
@@ -83,8 +83,8 @@ We now begin the actual proof:
 Quasifiniteness obviously satisfies the conditions of part (b) of the lemma
 above. Thus we may reduce to the pullback of $f: \Spec A \to \Spec B$ along
 $g: \Spec C \to \Spec B$. Now, consider $\Spec \kappa(\p) \to \Spec C \to \Spec B$. This factors
-through the morphism $\Spec \kappa(\p) \to \Spec \kappa(g(\p)) \to \Spec B$. Clearly $f^{-1}(g(\p)) \to \Spec \kappa(g(\p))$
-is finite type (since it is the pullback of $f$). Thus we
+through the morphism $\Spec \kappa(\p) \to \Spec \kappa(g(\p)) \to \Spec B$. Clearly $f^{-1}(g(\p)) \to \Spec \kappa(g(\p))$ is
+finite type (since it is the pullback of $f$). Thus we
 reduce to the case of the pullback of field by affine over a field. This case
 is covered by 7.4.D, making the morphism finite. Then it pulls back to a finite
 morphism over the field, hence it has finite fibers. \qed
@@ -93,34 +93,34 @@ morphism over the field, hence it has finite fibers. \qed
 We consider $X\times_ZY$ where $f: Y \to Z$ is surjective
 and $g: X \to Z$ is arbitrary. Let $\p \in X$. Then by
 9.3.C we may reduce to $\Spec \kappa(\p) \to \Spec \kappa(g(\p))$. Now, choosing a point
-$\q \in f^{-1}(g(\p))$ we are reduced to examining $\kappa(\p) \otimes_{\kappa(g(\p))}\kappa(\q)$.
-Now, the tensor product of two non-zero vector spaces is non-zero, since there
-is only one element of the ground field which annihilates both. Thus, the above
+$\q \in f^{-1}(g(\p))$ we are reduced to examining $\kappa(\p) \otimes_{\kappa(g(\p))}\kappa(\q)$. Now,
+the tensor product of two non-zero vector spaces is non-zero, since there is
+only one element of the ground field which annihilates both. Thus, the above
 tensor product, being of two $\kappa(g(\p))$-vector spaces must be
 non-zero. It thus has a maximal ideal, hence there is at least one point in the
 fiber over $\p$.
 
 \section{9.4.E}
-We let $k=\overline{k}$. By 9.2.D $X\times_kY$ is finite
-type. By 9.5.L, we may prove irreduciblity on an affine open cover. Also, by
-5.2.A (and the discussion in 5.3.2), reducedness is an affine-local property.
-Thus, if we show that $\Spec A \otimes_k \Spec B$ is integral for (finitely
-generated over $k$) integral domains
-$A, B$, then we are done. Now, $B$ is a
-free $k$-module, so we may choose generators
-$\{b_i\}_{i \in I}$ for some index set $I$. Now,
-suppose $(\sum_i a_i \otimes b_i)(\sum_j a'_j \otimes b'_j) = 0$ where $a_i, a'_j \neq 0$ and the
-$b_i, b'_j$ are generators of $B$. Now,
-$a_1a'_1 \neq 0$, so $\D(a_1a'_1)$ is nonempty and thus has a
-maximal ideal $\m$. Consider $A/\m \otimes_k B$. By the
-weak nullstellensatz, we have $A/\m \cong k$, so this is just
-$B$. Now $(\sum_i \overline{a_i} \otimes b_i)(\sum_j \overline{a'_j}
-      \otimes b'_j)=0 \in B$. But also
-$a_1 \neq 0$ in $A/\m$ so that
-$\overline{a_1}\otimes b_1 \neq 0$ and $\sum_i \overline{a_i} \otimes b_i \neq 0$ (and likewise with
-$a'_1$). But this contradicts the fact that
-$B$ is an integral domain. Thus $a_i = 0$ and
-$a'_j=0$ for all $i, j$. \qed
+We let $k=\overline{k}$. By 9.2.D $X\times_kY$ is finite type.
+By 9.5.L, we may prove irreduciblity on an affine open cover. Also, by 5.2.A
+(and the discussion in 5.3.2), reducedness is an affine-local property. Thus,
+if we show that $\Spec A \otimes_k \Spec B$ is integral for (finitely generated over
+$k$) integral domains $A, B$, then we are
+done. Now, $B$ is a free $k$-module, so
+we may choose generators $\{b_i\}_{i \in I}$ for some index set
+$I$. Now, suppose $(\sum_i a_i \otimes b_i)(\sum_j a'_j \otimes b'_j) = 0$ where
+$a_i, a'_j \neq 0$ and the $b_i, b'_j$ are generators of
+$B$. Now, $a_1a'_1 \neq 0$, so $\D(a_1a'_1)$
+is nonempty and thus has a maximal ideal $\m$. Consider
+$A/\m \otimes_k B$. By the weak nullstellensatz, we have
+$A/\m \cong k$, so this is just $B$. Now
+$(\sum_i \overline{a_i} \otimes b_i)(\sum_j \overline{a'_j}
+      \otimes b'_j)=0 \in B$. But also $a_1 \neq 0$ in
+$A/\m$ so that $\overline{a_1}\otimes b_1 \neq 0$ and
+$\sum_i \overline{a_i} \otimes b_i \neq 0$ (and likewise with $a'_1$). But this
+contradicts the fact that $B$ is an integral domain. Thus
+$a_i = 0$ and $a'_j=0$ for all
+$i, j$. \qed
 
 \section{9.4.F}
 Consider the following diagram: \[\begin{tikzcd}
