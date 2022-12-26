@@ -67,4 +67,29 @@ field. We proved this in 7.2, but for completeness let $0 = \sum_{i=1}^n a_ix^i+
 be an integral relation for $x$. Then $x\sum_{i=1}^{n-1}-a_ix^i/a_0=1$
 so that $x$ is invertible. \qed
 
+\section{11.1.E}
+By the going up theorem, $\pi$ is surjective. Hence any chain
+downstairs gives a chain upstairs. Now, suppose $\p_i$ is a
+chain in $A$. Then $\pi(\p_i)$ is a chain in
+$B$ of at most the same length. If $\pi(\p_i) = \pi(\p_{i+1})$
+then $\p_i \subset \p_{i+1}$, contradicting the zero dimensionality of the fiber
+(11.1.D). \qed
+
+\section{11.1.F}
+\section{11.1.G}
+\begin{enumerate}[a.]
+    \item Note that the reduction of a scheme has the same dimension as the scheme, since
+          they are homeomorphic. Hence we may reduce to the case where
+          $A$ is reduced. Now note that it suffices to show that
+          dimension of each irreducible component (regarded as a closed subscheme) is
+          preserved by the given pullback. Hence we may show that pullbacks of integral
+          domains preserve dimension. Choose a minimal prime $\p$ of
+          $A'=A\otimes_k K$. Note $A'$ is a free
+          $A$-module (we proved this in 5.4.M). Let
+          $a$ be in $\ker A \to A'/\p$. Then
+          $a \otimes 1 \in \p$ is a zero divisor, hence since $x \mapsto ax \otimes 1$ is
+          injective, we must have $a=0$. Hence $A \to A'/\p$ is
+          an integral extension, so 11.1.E applies. \qed
+    \item The closure of the image of a irreducible component is irreducible
+\end{enumerate}
 \end{document}
