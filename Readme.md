@@ -1,0 +1,1 @@
+This repo contains notes and solutions to Vakil's _The Rising Sea: Foundations of Algebraic Geometry_. The repo is currently based off of http://math.stanford.edu/~vakil/216blog/FOAGnov1817public.pdf, though work is in progress to update to the most recent version (http://math.stanford.edu/~vakil/216blog/FOAGaug2922publici.pdf).
